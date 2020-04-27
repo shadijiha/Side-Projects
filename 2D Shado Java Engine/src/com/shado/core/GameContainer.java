@@ -4,35 +4,45 @@
 
 package com.shado.core;
 
-public class GameContainer implements Runnable	{
+import com.shado.events.Input;
+
+public class GameContainer implements Runnable {
 
 	private Thread thread;
 	private Window window;
+	private Renderer2D renderer;
+	private Input input;
+	private AbstractGame game;
 
 	private boolean running = false;
-	private final double UPDATE_CAP = 1.0 / 60.0;	// Cap at 60 FPS
+	private final double UPDATE_CAP = 1.0 / 60.0;    // Cap at 60 FPS
 
-	private int width = 320, height = 240;
-	private float scale = 4.0f;
-	private String title = "Shado Engine v1.0\n";
+	private int width, height;
+	private float scale;
+	private String title;
 
-	public GameContainer()	{
-
-
+	public GameContainer(AbstractGame game) {
+		this.game = game;
+		this.width = game.width;
+		this.height = game.height;
+		this.scale = game.scale;
+		this.title = game.title;
 	}
 
-	public void start()	{
+	public void start() {
 		window = new Window(this);
+		renderer = new Renderer2D(this);
+		input = new Input(this);
 
 		thread = new Thread(this);
 		thread.run();
 	}
 
-	public void stop()	{
+	public void stop() {
 
 	}
 
-	public void run()	{
+	public void run() {
 
 		running = true;
 
@@ -46,7 +56,7 @@ public class GameContainer implements Runnable	{
 		int frames = 0;
 		int fps = 0;
 
-		while (running)	{
+		while (running) {
 
 			render = false;
 
@@ -58,26 +68,35 @@ public class GameContainer implements Runnable	{
 			unprocessedTime += passedTime;
 			frameTime += passedTime;
 
-			while (unprocessedTime >= UPDATE_CAP)	{
+			while (unprocessedTime >= UPDATE_CAP) {
 				unprocessedTime -= UPDATE_CAP;
 				render = true;
 
-				// TODO: Update game
+				// TODO: Replace the update_cap with accual delta time
+				game.update(this, (float) UPDATE_CAP);
 
-				if (frameTime >= 1.0)	{
+				// Update Input (Should be last thing)
+				input.update();
+
+				if (frameTime >= 1.0) {
 					frameTime = 0.0;
 					fps = frames;
 					frames = 0;
-					System.out.println(fps);
 				}
 			}
 
-			if (render)	{
+			if (render) {
+				renderer.clear();    // Clear screen
+
 				//TODO: Render game
+				game.render(this, renderer);
+				renderer.process();    // Render all alpha images
+
+				// This method also renders all The texts to the screen!
 				window.update();
 
 				frames++;
-			} else	{
+			} else {
 				try {
 					Thread.sleep(1);
 				} catch (InterruptedException e) {
@@ -89,7 +108,7 @@ public class GameContainer implements Runnable	{
 		dispose();
 	}
 
-	private void dispose()	{
+	private void dispose() {
 
 	}
 
@@ -124,5 +143,13 @@ public class GameContainer implements Runnable	{
 
 	public void setTitle(String title) {
 		this.title = title;
+	}
+
+	public Window getWindow() {
+		return window;
+	}
+
+	public Input getInput() {
+		return input;
 	}
 }

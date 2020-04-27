@@ -4,12 +4,11 @@
 
 package shado.core.render;
 
-import javafx.scene.canvas.Canvas;
-import shado.core.geometry.Shape;
-import shado.core.interfaces.Mouse;
+import javafx.scene.canvas.*;
+import shado.core.geometry.*;
+import shado.core.interfaces.*;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 public class Renderer2D {
 
@@ -37,8 +36,6 @@ public class Renderer2D {
 	/**
 	 * Render all the objects in the Queue to the Screen
 	 */
-	public void render() {
-
 	public void render() {
 
 		// TODO: Make this parallel
@@ -80,19 +77,17 @@ public class Renderer2D {
 					}
 				}
 
-				var matrix = camera.getViewProjectionMatrix();
-
-				Matrix transform = Matrix.generateIdentity(4, 4);
-				Vec4 newPos = (matrix.multiply(transform).multiply(new Vec4(shape.getPosition(), 1.0f))).toVector4D();
-
-				shape.setPosition(newPos.to3D());
-				shape.setPosition((float) matrix.getData(0, 3), (float) matrix.getData(1, 3));
+				// TODO: make camera work
+				//var matrix = camera.getViewProjectionMatrix();
+				//Matrix transform = Matrix.generateIdentity(4, 4);
+				//Vec4 newPos = (matrix.multiply(transform).multiply(new Vec4(shape.getPosition(), 1.0f))).toVector4D();
+				//shape.setPosition(newPos.to3D());
+				//shape.setPosition((float) matrix.getData(0, 3), (float) matrix.getData(1, 3));
 				//shape.setPosition(transform.getData(), newPos.y);
-				//shape.setDimensions((float) newDimension3D.x, (float) newDimension3D.y);
+				//shape.setPosition((float) newPos.x, (float) newPos.y);
 				shape.draw(canvas);
 			}
 		}
-	}
 	}
 
 	public void clear() {

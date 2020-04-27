@@ -4,8 +4,11 @@
 
 package shado.core.render;
 
-import shado.core.interfaces.Movable;
-import shado.core.util.Vec3;
+import shado.core.interfaces.*;
+import shado.core.util.*;
+
+import static java.lang.StrictMath.*;
+import static shado.core.util.Util.*;
 
 public class Camera {
 

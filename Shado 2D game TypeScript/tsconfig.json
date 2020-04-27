@@ -1,0 +1,13 @@
+{
+    "compilerOptions": {
+		"outDir": "CompiledFiles",
+		"target": "es5",
+		"module": "commonjs",
+		"sourceMap": false,
+		"removeComments": true,
+		"module": "none"
+    },
+	"exclude": [
+        "src/old/*.ts"
+    ]
+}

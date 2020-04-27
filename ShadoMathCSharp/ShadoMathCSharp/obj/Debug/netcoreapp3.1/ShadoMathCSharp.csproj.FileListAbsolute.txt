@@ -1,0 +1,13 @@
+D:\Wamp64\www\GitHub\Side-Projects\ShadoMathCSharp\ShadoMathCSharp\obj\Debug\netcoreapp3.1\ShadoMathCSharp.csprojAssemblyReference.cache
+D:\Wamp64\www\GitHub\Side-Projects\ShadoMathCSharp\ShadoMathCSharp\obj\Debug\netcoreapp3.1\ShadoMathCSharp.csproj.CoreCompileInputs.cache
+D:\Wamp64\www\GitHub\Side-Projects\ShadoMathCSharp\ShadoMathCSharp\obj\Debug\netcoreapp3.1\ShadoMathCSharp.AssemblyInfoInputs.cache
+D:\Wamp64\www\GitHub\Side-Projects\ShadoMathCSharp\ShadoMathCSharp\obj\Debug\netcoreapp3.1\ShadoMathCSharp.AssemblyInfo.cs
+D:\Wamp64\www\GitHub\Side-Projects\ShadoMathCSharp\ShadoMathCSharp\bin\Debug\netcoreapp3.1\ShadoMathCSharp.exe
+D:\Wamp64\www\GitHub\Side-Projects\ShadoMathCSharp\ShadoMathCSharp\bin\Debug\netcoreapp3.1\ShadoMathCSharp.deps.json
+D:\Wamp64\www\GitHub\Side-Projects\ShadoMathCSharp\ShadoMathCSharp\bin\Debug\netcoreapp3.1\ShadoMathCSharp.runtimeconfig.json
+D:\Wamp64\www\GitHub\Side-Projects\ShadoMathCSharp\ShadoMathCSharp\bin\Debug\netcoreapp3.1\ShadoMathCSharp.runtimeconfig.dev.json
+D:\Wamp64\www\GitHub\Side-Projects\ShadoMathCSharp\ShadoMathCSharp\bin\Debug\netcoreapp3.1\ShadoMathCSharp.dll
+D:\Wamp64\www\GitHub\Side-Projects\ShadoMathCSharp\ShadoMathCSharp\bin\Debug\netcoreapp3.1\ShadoMathCSharp.pdb
+D:\Wamp64\www\GitHub\Side-Projects\ShadoMathCSharp\ShadoMathCSharp\obj\Debug\netcoreapp3.1\ShadoMathCSharp.dll
+D:\Wamp64\www\GitHub\Side-Projects\ShadoMathCSharp\ShadoMathCSharp\obj\Debug\netcoreapp3.1\ShadoMathCSharp.pdb
+D:\Wamp64\www\GitHub\Side-Projects\ShadoMathCSharp\ShadoMathCSharp\obj\Debug\netcoreapp3.1\ShadoMathCSharp.genruntimeconfig.cache

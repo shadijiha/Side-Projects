@@ -1,0 +1,17 @@
+﻿  Exception.cpp
+  The contents of <concepts> are available only with C++20 concepts support.
+  Vec2D.cpp
+C:\Users\shadi\Desktop\ShadoLibrary\ShadoLibrary\Vec2D.cpp(46,20): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\shadi\Desktop\ShadoLibrary\ShadoLibrary\Vec2D.cpp(50,19): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+  Object.cpp
+  String.cpp
+  The contents of <concepts> are available only with C++20 concepts support.
+C:\Users\shadi\Desktop\ShadoLibrary\ShadoLibrary\String.cpp(32,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\shadi\Desktop\ShadoLibrary\ShadoLibrary\String.cpp(41,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\shadi\Desktop\ShadoLibrary\ShadoLibrary\String.cpp(73,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\shadi\Desktop\ShadoLibrary\ShadoLibrary\String.cpp(119,25): warning C4018: '>=': signed/unsigned mismatch
+C:\Users\shadi\Desktop\ShadoLibrary\ShadoLibrary\String.cpp(145,25): warning C4018: '>=': signed/unsigned mismatch
+  StringBuilder.cpp
+C:\Users\shadi\Desktop\ShadoLibrary\ShadoLibrary\StringBuilder.cpp(75,20): warning C4018: '<': signed/unsigned mismatch
+  main.cpp
+  ShadoLibrary.vcxproj -> C:\Users\shadi\Desktop\ShadoLibrary\Release\ShadoLibrary.lib

@@ -4,9 +4,9 @@
 
 package shado.core.interfaces;
 
-import java.util.function.Consumer;
+import java.util.function.*;
 
-public interface EventListener<T> {
+public interface EventListener<T> extends Collidable {
 
 	/**
 	 * Sets a function for whenever mouse is clicked on the element

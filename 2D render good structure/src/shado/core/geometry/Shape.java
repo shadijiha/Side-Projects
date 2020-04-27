@@ -4,20 +4,18 @@
 
 package shado.core.geometry;
 
-import javafx.scene.canvas.Canvas;
-import javafx.scene.paint.Color;
-import shado.core.interfaces.Collidable;
-import shado.core.interfaces.EventListener;
-import shado.core.interfaces.Movable;
-import shado.core.util.Dimension;
-import shado.core.util.Vec3;
+import javafx.scene.canvas.*;
+import javafx.scene.paint.*;
+import shado.core.interfaces.*;
+import shado.core.util.*;
 
-import java.util.function.Consumer;
+import java.util.function.*;
 
-public abstract class Shape implements EventListener<Shape>, Collidable, Movable {
+public abstract class Shape implements EventListener<Shape>, Collidable, Movable, Drawable {
 
 	protected Vec3 position;
 	protected Dimension dimensions;
+	protected Vec3 initial_position;
 
 	protected Color fill;
 	protected Color stroke;
@@ -40,6 +38,7 @@ public abstract class Shape implements EventListener<Shape>, Collidable, Movable
 	protected Shape(float x, float y, float w, float h) {
 		position = new Vec3(x, y);
 		dimensions = new Dimension(w, h);
+		initial_position = new Vec3(position);
 
 		fill = Color.WHITE;
 		stroke = Color.BLACK;
@@ -53,6 +52,7 @@ public abstract class Shape implements EventListener<Shape>, Collidable, Movable
 	protected Shape(Shape other) {
 		position = new Vec3(other.position);
 		dimensions = new Dimension(other.dimensions);
+		initial_position = new Vec3(other.initial_position);
 
 		fill = Color.rgb((int) other.fill.getRed(), (int) other.fill.getGreen(), (int) other.fill.getBlue(), other.fill.getOpacity());
 		stroke = Color.rgb((int) other.stroke.getRed(), (int) other.stroke.getGreen(), (int) other.stroke.getBlue(), other.stroke.getOpacity());
@@ -94,6 +94,11 @@ public abstract class Shape implements EventListener<Shape>, Collidable, Movable
 
 	public void consumeOutEvent(boolean status) {
 		outEventConsumed = status;
+	}
+
+	public void resetPosition() {
+		this.position.x = initial_position.x;
+		this.position.y = initial_position.y;
 	}
 
 	// Get events
