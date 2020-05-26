@@ -160,18 +160,7 @@
     <ClCompile Include="src\Main.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\backend\IndexBuffer.h" />
-    <ClInclude Include="src\backend\Renderer.h" />
-    <ClInclude Include="src\backend\Shader.h" />
-    <ClInclude Include="src\backend\stb_image\stbimage.h" />
-    <ClInclude Include="src\backend\Texture.h" />
-    <ClInclude Include="src\backend\VertexArray.h" />
-    <ClInclude Include="src\backend\VertexBuffer.h" />
-    <ClInclude Include="src\backend\VertexBufferLayout.h" />
-    <ClInclude Include="src\Core.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <Image Include="resources\Champie_Riven_profileicon.png" />
+    <ClInclude Include="src\Backend\Core.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
