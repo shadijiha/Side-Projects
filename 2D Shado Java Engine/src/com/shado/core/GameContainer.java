@@ -4,7 +4,9 @@
 
 package com.shado.core;
 
-import com.shado.events.Input;
+import com.shado.events.*;
+
+import java.awt.*;
 
 public class GameContainer implements Runnable {
 
@@ -15,7 +17,8 @@ public class GameContainer implements Runnable {
 	private AbstractGame game;
 
 	private boolean running = false;
-	private final double UPDATE_CAP = 1.0 / 60.0;    // Cap at 60 FPS
+	private final double UPDATE_CAP;    // Cap at the MAIN monitor refresh rate
+	private int lastFPS;
 
 	private int width, height;
 	private float scale;
@@ -27,6 +30,8 @@ public class GameContainer implements Runnable {
 		this.height = game.height;
 		this.scale = game.scale;
 		this.title = game.title;
+
+		UPDATE_CAP = 1.0 / getMonitorsRefreshRate()[0];
 	}
 
 	public void start() {
@@ -56,6 +61,8 @@ public class GameContainer implements Runnable {
 		int frames = 0;
 		int fps = 0;
 
+		game.init(this);
+
 		while (running) {
 
 			render = false;
@@ -72,7 +79,7 @@ public class GameContainer implements Runnable {
 				unprocessedTime -= UPDATE_CAP;
 				render = true;
 
-				// TODO: Replace the update_cap with accual delta time
+				// TODO: Replace the update_cap with actual delta time
 				game.update(this, (float) UPDATE_CAP);
 
 				// Update Input (Should be last thing)
@@ -88,7 +95,7 @@ public class GameContainer implements Runnable {
 			if (render) {
 				renderer.clear();    // Clear screen
 
-				//TODO: Render game
+				// Render game
 				game.render(this, renderer);
 				renderer.process();    // Render all alpha images
 
@@ -103,6 +110,8 @@ public class GameContainer implements Runnable {
 					e.printStackTrace();
 				}
 			}
+
+			this.lastFPS = fps;    // Register the last framerate
 		}
 
 		dispose();
@@ -123,6 +132,10 @@ public class GameContainer implements Runnable {
 
 	public int getHeight() {
 		return height;
+	}
+
+	public int getFramerate() {
+		return lastFPS;
 	}
 
 	public void setHeight(int height) {
@@ -149,7 +162,40 @@ public class GameContainer implements Runnable {
 		return window;
 	}
 
+	public int[] getMonitorsRefreshRate() {
+
+		GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
+		GraphicsDevice[] gs = ge.getScreenDevices();
+
+		int[] values = new int[gs.length];
+
+		for (int i = 0; i < gs.length; i++) {
+			DisplayMode dm = gs[i].getDisplayMode();
+
+			int refreshRate = dm.getRefreshRate();
+			if (refreshRate == DisplayMode.REFRESH_RATE_UNKNOWN) {
+				refreshRate = 60;
+			}
+
+			values[i] = refreshRate;
+
+			//int bitDepth = dm.getBitDepth();
+			//int numColors = (int) Math.pow(2, bitDepth);
+		}
+		return values;
+	}
+
+	/**
+	 * @return Returns the input of game manager
+	 */
 	public Input getInput() {
 		return input;
+	}
+
+	/**
+	 * @return Returns the rendering context
+	 */
+	public Renderer2D getRenderer() {
+		return renderer;
 	}
 }

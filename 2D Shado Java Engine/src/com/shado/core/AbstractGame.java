@@ -32,6 +32,12 @@ public abstract class AbstractGame {
 	}
 
 	/**
+	 * This code is execute right before entering the game loop
+	 * @param gc The GameContainer
+	 */
+	public abstract void init(GameContainer gc);
+
+	/**
 	 * This code is execute whenever possible
 	 * @param gc The GameContainer
 	 * @param dt The time between frames in SECONDS

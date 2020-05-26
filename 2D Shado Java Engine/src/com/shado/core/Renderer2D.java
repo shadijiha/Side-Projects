@@ -6,8 +6,6 @@ package com.shado.core;
 
 import com.shado.gfx.Image;
 import com.shado.gfx.*;
-import com.shado.intefaces.*;
-import com.shado.layers.*;
 
 import java.awt.*;
 import java.awt.image.*;
@@ -58,7 +56,7 @@ public class Renderer2D {
 	 * Takes all Images that have alpha and sort them by their Z depth (renders closest last)
 	 *
 	 */
-	public void process() {
+	protected void process() {
 
 		processing = true;
 
@@ -70,22 +68,28 @@ public class Renderer2D {
 		});
 
 		// Display Alpha images
-		//TODO:: make this parallel
-		synchronized (imageRequests) {
-			for (ImageRequest request : imageRequests) {
-				drawImage(request.image, request.x, request.y);
-			}
-
-			imageRequests.clear();
-		}
+		//		synchronized (imageRequests) {
+		//			for (ImageRequest request : imageRequests) {
+		//				drawImage(request.image, request.x, request.y);
+		//			}
+		//
+		//			imageRequests.clear();
+		//		}
+		// TODO:: If you ever encounter sync problems : use the commented code above
+		imageRequests.parallelStream().forEachOrdered(request -> {
+			drawImage(request.image, request.x, request.y);
+		});
 
 		// Display Lights
-		//TODO:: Make this parallel
-		synchronized (lightRequests) {
-			for (LightRequest request : lightRequests) {
-				drawLightRequest(request.light, request.x, request.y);
-			}
-		}
+		//		synchronized (lightRequests) {
+		//			for (LightRequest request : lightRequests) {
+		//				drawLightRequest(request.light, request.x, request.y);
+		//			}
+		//		}
+		// TODO:: If you ever encounter sync problems : use the commented code above
+		lightRequests.parallelStream().forEachOrdered(request -> {
+			drawLightRequest(request.light, request.x, request.y);
+		});
 
 		// Merge light map and pixel map
 		for (int i = 0; i < p.length; i++) {
@@ -170,6 +174,10 @@ public class Renderer2D {
 
 		light_block[x + y * pW] = value;
 	}
+
+	/*****************************
+	 * **** Rendering methods ****
+	 ************************** */
 
 	/**
 	 * Draws an image to the screen
@@ -280,7 +288,7 @@ public class Renderer2D {
 	 * @param font The font of the text
 	 * @param color The color of the text
 	 */
-	public void drawText(String text, int offX, int offY, Font font, Color color) {
+	public void drawText(String text, int offX, int offY, Font font, int color) {
 
 		var tempFont = font.deriveFont(font.getSize() * gc.getScale());
 		gc.getWindow().addText(new Text(text, (int) (offX * gc.getScale()), (int) (offY * gc.getScale()), tempFont, color));
@@ -546,12 +554,9 @@ public class Renderer2D {
 		}
 	}
 
-	public void drawLayer(Layer<?> layer) {
-		//TODO: make this parallel
-		for (Drawable d : layer.objectsToRender()) {
-			d.draw(this);
-		}
-	}
+	/*****************************
+	 * **** Getters & setters ****
+	 ************************** */
 
 	/**
 	 * @return Returns the current Z buffer of the renderer

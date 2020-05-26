@@ -4,14 +4,13 @@
 
 package com.shado.core;
 
-import com.shado.gfx.Text;
+import com.shado.gfx.*;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.image.BufferStrategy;
-import java.awt.image.BufferedImage;
-import java.util.ArrayList;
+import java.awt.image.*;
 import java.util.List;
+import java.util.*;
 
 public class Window {
 
@@ -49,15 +48,25 @@ public class Window {
 		g.drawImage(image, 0, 0, canvas.getWidth(), canvas.getHeight(), null);
 
 		// Draw text
+		// TODO: make this parallel
 		for (Text t : textBuffer) {
 			g.setFont(t.getFont());
-			g.setColor(t.getColor());
+
+			// Convert Shado.gfx.color to java.awt.Color
+			String colorStr = Integer.toHexString(t.getColor());
+			java.awt.Color c = new java.awt.Color(
+					Integer.valueOf(colorStr.substring(2, 4), 16),
+					Integer.valueOf(colorStr.substring(4, 6), 16),
+					Integer.valueOf(colorStr.substring(6, 8), 16),
+					Integer.valueOf(colorStr.substring(0, 2), 16));
+
+			g.setColor(c);
 			g.drawString(t.getText(), t.getX(), t.getY());
 		}
 
 		bs.show();
 
-		//TODO: should propebly cleat the textBuffer list
+		// Clear the textBuffer list
 		textBuffer.clear();
 	}
 

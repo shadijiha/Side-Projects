@@ -4,7 +4,6 @@
 
 package com.shado.gfx;
 
-import java.awt.Font;
 import java.awt.*;
 
 public class Text {
@@ -13,12 +12,12 @@ public class Text {
 
 	private String text;
 	private Font font;
-	private Color color;
+	private int color;
 
 	private int x;
 	private int y;
 
-	public Text(String text, int x, int y, Font font, Color color) {
+	public Text(String text, int x, int y, Font font, int color) {
 		this.text = text;
 		this.font = font;
 		this.x = x;
@@ -42,11 +41,11 @@ public class Text {
 		this.font = font;
 	}
 
-	public Color getColor() {
+	public int getColor() {
 		return color;
 	}
 
-	public void setColor(Color color) {
+	public void setColor(int color) {
 		this.color = color;
 	}
 

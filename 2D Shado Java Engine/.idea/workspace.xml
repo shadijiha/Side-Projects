@@ -7,246 +7,59 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1fa9430f-9eeb-4d1d-98f0-c3e2cfe05af4" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/artifacts/2D_Shado_Java_Engine_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/kotlinc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/KotlinJavaRuntime.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Resources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/saveactions_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Resources/Champie_Riven_profileicon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Resources/JDi7T2B2_400x400.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Resources/Test.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Resources/Untitled.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Resources/kayle-morgana-the-righteous-the-fallen-login-screen-league-of-legends.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Resources/kayle-morgana-the-righteous-the-fallen-login-screen-league-of-legends.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Resources/wood.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/kotlin-reflect-sources.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/kotlin-reflect.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/kotlin-stdlib-jdk7-sources.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/kotlin-stdlib-jdk7.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/kotlin-stdlib-jdk8-sources.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/kotlin-stdlib-jdk8.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/kotlin-stdlib-sources.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/kotlin-stdlib.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/kotlin-test-sources.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/kotlin-test.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/shado/audio/SoundClip.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/shado/core/AbstractGame.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/shado/core/ImageRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/shado/core/LightRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/shado/core/Renderer2D.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/shado/events/Input.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/shado/gfx/Image.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/shado/gfx/ImageTile.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/shado/gfx/Light.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/shado/gfx/Text.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/shado/intefaces/Drawable.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/shado/intefaces/Hidable.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/shado/intefaces/Movable.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/shado/layers/Layer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/shado/layers/LayerStack.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/shado/math/Complex.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/shado/math/Dimension.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/shado/math/Fraction.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/shado/math/Matrix.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/shado/math/Util.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/shado/math/Vec.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/shado/math/Vec2D.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/shado/math/Vec3D.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/shado/math/Vertex.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/shado/shapes/Circle.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/shado/shapes/Rectangle.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/shado/shapes/Shape.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/driver/GameManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../2D render good structure/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../2D render good structure/src/shado/core/interfaces/Drawable.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Calendar/DataFiles/Images/Berserker_s_Greaves_item.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Calendar/DataFiles/Images/Blade_of_the_Ruined_King_item.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Calendar/DataFiles/Images/Boots_of_Swiftness_item.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Calendar/DataFiles/Images/Critical_strike_chance.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Calendar/DataFiles/Images/Duskblade_of_Draktharr_item.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Calendar/DataFiles/Images/Emotes/4Head.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Calendar/DataFiles/Images/Emotes/Clap.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Calendar/DataFiles/Images/Emotes/D.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Calendar/DataFiles/Images/Emotes/EZ.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Calendar/DataFiles/Images/Emotes/FeelsBadMan.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Calendar/DataFiles/Images/Emotes/Kappa.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Calendar/DataFiles/Images/Emotes/LULW.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Calendar/DataFiles/Images/Emotes/OMEGALUL.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Calendar/DataFiles/Images/Emotes/P.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Calendar/DataFiles/Images/Emotes/POGGERS.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Calendar/DataFiles/Images/Emotes/PepeHands.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Calendar/DataFiles/Images/Emotes/Pepega.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Calendar/DataFiles/Images/Emotes/PogU.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Calendar/DataFiles/Images/Emotes/TriHard.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Calendar/DataFiles/Images/Emotes/slash.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Calendar/DataFiles/Images/Emotes/smile.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Calendar/DataFiles/Images/Emotes/tyler1Hey.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Calendar/DataFiles/Images/Essence_Reaver_item.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Calendar/DataFiles/Images/Evaluation_Oral_Presentation_sujet_2019.doc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Calendar/DataFiles/Images/Force_of_Nature_item.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Calendar/DataFiles/Images/Frozen_Heart_item.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Calendar/DataFiles/Images/Grievous_Wounds_icon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Calendar/DataFiles/Images/Guinsoo_s_Rageblade_item.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Calendar/DataFiles/Images/Iceborn_Gauntlet_item.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Calendar/DataFiles/Images/Infinity_Edge_item.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Calendar/DataFiles/Images/Liandry's_Torment_item.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Calendar/DataFiles/Images/Long_Staff_item.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Calendar/DataFiles/Images/Lord_Dominik's_Regards_item.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Calendar/DataFiles/Images/Magic_Critical_strike_chance.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Calendar/DataFiles/Images/Mortal_Reminder_item.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Calendar/DataFiles/Images/Nashor_s_Tooth_item.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Calendar/DataFiles/Images/Phantom_Dancer_item.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Calendar/DataFiles/Images/Rabadon_s_Deathcap_item.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Calendar/DataFiles/Images/Rapid_Firecannon_item.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Calendar/DataFiles/Images/Requiem.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Calendar/DataFiles/Images/Root_icon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Calendar/DataFiles/Images/Runaan_s_Hurricane_item.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Calendar/DataFiles/Images/Spirit_Visage_item.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Calendar/DataFiles/Images/Statikk_Shiv_item.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Calendar/DataFiles/Images/Sterak_s_Gage_item.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Calendar/DataFiles/Images/Stormrazor_item.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Calendar/DataFiles/Images/Stun_icon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Calendar/DataFiles/Images/Sunfire_Cape_item.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Calendar/DataFiles/Images/Tear_of_the_Goddess_item.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Calendar/DataFiles/Images/The_Bloodthirster_item.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Calendar/DataFiles/Images/Thornmail_item.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Calendar/DataFiles/Images/Unstoppable.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Calendar/DataFiles/Images/Unstoppable_old.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Calendar/DataFiles/Images/Untitled.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Calendar/DataFiles/Images/Void_Staff_item.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Calendar/DataFiles/Images/Warmog's_Armor_item.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Calendar/DataFiles/Images/Wit_s_End_item.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Calendar/DataFiles/Images/Youmuu_s_Ghostblade_item.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Calendar/DataFiles/Images/ability_power.PNG" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Calendar/DataFiles/Images/ad.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Calendar/DataFiles/Images/all_stats.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Calendar/DataFiles/Images/armor.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Calendar/DataFiles/Images/armorPen.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Calendar/DataFiles/Images/attack_damage.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Calendar/DataFiles/Images/attack_speed.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Calendar/DataFiles/Images/bullet.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Calendar/DataFiles/Images/closeButton.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Calendar/DataFiles/Images/cloud.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Calendar/DataFiles/Images/compressed_item_shop.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Calendar/DataFiles/Images/crit.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Calendar/DataFiles/Images/download.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Calendar/DataFiles/Images/end.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Calendar/DataFiles/Images/finish-flags-icon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Calendar/DataFiles/Images/gift.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Calendar/DataFiles/Images/gold.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Calendar/DataFiles/Images/goldx2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Calendar/DataFiles/Images/grass.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Calendar/DataFiles/Images/hp.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Calendar/DataFiles/Images/hp_potion.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Calendar/DataFiles/Images/ice_cube.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Calendar/DataFiles/Images/lifeSteal.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Calendar/DataFiles/Images/locked.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Calendar/DataFiles/Images/magicPen.PNG" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Calendar/DataFiles/Images/md.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Calendar/DataFiles/Images/monster.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Calendar/DataFiles/Images/mr.PNG" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Calendar/DataFiles/Images/ms.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Calendar/DataFiles/Images/pauseButton.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Calendar/DataFiles/Images/platforme.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Calendar/DataFiles/Images/playButton.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Calendar/DataFiles/Images/player.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Calendar/DataFiles/Images/range.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Calendar/DataFiles/Images/regn.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Calendar/DataFiles/Images/reload.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Calendar/DataFiles/Images/settings.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Calendar/DataFiles/Images/snowflake.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Calendar/DataFiles/Images/sun.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Calendar/DataFiles/Images/t1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Calendar/DataFiles/Images/tree0.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Calendar/DataFiles/Images/tree1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Calendar/DataFiles/Images/tree2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Calendar/DataFiles/Images/true_critical_strike_chance_icon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Calendar/DataFiles/Images/uncompressed_item_shop.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Calendar/DataFiles/Images/unlocked.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Calendar/DataFiles/Images/weapon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Calendar/DataFiles/Images/x.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Calendar/DataFiles/monster.son" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Calendar/DataFiles/playerInfo.son" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Calendar/DataFiles/sounds/Aatrox Rework Ultimate ability sound effect (World Ender).mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Calendar/DataFiles/sounds/Karthus_R3.ogg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Calendar/DataFiles/sounds/Karthus_R5.ogg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Calendar/DataFiles/sounds/Karthus_R6.ogg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Calendar/DataFiles/sounds/crit sound.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Calendar/DataFiles/sounds/kayle-morgana-the-righteous-the-fallen-login-screen-league-of-legends.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Calendar/DataFiles/sounds/yasuo_ult.ogg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Calendar/JavaFX test.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Calendar/Logger.uml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Calendar/calendar.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Calendar/calendar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Calendar/events.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Calendar/src/sample/CSVParser.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Calendar/src/sample/DrawComponent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Calendar/src/sample/Event.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Calendar/src/sample/Mouse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Code with mosh/Code with mosh.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Code with mosh/src/dataStructures/HashTable.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Code with mosh/src/dataStructures/Stack.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Code with mosh/src/datatypes/uint16_t.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Code with mosh/src/datatypes/uint32_t.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Code with mosh/src/datatypes/uint64_t.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Code with mosh/src/datatypes/uint8_t.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Code with mosh/src/datatypes/uint_t.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Shado Engin Game test/Shado Engin Game test.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Shado Pass Java/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Shado Pass Java/.idea/codeStyles/Project.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Shado Pass Java/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Shado Pass Java/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Shado Pass Java/.idea/description.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Shado Pass Java/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Shado Pass Java/.idea/gradle.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Shado Pass Java/.idea/libraries/lib_not_src.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Shado Pass Java/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Shado Pass Java/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Shado Pass Java/.idea/saveactions_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Shado Pass Java/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Shado Pass Java/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Shado Pass Java/Shado Pass Java.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/shado/gfx/Color.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/shado/math/Pair.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/2D Shado Java Engine.iml" beforeDir="false" afterPath="$PROJECT_DIR$/2D Shado Java Engine.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/2D Shado Java Engine/com/shado/core/AbstractGame.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/2D Shado Java Engine/com/shado/core/AbstractGame.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/2D Shado Java Engine/com/shado/core/GameContainer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/2D Shado Java Engine/com/shado/core/GameContainer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/2D Shado Java Engine/com/shado/core/Renderer2D$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/2D Shado Java Engine/com/shado/core/Renderer2D$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/2D Shado Java Engine/com/shado/core/Renderer2D.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/2D Shado Java Engine/com/shado/core/Renderer2D.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/2D Shado Java Engine/com/shado/core/Window.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/2D Shado Java Engine/com/shado/core/Window.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/2D Shado Java Engine/driver/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/2D Shado Java Engine/com/shado/gfx/Text.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/2D Shado Java Engine/com/shado/gfx/Text.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/2D Shado Java Engine/com/shado/intefaces/Drawable.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/2D Shado Java Engine/com/shado/intefaces/Hidable.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/2D Shado Java Engine/com/shado/intefaces/Movable.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/2D Shado Java Engine/com/shado/layers/Layer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/2D Shado Java Engine/com/shado/layers/LayerStack.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/2D Shado Java Engine/com/shado/shapes/Circle.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/2D Shado Java Engine/com/shado/shapes/Rectangle.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/2D Shado Java Engine/com/shado/shapes/Shape.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/2D Shado Java Engine/driver/GameManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/2D Shado Java Engine/driver/GameManager.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/shado/core/AbstractGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/shado/core/AbstractGame.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/shado/core/GameContainer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/shado/core/GameContainer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/shado/core/Renderer2D.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/shado/core/Renderer2D.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/shado/core/Window.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/shado/core/Window.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/driver/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../2D render good structure/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../2D render good structure/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../2D render good structure/out/production/Desktop/driver/Main$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/../2D render good structure/out/production/Desktop/driver/Main$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../2D render good structure/out/production/Desktop/driver/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/../2D render good structure/out/production/Desktop/driver/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../2D render good structure/out/production/Desktop/shado/core/geometry/Shape.class" beforeDir="false" afterPath="$PROJECT_DIR$/../2D render good structure/out/production/Desktop/shado/core/geometry/Shape.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../2D render good structure/out/production/Desktop/shado/core/render/Camera.class" beforeDir="false" afterPath="$PROJECT_DIR$/../2D render good structure/out/production/Desktop/shado/core/render/Camera.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../2D render good structure/out/production/Desktop/shado/core/render/Renderer2D.class" beforeDir="false" afterPath="$PROJECT_DIR$/../2D render good structure/out/production/Desktop/shado/core/render/Renderer2D.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../2D render good structure/src/shado/core/geometry/Shape.java" beforeDir="false" afterPath="$PROJECT_DIR$/../2D render good structure/src/shado/core/geometry/Shape.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../2D render good structure/src/shado/core/interfaces/EventListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/../2D render good structure/src/shado/core/interfaces/EventListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../2D render good structure/src/shado/core/render/Camera.java" beforeDir="false" afterPath="$PROJECT_DIR$/../2D render good structure/src/shado/core/render/Camera.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../2D render good structure/src/shado/core/render/Renderer2D.java" beforeDir="false" afterPath="$PROJECT_DIR$/../2D render good structure/src/shado/core/render/Renderer2D.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../C# File reader/.vs/WindowsFormsApp1/v16/.suo" beforeDir="false" afterPath="$PROJECT_DIR$/../C# File reader/.vs/WindowsFormsApp1/v16/.suo" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../C++ file reader with Argv/.vs/ConsoleApplication1/v16/.suo" beforeDir="false" afterPath="$PROJECT_DIR$/../C++ file reader with Argv/.vs/ConsoleApplication1/v16/.suo" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../C++ file reader with Argv/.vs/ConsoleApplication1/v16/Browse.VC.db" beforeDir="false" afterPath="$PROJECT_DIR$/../C++ file reader with Argv/.vs/ConsoleApplication1/v16/Browse.VC.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../C++ file reader with Argv/ConsoleApplication1/Debug/ConsoleA.1E319D0E.tlog/CL.command.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/../C++ file reader with Argv/ConsoleApplication1/Debug/ConsoleA.1E319D0E.tlog/CL.command.1.tlog" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../C++ file reader with Argv/ConsoleApplication1/Debug/ConsoleA.1E319D0E.tlog/CL.read.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/../C++ file reader with Argv/ConsoleApplication1/Debug/ConsoleA.1E319D0E.tlog/CL.read.1.tlog" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../C++ file reader with Argv/ConsoleApplication1/Debug/ConsoleA.1E319D0E.tlog/CL.write.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/../C++ file reader with Argv/ConsoleApplication1/Debug/ConsoleA.1E319D0E.tlog/CL.write.1.tlog" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../C++ file reader with Argv/ConsoleApplication1/Debug/ConsoleA.1E319D0E.tlog/ConsoleApplication1.lastbuildstate" beforeDir="false" afterPath="$PROJECT_DIR$/../C++ file reader with Argv/ConsoleApplication1/Debug/ConsoleA.1E319D0E.tlog/ConsoleApplication1.lastbuildstate" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../C++ file reader with Argv/ConsoleApplication1/Debug/ConsoleA.1E319D0E.tlog/link.command.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/../C++ file reader with Argv/ConsoleApplication1/Debug/ConsoleA.1E319D0E.tlog/link.command.1.tlog" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../C++ file reader with Argv/ConsoleApplication1/Debug/ConsoleA.1E319D0E.tlog/link.read.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/../C++ file reader with Argv/ConsoleApplication1/Debug/ConsoleA.1E319D0E.tlog/link.read.1.tlog" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../C++ file reader with Argv/ConsoleApplication1/Debug/ConsoleA.1E319D0E.tlog/link.write.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/../C++ file reader with Argv/ConsoleApplication1/Debug/ConsoleA.1E319D0E.tlog/link.write.1.tlog" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../C++ file reader with Argv/ConsoleApplication1/Debug/ConsoleApplication1.log" beforeDir="false" afterPath="$PROJECT_DIR$/../C++ file reader with Argv/ConsoleApplication1/Debug/ConsoleApplication1.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../C++ file reader with Argv/ConsoleApplication1/Debug/ConsoleApplication1.obj" beforeDir="false" afterPath="$PROJECT_DIR$/../C++ file reader with Argv/ConsoleApplication1/Debug/ConsoleApplication1.obj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../C++ file reader with Argv/ConsoleApplication1/Debug/vc142.idb" beforeDir="false" afterPath="$PROJECT_DIR$/../C++ file reader with Argv/ConsoleApplication1/Debug/vc142.idb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../C++ file reader with Argv/ConsoleApplication1/Debug/vc142.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../C++ file reader with Argv/ConsoleApplication1/Debug/vc142.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../C++ file reader with Argv/Debug/ConsoleApplication1.exe" beforeDir="false" afterPath="$PROJECT_DIR$/../C++ file reader with Argv/Debug/ConsoleApplication1.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../C++ file reader with Argv/Debug/ConsoleApplication1.ilk" beforeDir="false" afterPath="$PROJECT_DIR$/../C++ file reader with Argv/Debug/ConsoleApplication1.ilk" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../C++ file reader with Argv/Debug/ConsoleApplication1.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../C++ file reader with Argv/Debug/ConsoleApplication1.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/shado/gfx/Text.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/shado/gfx/Text.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/shado/intefaces/Drawable.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/shado/intefaces/Hidable.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/shado/intefaces/Movable.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/shado/layers/Layer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/shado/layers/LayerStack.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/shado/math/Dimension.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/shado/math/Util.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/shado/math/Util.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/shado/shapes/Circle.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/shado/shapes/Rectangle.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/shado/shapes/Shape.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/driver/GameManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/driver/GameManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Learning OpenGL/.vs/Learning OpenGL/v16/.suo" beforeDir="false" afterPath="$PROJECT_DIR$/../Learning OpenGL/.vs/Learning OpenGL/v16/.suo" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Learning OpenGL/.vs/Learning OpenGL/v16/Browse.VC.db" beforeDir="false" afterPath="$PROJECT_DIR$/../Learning OpenGL/.vs/Learning OpenGL/v16/Browse.VC.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Learning OpenGL/Debug/Learning OpenGL.exe" beforeDir="false" afterPath="$PROJECT_DIR$/../Learning OpenGL/Debug/Learning OpenGL.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Learning OpenGL/Debug/Learning OpenGL.ilk" beforeDir="false" afterPath="$PROJECT_DIR$/../Learning OpenGL/Debug/Learning OpenGL.ilk" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Learning OpenGL/Debug/Learning OpenGL.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../Learning OpenGL/Debug/Learning OpenGL.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Learning OpenGL/Learning OpenGL/Debug/Learning OpenGL.log" beforeDir="false" afterPath="$PROJECT_DIR$/../Learning OpenGL/Learning OpenGL/Debug/Learning OpenGL.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Learning OpenGL/Learning OpenGL/Debug/Learning OpenGL.tlog/CL.command.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/../Learning OpenGL/Learning OpenGL/Debug/Learning OpenGL.tlog/CL.command.1.tlog" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Learning OpenGL/Learning OpenGL/Debug/Learning OpenGL.tlog/CL.read.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/../Learning OpenGL/Learning OpenGL/Debug/Learning OpenGL.tlog/CL.read.1.tlog" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Learning OpenGL/Learning OpenGL/Debug/Learning OpenGL.tlog/CL.write.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/../Learning OpenGL/Learning OpenGL/Debug/Learning OpenGL.tlog/CL.write.1.tlog" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Learning OpenGL/Learning OpenGL/Debug/Learning OpenGL.tlog/Learning OpenGL.lastbuildstate" beforeDir="false" afterPath="$PROJECT_DIR$/../Learning OpenGL/Learning OpenGL/Debug/Learning OpenGL.tlog/Learning OpenGL.lastbuildstate" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Learning OpenGL/Learning OpenGL/Debug/Learning OpenGL.tlog/link.command.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/../Learning OpenGL/Learning OpenGL/Debug/Learning OpenGL.tlog/link.command.1.tlog" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Learning OpenGL/Learning OpenGL/Debug/Learning OpenGL.tlog/link.read.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/../Learning OpenGL/Learning OpenGL/Debug/Learning OpenGL.tlog/link.read.1.tlog" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Learning OpenGL/Learning OpenGL/Debug/Learning OpenGL.tlog/link.write.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/../Learning OpenGL/Learning OpenGL/Debug/Learning OpenGL.tlog/link.write.1.tlog" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Learning OpenGL/Learning OpenGL/Debug/Main.obj" beforeDir="false" afterPath="$PROJECT_DIR$/../Learning OpenGL/Learning OpenGL/Debug/Main.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Learning OpenGL/Learning OpenGL/Debug/vc142.idb" beforeDir="false" afterPath="$PROJECT_DIR$/../Learning OpenGL/Learning OpenGL/Debug/vc142.idb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Learning OpenGL/Learning OpenGL/Debug/vc142.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../Learning OpenGL/Learning OpenGL/Debug/vc142.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Learning OpenGL/Learning OpenGL/Learning OpenGL.vcxproj" beforeDir="false" afterPath="$PROJECT_DIR$/../Learning OpenGL/Learning OpenGL/Learning OpenGL.vcxproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Learning OpenGL/Learning OpenGL/Learning OpenGL.vcxproj.filters" beforeDir="false" afterPath="$PROJECT_DIR$/../Learning OpenGL/Learning OpenGL/Learning OpenGL.vcxproj.filters" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Learning OpenGL/Learning OpenGL/src/Main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../Learning OpenGL/Learning OpenGL/src/Main.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -260,8 +73,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Kotlin File" />
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -333,6 +146,8 @@
       <workItem from="1585453968620" duration="66000" />
       <workItem from="1585454714526" duration="246000" />
       <workItem from="1586518318577" duration="5947000" />
+      <workItem from="1589358225801" duration="8925000" />
+      <workItem from="1589379458690" duration="1890000" />
     </task>
     <servers />
   </component>
@@ -343,10 +158,10 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="1085" y="375" key="#com.intellij.ide.util.MemberChooser" timestamp="1586551575972">
+    <state x="1085" y="375" key="#com.intellij.ide.util.MemberChooser" timestamp="1589380219490">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="1085" y="375" key="#com.intellij.ide.util.MemberChooser/2560.-69.2560.1400/0.0.2560.1400@0.0.2560.1400" timestamp="1586551575972" />
+    <state x="1085" y="375" key="#com.intellij.ide.util.MemberChooser/2560.-69.2560.1400/0.0.2560.1400@0.0.2560.1400" timestamp="1589380219490" />
     <state x="3645" y="306" key="#com.intellij.ide.util.MemberChooser/2560.-69.2560.1400/0.0.2560.1400@2560.-69.2560.1400" timestamp="1585274203902" />
     <state x="1031" y="549" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1585366363122">
       <screen x="0" y="0" width="2560" height="1400" />
@@ -364,25 +179,25 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1007" y="509" key="FileChooserDialogImpl/2560.-69.2560.1400/0.0.2560.1400@0.0.2560.1400" timestamp="1584917435420" />
-    <state width="2517" height="314" key="GridCell.Tab.0.bottom" timestamp="1586560400497">
+    <state width="2517" height="314" key="GridCell.Tab.0.bottom" timestamp="1589381349842">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2517" height="314" key="GridCell.Tab.0.bottom/2560.-69.2560.1400/0.0.2560.1400@0.0.2560.1400" timestamp="1586560400497" />
+    <state width="2517" height="314" key="GridCell.Tab.0.bottom/2560.-69.2560.1400/0.0.2560.1400@0.0.2560.1400" timestamp="1589381349842" />
     <state width="2517" height="314" key="GridCell.Tab.0.bottom/2560.-69.2560.1400/0.0.2560.1400@2560.-69.2560.1400" timestamp="1585364721562" />
-    <state width="2517" height="314" key="GridCell.Tab.0.center" timestamp="1586560400497">
+    <state width="2517" height="314" key="GridCell.Tab.0.center" timestamp="1589381349842">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2517" height="314" key="GridCell.Tab.0.center/2560.-69.2560.1400/0.0.2560.1400@0.0.2560.1400" timestamp="1586560400497" />
+    <state width="2517" height="314" key="GridCell.Tab.0.center/2560.-69.2560.1400/0.0.2560.1400@0.0.2560.1400" timestamp="1589381349842" />
     <state width="2517" height="314" key="GridCell.Tab.0.center/2560.-69.2560.1400/0.0.2560.1400@2560.-69.2560.1400" timestamp="1585364721561" />
-    <state width="2517" height="314" key="GridCell.Tab.0.left" timestamp="1586560400497">
+    <state width="2517" height="314" key="GridCell.Tab.0.left" timestamp="1589381349842">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2517" height="314" key="GridCell.Tab.0.left/2560.-69.2560.1400/0.0.2560.1400@0.0.2560.1400" timestamp="1586560400497" />
+    <state width="2517" height="314" key="GridCell.Tab.0.left/2560.-69.2560.1400/0.0.2560.1400@0.0.2560.1400" timestamp="1589381349842" />
     <state width="2517" height="314" key="GridCell.Tab.0.left/2560.-69.2560.1400/0.0.2560.1400@2560.-69.2560.1400" timestamp="1585364721561" />
-    <state width="2517" height="314" key="GridCell.Tab.0.right" timestamp="1586560400497">
+    <state width="2517" height="314" key="GridCell.Tab.0.right" timestamp="1589381349842">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2517" height="314" key="GridCell.Tab.0.right/2560.-69.2560.1400/0.0.2560.1400@0.0.2560.1400" timestamp="1586560400497" />
+    <state width="2517" height="314" key="GridCell.Tab.0.right/2560.-69.2560.1400/0.0.2560.1400@0.0.2560.1400" timestamp="1589381349842" />
     <state width="2517" height="314" key="GridCell.Tab.0.right/2560.-69.2560.1400/0.0.2560.1400@2560.-69.2560.1400" timestamp="1585364721562" />
     <state width="2517" height="470" key="GridCell.Tab.1.bottom" timestamp="1584898226859">
       <screen x="0" y="0" width="2560" height="1400" />
@@ -404,10 +219,10 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="781" y="342" key="SettingsEditor/2560.-69.2560.1400/0.0.2560.1400@0.0.2560.1400" timestamp="1585431492054" />
-    <state x="1319" y="582" key="com.intellij.ide.util.TipDialog" timestamp="1585453972500">
+    <state x="1319" y="582" key="com.intellij.ide.util.TipDialog" timestamp="1589379478409">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="1319" y="582" key="com.intellij.ide.util.TipDialog/2560.-69.2560.1400/0.0.2560.1400@0.0.2560.1400" timestamp="1585453972500" />
+    <state x="1319" y="582" key="com.intellij.ide.util.TipDialog/2560.-69.2560.1400/0.0.2560.1400@0.0.2560.1400" timestamp="1589379478409" />
     <state x="1319" y="582" key="com.intellij.ide.util.TipDialog/2560.-69.2560.1400/0.0.2560.1400@2560.-69.2560.1400" timestamp="1584732646765" />
     <state x="901" y="381" width="758" height="638" key="find.popup" timestamp="1585333609469">
       <screen x="0" y="0" width="2560" height="1400" />
@@ -426,16 +241,5 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="943" y="315" width="672" height="678" key="search.everywhere.popup/2560.-69.2560.1400/0.0.2560.1400@0.0.2560.1400" timestamp="1584864341310" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/driver/GameManager.java</url>
-          <line>35</line>
-          <option name="timeStamp" value="12" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

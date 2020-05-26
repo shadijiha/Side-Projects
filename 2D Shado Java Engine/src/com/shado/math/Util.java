@@ -1,9 +1,6 @@
 package com.shado.math;
 
-import java.awt.*;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.GregorianCalendar;
+import java.util.*;
 
 public class Util {
 
@@ -29,15 +26,6 @@ public class Util {
 	 * */
 	public static int random(int min, int max) {
 		return (int) random((double) min, (double) max);
-	}
-
-	/***
-	 * Gives a random Color
-	 *
-	 * @return Returns a random Color
-	 * */
-	public static Color randomColor() {
-		return new Color(random(0, 255), random(0, 255), random(0, 255));
 	}
 
 	/***
