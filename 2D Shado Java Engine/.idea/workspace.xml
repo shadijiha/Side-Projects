@@ -7,59 +7,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1fa9430f-9eeb-4d1d-98f0-c3e2cfe05af4" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/com/shado/gfx/Color.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/shado/math/Pair.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/2D Shado Java Engine/com/shado/core/AbstractGame.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/2D Shado Java Engine/com/shado/core/AbstractGame.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/2D Shado Java Engine/com/shado/core/GameContainer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/2D Shado Java Engine/com/shado/core/GameContainer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/2D Shado Java Engine/com/shado/core/Renderer2D$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/2D Shado Java Engine/com/shado/core/Renderer2D$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/2D Shado Java Engine/com/shado/core/Renderer2D.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/2D Shado Java Engine/com/shado/core/Renderer2D.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/2D Shado Java Engine/com/shado/core/Window.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/2D Shado Java Engine/com/shado/core/Window.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/2D Shado Java Engine/com/shado/gfx/Text.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/2D Shado Java Engine/com/shado/gfx/Text.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/2D Shado Java Engine/com/shado/intefaces/Drawable.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/2D Shado Java Engine/com/shado/intefaces/Hidable.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/2D Shado Java Engine/com/shado/intefaces/Movable.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/2D Shado Java Engine/com/shado/layers/Layer.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/2D Shado Java Engine/com/shado/layers/LayerStack.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/2D Shado Java Engine/com/shado/shapes/Circle.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/2D Shado Java Engine/com/shado/shapes/Rectangle.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/2D Shado Java Engine/com/shado/shapes/Shape.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/2D Shado Java Engine/driver/GameManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/2D Shado Java Engine/driver/GameManager.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/shado/core/AbstractGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/shado/core/AbstractGame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/shado/core/GameContainer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/shado/core/GameContainer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/shado/core/Renderer2D.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/shado/core/Renderer2D.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/shado/core/Window.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/shado/core/Window.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/shado/gfx/Text.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/shado/gfx/Text.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/shado/intefaces/Drawable.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/shado/intefaces/Hidable.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/shado/intefaces/Movable.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/shado/layers/Layer.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/shado/layers/LayerStack.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/shado/math/Dimension.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/shado/math/Util.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/shado/math/Util.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/shado/shapes/Circle.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/shado/shapes/Rectangle.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/shado/shapes/Shape.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/driver/GameManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/driver/GameManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Learning OpenGL/.vs/Learning OpenGL/v16/.suo" beforeDir="false" afterPath="$PROJECT_DIR$/../Learning OpenGL/.vs/Learning OpenGL/v16/.suo" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Learning OpenGL/.vs/Learning OpenGL/v16/Browse.VC.db" beforeDir="false" afterPath="$PROJECT_DIR$/../Learning OpenGL/.vs/Learning OpenGL/v16/Browse.VC.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Learning OpenGL/Debug/Learning OpenGL.exe" beforeDir="false" afterPath="$PROJECT_DIR$/../Learning OpenGL/Debug/Learning OpenGL.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Learning OpenGL/Debug/Learning OpenGL.ilk" beforeDir="false" afterPath="$PROJECT_DIR$/../Learning OpenGL/Debug/Learning OpenGL.ilk" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Learning OpenGL/Debug/Learning OpenGL.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../Learning OpenGL/Debug/Learning OpenGL.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Learning OpenGL/Learning OpenGL/Debug/Learning OpenGL.log" beforeDir="false" afterPath="$PROJECT_DIR$/../Learning OpenGL/Learning OpenGL/Debug/Learning OpenGL.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Learning OpenGL/Learning OpenGL/Debug/Learning OpenGL.tlog/CL.command.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/../Learning OpenGL/Learning OpenGL/Debug/Learning OpenGL.tlog/CL.command.1.tlog" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Learning OpenGL/Learning OpenGL/Debug/Learning OpenGL.tlog/CL.read.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/../Learning OpenGL/Learning OpenGL/Debug/Learning OpenGL.tlog/CL.read.1.tlog" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Learning OpenGL/Learning OpenGL/Debug/Learning OpenGL.tlog/CL.write.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/../Learning OpenGL/Learning OpenGL/Debug/Learning OpenGL.tlog/CL.write.1.tlog" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Learning OpenGL/Learning OpenGL/Debug/Learning OpenGL.tlog/Learning OpenGL.lastbuildstate" beforeDir="false" afterPath="$PROJECT_DIR$/../Learning OpenGL/Learning OpenGL/Debug/Learning OpenGL.tlog/Learning OpenGL.lastbuildstate" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Learning OpenGL/Learning OpenGL/Debug/Learning OpenGL.tlog/link.command.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/../Learning OpenGL/Learning OpenGL/Debug/Learning OpenGL.tlog/link.command.1.tlog" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Learning OpenGL/Learning OpenGL/Debug/Learning OpenGL.tlog/link.read.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/../Learning OpenGL/Learning OpenGL/Debug/Learning OpenGL.tlog/link.read.1.tlog" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Learning OpenGL/Learning OpenGL/Debug/Learning OpenGL.tlog/link.write.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/../Learning OpenGL/Learning OpenGL/Debug/Learning OpenGL.tlog/link.write.1.tlog" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Learning OpenGL/Learning OpenGL/Debug/Main.obj" beforeDir="false" afterPath="$PROJECT_DIR$/../Learning OpenGL/Learning OpenGL/Debug/Main.obj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Learning OpenGL/Learning OpenGL/Debug/vc142.idb" beforeDir="false" afterPath="$PROJECT_DIR$/../Learning OpenGL/Learning OpenGL/Debug/vc142.idb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Learning OpenGL/Learning OpenGL/Debug/vc142.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../Learning OpenGL/Learning OpenGL/Debug/vc142.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Learning OpenGL/Learning OpenGL/Learning OpenGL.vcxproj" beforeDir="false" afterPath="$PROJECT_DIR$/../Learning OpenGL/Learning OpenGL/Learning OpenGL.vcxproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Learning OpenGL/Learning OpenGL/Learning OpenGL.vcxproj.filters" beforeDir="false" afterPath="$PROJECT_DIR$/../Learning OpenGL/Learning OpenGL/Learning OpenGL.vcxproj.filters" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Learning OpenGL/Learning OpenGL/src/Main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../Learning OpenGL/Learning OpenGL/src/Main.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -148,6 +96,7 @@
       <workItem from="1586518318577" duration="5947000" />
       <workItem from="1589358225801" duration="8925000" />
       <workItem from="1589379458690" duration="1890000" />
+      <workItem from="1590535920830" duration="613000" />
     </task>
     <servers />
   </component>
@@ -219,10 +168,10 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="781" y="342" key="SettingsEditor/2560.-69.2560.1400/0.0.2560.1400@0.0.2560.1400" timestamp="1585431492054" />
-    <state x="1319" y="582" key="com.intellij.ide.util.TipDialog" timestamp="1589379478409">
+    <state x="1319" y="582" key="com.intellij.ide.util.TipDialog" timestamp="1590535921081">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="1319" y="582" key="com.intellij.ide.util.TipDialog/2560.-69.2560.1400/0.0.2560.1400@0.0.2560.1400" timestamp="1589379478409" />
+    <state x="1319" y="582" key="com.intellij.ide.util.TipDialog/2560.-69.2560.1400/0.0.2560.1400@0.0.2560.1400" timestamp="1590535921081" />
     <state x="1319" y="582" key="com.intellij.ide.util.TipDialog/2560.-69.2560.1400/0.0.2560.1400@2560.-69.2560.1400" timestamp="1584732646765" />
     <state x="901" y="381" width="758" height="638" key="find.popup" timestamp="1585333609469">
       <screen x="0" y="0" width="2560" height="1400" />
