@@ -1,0 +1,10 @@
+
+void add(void a, void b)	{
+	return a + b;
+}
+
+
+
+void main(void)	{
+	return 0;
+}

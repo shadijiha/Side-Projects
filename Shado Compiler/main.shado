@@ -1,0 +1,6 @@
+#include "test.shado"
+#define int void
+
+int main(void)	{
+	return 0;
+}

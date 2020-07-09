@@ -1,0 +1,73 @@
+﻿  main.cpp
+C:\Users\shadi\Desktop\Data structures\Data structures\src\include\ArrayList.h(162,18): warning C4018: '>=': signed/unsigned mismatch
+C:\Users\shadi\Desktop\Data structures\Data structures\src\include\ArrayList.h(153): message : while compiling class template member function 'bool ArrayList<int>::add(unsigned int,T)'
+          with
+          [
+              T=int
+          ]
+C:\Users\shadi\Desktop\Data structures\Data structures\src\main.cpp(12): message : see reference to class template instantiation 'ArrayList<int>' being compiled
+C:\Users\shadi\Desktop\Data structures\Data structures\src\include\ArrayList.h(166,29): warning C4018: '>=': signed/unsigned mismatch
+C:\Users\shadi\Desktop\Data structures\Data structures\src\include\ArrayList.h(72,18): warning C4018: '>=': signed/unsigned mismatch
+C:\Users\shadi\Desktop\Data structures\Data structures\src\include\ArrayList.h(70): message : while compiling class template member function 'bool ArrayList<int>::add(T)'
+          with
+          [
+              T=int
+          ]
+C:\Users\shadi\Desktop\Data structures\Data structures\src\main.cpp(15): message : see reference to function template instantiation 'bool ArrayList<int>::add(T)' being compiled
+          with
+          [
+              T=int
+          ]
+C:\Users\shadi\Desktop\Data structures\Data structures\src\include\ArrayList.h(99,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\shadi\Desktop\Data structures\Data structures\src\include\ArrayList.h(98): message : while compiling class template member function 'bool ArrayList<int>::contains(const T &,const std::function<bool (T,T)> &)'
+          with
+          [
+              T=int
+          ]
+C:\Users\shadi\Desktop\Data structures\Data structures\src\include\ArrayList.h(91,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\shadi\Desktop\Data structures\Data structures\src\include\ArrayList.h(90): message : while compiling class template member function 'bool ArrayList<int>::contains(const T &)'
+          with
+          [
+              T=int
+          ]
+C:\Users\shadi\Desktop\Data structures\Data structures\src\include\ArrayList.h(107,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\shadi\Desktop\Data structures\Data structures\src\include\ArrayList.h(106): message : while compiling class template member function 'bool ArrayList<int>::remove(const T &)'
+          with
+          [
+              T=int
+          ]
+C:\Users\shadi\Desktop\Data structures\Data structures\src\include\ArrayList.h(121,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\shadi\Desktop\Data structures\Data structures\src\include\ArrayList.h(119): message : while compiling class template member function 'bool ArrayList<int>::removeIf(const std::function<bool (T)> &)'
+          with
+          [
+              T=int
+          ]
+C:\Users\shadi\Desktop\Data structures\Data structures\src\include\ArrayList.h(146,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\shadi\Desktop\Data structures\Data structures\src\include\ArrayList.h(143): message : while compiling class template member function 'T *ArrayList<T>::toArray(void) const'
+          with
+          [
+              T=int
+          ]
+C:\Users\shadi\Desktop\Data structures\Data structures\src\include\ArrayList.h(199,24): warning C4018: '<=': signed/unsigned mismatch
+C:\Users\shadi\Desktop\Data structures\Data structures\src\include\ArrayList.h(196): message : while compiling class template member function 'std::shared_ptr<AbstractList<T>> ArrayList<T>::subList(unsigned int,unsigned int) const'
+          with
+          [
+              T=int
+          ]
+C:\Users\shadi\Desktop\Data structures\Data structures\src\include\ArrayList.h(251,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\shadi\Desktop\Data structures\Data structures\src\include\ArrayList.h(250): message : while compiling class template member function 'unsigned int ArrayList<int>::indexOf(const T &) const'
+          with
+          [
+              T=int
+          ]
+C:\Users\shadi\Desktop\Data structures\Data structures\src\include\ArrayList.h(262,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\shadi\Desktop\Data structures\Data structures\src\include\ArrayList.h(258): message : while compiling class template member function 'std::string ArrayList<int>::toString(void) const'
+C:\Users\shadi\Desktop\Data structures\Data structures\src\include\ArrayList.h(222,23): warning C4018: '<': signed/unsigned mismatch
+C:\Users\shadi\Desktop\Data structures\Data structures\src\include\ArrayList.h(217): message : while compiling class template member function 'void ArrayList<int>::shift_elements(int)'
+C:\Users\shadi\Desktop\Data structures\Data structures\src\include\ArrayList.h(211): message : see reference to function template instantiation 'void ArrayList<int>::shift_elements(int)' being compiled
+C:\Users\shadi\Desktop\Data structures\Data structures\src\include\ArrayList.h(45): message : while compiling class template member function 'ArrayList<int>::ArrayList(void)'
+C:\Users\shadi\Desktop\Data structures\Data structures\src\main.cpp(12): message : see reference to function template instantiation 'ArrayList<int>::ArrayList(void)' being compiled
+C:\Users\shadi\Desktop\Data structures\Data structures\src\include\ArrayList.h(239,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\shadi\Desktop\Data structures\Data structures\src\include\ArrayList.h(234): message : while compiling class template member function 'void ArrayList<int>::resize(void)'
+C:\Users\shadi\Desktop\Data structures\Data structures\src\include\ArrayList.h(163): message : see reference to function template instantiation 'void ArrayList<int>::resize(void)' being compiled
+  Data structures.vcxproj -> C:\Users\shadi\Desktop\Data structures\Debug\Data structures.exe

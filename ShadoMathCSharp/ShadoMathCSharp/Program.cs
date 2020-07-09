@@ -1,14 +1,44 @@
 ﻿using System;
 
 namespace ShadoMathCSharp {
-	class Program {
+
+
+	public class Base {
+		public Base() {
+			Console.WriteLine("Parent Constructor");
+		}
+
+		~Base() {
+			Console.WriteLine("Parent Deconstructor");
+		}
+
+		public void Print() {
+			Console.WriteLine("Parent Print");
+		}
+
+	}
+
+	public class Derived : Base {
+		public Derived() {
+			Console.WriteLine("Child Constructor");
+		}
+
+		~Derived() {
+			Console.WriteLine("Child Deconstructor");
+		}
+
+		public void Print() {
+			Console.WriteLine("Child Print");
+		}
+	}
+
+    class Program {
 		static void Main(string[] args) {
 
-			Vec2D v = new Vec2D(5, 10);
-			Vec2D u = new Vec2D(5, 10);
-			v.x = 10;
-
-			Console.WriteLine("v: {0}, u: {1} ----> v == u = {2}", v.Mag(), u.Mag(), v == u);
+			Derived d = new Derived();
+			d.Print();
+			Base b = d;
+			b.Print();
 		}
 
 	}
