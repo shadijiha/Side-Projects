@@ -1,0 +1,4 @@
+y, compiler.language.Variable@68de145, int
+sum, compiler.language.Variable@545997b1, int
+x, compiler.language.Variable@b81eda8, int
+z, compiler.language.Variable@e874448, double

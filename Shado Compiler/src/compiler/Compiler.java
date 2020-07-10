@@ -4,16 +4,25 @@
 
 package compiler;
 
-import compiler.preprocessor.*;
-import compiler.util.*;
+import compiler.language.AssignmentExpression;
+import compiler.language.Variable;
+import compiler.preprocessor.Preprocessor;
+import compiler.util.Util;
 
-import java.io.*;
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.util.*;
 
 public class Compiler {
 
+	private static final List<String> reserved_words = new ArrayList<>();
+	private static boolean initialized = false;
+
 	private File file;
 	private String data;
+	private int currentLine;
+
+	private Map<Integer, Variable> variables;
 
 	public Compiler(String filepath) throws FileNotFoundException {
 
@@ -23,24 +32,46 @@ public class Compiler {
 			throw new FileNotFoundException(file.getAbsolutePath() + " was not found!");
 
 		data = Util.readFile(filepath);
+		variables = new HashMap<>();
+
+		if (!initialized)
+			initialize();
 	}
 
+	/**
+	 * Compiles the given file
+	 */
 	public void compile() {
 
 		List<String> lines = Arrays.asList(data.split("\n"));
 
 		for (String line : lines) {
 
+			// Preprocessor command
 			if (line.startsWith("#"))
 				new Preprocessor(line).execute(this);
 
+			// If the line starts with a premetive and it contains a "=" then it is a variable declaration
+			for (String type : Variable.getPremetives()) {
+				if (line.startsWith(type + " ") && line.contains("=")) {
+					new AssignmentExpression(line).execute(this);
+					break;
+				}
+			}
 
+			currentLine++;
 		}
 
 		// Write compiled file // FOR DEBUG ONLY
-		Util.writeToFile(file.getPath() + file.getName() + ".cshado", data);
+		Util.writeToFile(Util.filenameNoExtension(file.getName()) + ".cshado", data);
+
+		// Write a map file // FOR DEBUG ONLY
+		Util.writeToFile(Util.filenameNoExtension(file.getName()) + ".debug", toMap());
 	}
 
+	/**
+	 * @return Returns the data of the compiler's buffer
+	 */
 	public String getData() {
 		return data;
 	}
@@ -54,7 +85,77 @@ public class Compiler {
 		data = data.replace(token, replacement);
 	}
 
+	/**
+	 * Replaces all the data inside the compiler buffer
+	 * @param s The new Data
+	 */
 	public void setData(String s) {
 		data = s;
+	}
+
+	/**
+	 * Initializes the compiler (e.g. reserved words)
+	 */
+	private void initialize() {
+
+		List<String> list = Arrays.asList("if", "else", "switch", "case", "default",           // Conditional
+				"while", "for", "when", "do", "goto",            // Loops
+				"class", "struct", "new", "this", "super", "base", "constructor", "abstract", "interface",   // Classes
+				"public", "private", "package", "protected",    // Access modifiers
+				"import", "export", "extern", "using",            // Import
+				"final", "const", "override", "native", "static",
+				"synchronized", "volatile",
+				"var", "auto");        // Functions modifiers
+
+		reserved_words.addAll(Variable.getPremetives());
+		reserved_words.addAll(list);
+
+		initialized = true;
+	}
+
+	/**
+	 * gets the line that is currently getting evaluated
+	 * @return
+	 */
+	public int getCurrentLine() {
+		return currentLine;
+	}
+
+	/**
+	 * Gets the name of the file that is currently getting compiled
+	 * @return
+	 */
+	public String getFileName() {
+		return file.getName();
+	}
+
+	/**
+	 * Adds a variable to the compiler's buffer
+	 * @param v
+	 */
+	public void addVariable(Variable v) {
+		variables.put(v.hashCode(), v);
+	}
+
+	public boolean hasVariable(Variable v) {
+		for (var var : variables.entrySet())
+			if (var.getValue().getName().equals(v.getName()))
+				return true;
+		return false;
+	}
+
+	public Map<Integer, Variable> allVariables() {
+		return new HashMap<>(variables);
+	}
+
+	@Deprecated
+	private String toMap() {
+
+		StringBuilder builder = new StringBuilder();
+
+		for (var var : variables.entrySet())
+			builder.append(var.getValue().getName()).append(", ").append(var.getValue()).append(", ").append(var.getValue().getType()).append("\n");
+
+		return builder.toString();
 	}
 }

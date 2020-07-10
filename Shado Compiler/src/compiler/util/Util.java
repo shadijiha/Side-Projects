@@ -1,7 +1,12 @@
 package compiler.util;
 
-import java.io.*;
-import java.util.*;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.PrintWriter;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
 
 public abstract class Util {
 
@@ -76,5 +81,36 @@ public abstract class Util {
 		} finally {
 			writer.close();
 		}
+	}
+
+	public static String filenameNoExtension(String name) {
+		return name.split("\\.")[0];
+	}
+
+	public static String stringArrayToString(String[] array, String splitter) {
+
+		StringBuilder builder = new StringBuilder();
+
+		for (int i = 0; i < array.length; i++) {
+			builder.append(array[i]);
+
+			if (i != array.length - 1)
+				builder.append(splitter);
+		}
+
+		return builder.toString();
+	}
+
+	public static String[] removeWhiteSpace(String[] array) {
+
+		List<String> list = new ArrayList<>();
+
+		for (String e : array) {
+			if (!e.matches("\\s")) {
+				list.add(e);
+			}
+		}
+
+		return list.toArray(String[]::new);
 	}
 }

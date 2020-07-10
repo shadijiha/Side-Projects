@@ -1,4 +1,8 @@
-#include "test.shado"
+
+int add(int a, int b)	{
+	return a + b;
+}
+
 
 int x = 10;
 int y = 20;
