@@ -28,6 +28,7 @@ public class Main extends AbstractGame {
     @Override
     public void render(GameContainer gc, Renderer2D r) {
 
+        r.drawImage();
         r.fillRect(100, 100, 50, 75, 0xff0000ff, Light.FULL_BLOCK);
 
         r.drawLight(light, gc.getInput().getMouseX(), gc.getInput().getMouseY());
