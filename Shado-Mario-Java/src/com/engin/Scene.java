@@ -6,7 +6,7 @@ public abstract class Scene {
 
 	private final long id;
 	private final String name;
-	private int zIndex;
+	protected int zIndex;
 
 	public Scene(String name, int z_index) {
 		this.name = name;
