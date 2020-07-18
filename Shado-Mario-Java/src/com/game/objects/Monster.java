@@ -3,11 +3,9 @@
  */
 package com.game.objects;
 
-import com.engin.shapes.Texture;
-import com.game.objects.info.DamageInfo;
-import com.game.objects.interfaces.ICollidable;
-import com.game.objects.interfaces.IDrawable;
-import com.game.objects.interfaces.IMovable;
+import com.engin.shapes.*;
+import com.game.objects.info.*;
+import com.game.objects.interfaces.*;
 
 import java.awt.*;
 
@@ -27,7 +25,7 @@ public class Monster extends LivingObject implements IDrawable, IMovable {
 		this.y = y;
 
 		width = 50;
-		height = 150;
+		height = 100;
 
 		texture = new Texture("Images/monster.png", width, height);
 	}
@@ -83,7 +81,7 @@ public class Monster extends LivingObject implements IDrawable, IMovable {
 			hp -= (1 - armor_reduction) * info.amount;
 		else if (info.type == DamageInfo.MAGIC)
 			hp -= (1 - mr_reduction) * info.amount;
-		else if (info.type == DamageInfo.PHYSICAL)
+		else if (info.type == DamageInfo.TRUE)
 			hp -= info.amount;
 		else
 			throw new RuntimeException("Invalid damage type!");

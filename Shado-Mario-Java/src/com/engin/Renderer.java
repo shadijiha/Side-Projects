@@ -5,8 +5,8 @@ package com.engin;
 
 import javax.swing.*;
 import java.awt.*;
-import java.util.ArrayList;
 import java.util.List;
+import java.util.*;
 
 public class Renderer extends JPanel {
 
@@ -60,7 +60,7 @@ public class Renderer extends JPanel {
 		updateThread.start();
 	}
 
-	public void updateComponent() {
+	private void updateComponent() {
 		// Render scenes
 		scenes.stream().forEach(scene -> {
 			scene.update(deltaTime);
@@ -100,12 +100,31 @@ public class Renderer extends JPanel {
 		}
 	}
 
+	/**
+	 * Submit a scene to be drawn to the screen
+	 * @param scene The scene to draw
+	 */
 	public void submit(Scene scene) {
+		scene.init();
 		scenes.add(scene);
 		sortScenes();
-		scene.init();
 	}
 
+	/**
+	 * Submit a scene to be drawn to the screen with a specific Z-index
+	 * @param scene The scene to draw
+	 * @param zIndex The desired z index (smaller z-index = will be drawn earlier)
+	 */
+	public void submit(Scene scene, int zIndex) {
+		scene.zIndex = zIndex;
+		submit(scene);
+	}
+
+	/**
+	 * Removes a scene from the scene list by its ID
+	 * @param sceneID The ID of the scene to remove
+	 * @return Returns the removed scene
+	 */
 	public Scene remove(long sceneID) {
 		Scene val = null;
 		for (int i = 0; i < scenes.size(); i++) {
@@ -119,6 +138,11 @@ public class Renderer extends JPanel {
 		return val;
 	}
 
+	/**
+	 * Removes a scene from the scene list by its name
+	 * @param sceneName The name of the scene to remove
+	 * @return Returns the removed scene
+	 */
 	public Scene remove(String sceneName) {
 		Scene val = null;
 		for (int i = 0; i < scenes.size(); i++) {
@@ -132,6 +156,9 @@ public class Renderer extends JPanel {
 		return val;
 	}
 
+	/**
+	 * Sorts the scenes by there Z-index
+	 */
 	private void sortScenes() {
 		scenes.sort((Scene obj1, Scene obj2) -> {
 			return Integer.compare(obj1.getzIndex(), obj2.getzIndex());
