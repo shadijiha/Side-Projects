@@ -2,21 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="618df01e-c6d4-4d00-97b7-545222557da5" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/compiler/language/AssignmentExpression.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/compiler/language/FunctionDeclaration.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/compiler/language/Scope.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/compiler/language/Variable.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/compiler/language/exceptions/CompilationError.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/compiler/language/exceptions/SymbolRedefinition.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/compiler/language/exceptions/SyntaxError.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/compiler/language/DeclaredVariableAssignment.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/compiler/language/VariableDeclarationExpression.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/compiler/language/types/Operator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/compiler/language/types/PremetiveType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/compiler/language/types/ShadoInteger.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/compiler/language/types/VariableClass.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.shado" beforeDir="false" afterPath="$PROJECT_DIR$/main.shado" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.shadomain.shado.cshado" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OSTest/compiler/Compiler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OSTest/compiler/Compiler.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OSTest/compiler/util/Util.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OSTest/compiler/util/Util.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.cshado" beforeDir="false" afterPath="$PROJECT_DIR$/main.cshado" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.debug" beforeDir="false" afterPath="$PROJECT_DIR$/main.debug" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OSTest/META-INF/OSTest.kotlin_module" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/compiler/Compiler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/compiler/Compiler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/compiler/util/Util.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/compiler/util/Util.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/compiler/language/Variable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/compiler/language/Variable.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,6 +28,7 @@
       <list>
         <option value="Interface" />
         <option value="Class" />
+        <option value="Enum" />
       </list>
     </option>
   </component>
@@ -98,6 +96,8 @@
       <workItem from="1594272370587" duration="5010000" />
       <workItem from="1594304777920" duration="3426000" />
       <workItem from="1594308231824" duration="7158000" />
+      <workItem from="1595043048226" duration="4044000" />
+      <workItem from="1595114165235" duration="38000" />
     </task>
     <servers />
   </component>
@@ -105,31 +105,31 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="725" y="220" key="#com.intellij.ide.util.MemberChooser" timestamp="1594318906618">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state x="1208" y="555" key="#com.intellij.ide.util.MemberChooser" timestamp="1595046019963">
+      <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="725" y="220" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1594318906618" />
-    <state x="1208" y="555" key="#com.intellij.ide.util.MemberChooser/2560.-69.2560.1400/0.0.2560.1400@0.0.2560.1400" timestamp="1594276450335" />
-    <state width="1493" height="190" key="GridCell.Tab.0.bottom" timestamp="1594391438397">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state x="1208" y="555" key="#com.intellij.ide.util.MemberChooser/2560.-69.2560.1400/0.0.2560.1400@0.0.2560.1400" timestamp="1595046019963" />
+    <state width="2517" height="411" key="GridCell.Tab.0.bottom" timestamp="1595047095842">
+      <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state width="1493" height="190" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1594391438397" />
-    <state width="2517" height="470" key="GridCell.Tab.0.bottom/2560.-69.2560.1400/0.0.2560.1400@0.0.2560.1400" timestamp="1594277384745" />
-    <state width="1493" height="190" key="GridCell.Tab.0.center" timestamp="1594391438396">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state width="2517" height="411" key="GridCell.Tab.0.bottom/2560.-69.2560.1400/0.0.2560.1400@0.0.2560.1400" timestamp="1595047095842" />
+    <state width="2517" height="411" key="GridCell.Tab.0.center" timestamp="1595047095842">
+      <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state width="1493" height="190" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1594391438396" />
-    <state width="2517" height="470" key="GridCell.Tab.0.center/2560.-69.2560.1400/0.0.2560.1400@0.0.2560.1400" timestamp="1594277384745" />
-    <state width="1493" height="190" key="GridCell.Tab.0.left" timestamp="1594391438396">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state width="2517" height="411" key="GridCell.Tab.0.center/2560.-69.2560.1400/0.0.2560.1400@0.0.2560.1400" timestamp="1595047095842" />
+    <state width="2517" height="411" key="GridCell.Tab.0.left" timestamp="1595047095842">
+      <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state width="1493" height="190" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1594391438396" />
-    <state width="2517" height="470" key="GridCell.Tab.0.left/2560.-69.2560.1400/0.0.2560.1400@0.0.2560.1400" timestamp="1594277384745" />
-    <state width="1493" height="190" key="GridCell.Tab.0.right" timestamp="1594391438397">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state width="2517" height="411" key="GridCell.Tab.0.left/2560.-69.2560.1400/0.0.2560.1400@0.0.2560.1400" timestamp="1595047095842" />
+    <state width="2517" height="411" key="GridCell.Tab.0.right" timestamp="1595047095842">
+      <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state width="1493" height="190" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1594391438397" />
-    <state width="2517" height="470" key="GridCell.Tab.0.right/2560.-69.2560.1400/0.0.2560.1400@0.0.2560.1400" timestamp="1594277384745" />
+    <state width="2517" height="411" key="GridCell.Tab.0.right/2560.-69.2560.1400/0.0.2560.1400@0.0.2560.1400" timestamp="1595047095842" />
     <state width="1493" height="236" key="GridCell.Tab.1.bottom" timestamp="1594391438381">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -154,11 +154,11 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="781" y="342" key="SettingsEditor/2560.-69.2560.1400/0.0.2560.1400@0.0.2560.1400" timestamp="1594242293552" />
-    <state x="574" y="308" key="com.intellij.ide.util.TipDialog" timestamp="1594308237726">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state x="956" y="523" key="com.intellij.ide.util.TipDialog" timestamp="1595114165052">
+      <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="574" y="308" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1594308237726" />
-    <state x="956" y="523" key="com.intellij.ide.util.TipDialog/2560.-69.2560.1400/0.0.2560.1400@0.0.2560.1400" timestamp="1594272370240" />
+    <state x="956" y="523" key="com.intellij.ide.util.TipDialog/2560.-69.2560.1400/0.0.2560.1400@0.0.2560.1400" timestamp="1595114165052" />
     <state x="943" y="315" width="672" height="678" key="search.everywhere.popup" timestamp="1594275005062">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>

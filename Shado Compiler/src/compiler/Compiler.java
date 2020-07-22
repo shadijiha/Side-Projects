@@ -4,13 +4,11 @@
 
 package compiler;
 
-import compiler.language.AssignmentExpression;
-import compiler.language.Variable;
-import compiler.preprocessor.Preprocessor;
-import compiler.util.Util;
+import compiler.language.*;
+import compiler.preprocessor.*;
+import compiler.util.*;
 
-import java.io.File;
-import java.io.FileNotFoundException;
+import java.io.*;
 import java.util.*;
 
 public class Compiler {
@@ -51,10 +49,26 @@ public class Compiler {
 			if (line.startsWith("#"))
 				new Preprocessor(line).execute(this);
 
-			// If the line starts with a premetive and it contains a "=" then it is a variable declaration
+			// If the line starts with a premetive and it contains a "=" then it is a variable or function declaration
 			for (String type : Variable.getPremetives()) {
+
+				// Variable assignment --> e.g:  int a = 10;
 				if (line.startsWith(type + " ") && line.contains("=")) {
 					new AssignmentExpression(line).execute(this);
+					break;
+				}
+
+				// variable declaration --> e.g. int a;
+				if (line.startsWith(type + " ") && !line.contains("=")) {
+					new VariableDeclarationExpression(line).execute(this);
+					break;
+				}
+
+				// declared variable assignment
+				// e.g.:	4|	int x;
+				//			5|	x = 15;
+				if (!line.startsWith(type + " ") && line.contains("=")) {
+					new DeclaredVariableAssignment(line).execute(this);
 					break;
 				}
 			}
@@ -141,6 +155,13 @@ public class Compiler {
 		for (var var : variables.entrySet())
 			if (var.getValue().getName().equals(v.getName()))
 				return true;
+		return false;
+	}
+
+	public boolean updateVariable(String varName, Object newVal) {
+		for (var var : variables.entrySet())
+			if (var.getValue().getName().equals(varName))
+				var.getValue().setValue(newVal);
 		return false;
 	}
 

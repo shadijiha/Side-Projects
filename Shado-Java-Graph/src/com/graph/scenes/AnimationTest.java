@@ -4,7 +4,7 @@
 
 package com.graph.scenes;
 
-import com.engin.Scene;
+import com.engin.*;
 
 import java.awt.*;
 
@@ -25,12 +25,12 @@ public class AnimationTest extends Scene {
 	}
 
 	@Override
-	public void init() {
+	public void init(Renderer r) {
 
 	}
 
 	@Override
-	public void update(long dt) {
+	public void update(float dt) {
 	}
 
 	@Override

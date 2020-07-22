@@ -1,12 +1,9 @@
 package com.engin.shapes;
 
-import javax.imageio.ImageIO;
+import javax.imageio.*;
 import java.awt.*;
-import java.awt.image.BufferedImage;
-import java.awt.image.ImageObserver;
-import java.awt.image.ImageProducer;
-import java.io.File;
-import java.io.IOException;
+import java.awt.image.*;
+import java.io.*;
 
 public class Texture extends Image {
 
@@ -70,7 +67,7 @@ public class Texture extends Image {
 	}
 
 	public void draw(Graphics g) {
-		g.drawImage(this, x, y, null);
+		g.drawImage(image, x, y, null);
 	}
 
 	/***************************** Getters and setters *******************************/
