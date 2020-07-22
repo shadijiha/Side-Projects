@@ -13,6 +13,6 @@ public class Main {
 
 		renderer.submit(new AnimationTest());
 
-
 	}
+
 }
