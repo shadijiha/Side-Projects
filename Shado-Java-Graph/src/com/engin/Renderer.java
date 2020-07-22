@@ -15,18 +15,18 @@ public class Renderer extends JPanel {
 	private final JFrame frame;
 	private final List<Scene> scenes;
 
-	private long startTime;
-	private long endTime;
-	private long deltaTime;
+	private volatile long startTime;
+	private volatile long endTime;
+	private volatile long deltaTime;
 
 	private final Thread drawThread;
 	private final Thread updateThread;
 
-	public Renderer() {
+	public Renderer(int width, int height) {
 		scenes = new ArrayList<>();
 
 		frame = new JFrame("Renderer");
-		frame.setPreferredSize(new Dimension(1280, 720));
+		frame.setPreferredSize(new Dimension(width, height));
 		frame.add(this);
 		frame.pack();
 		frame.setLocationRelativeTo(null);
@@ -38,7 +38,10 @@ public class Renderer extends JPanel {
 				updateComponent();
 			}
 		});
+	}
 
+	public Renderer() {
+		this(1280, 720);
 	}
 
 	public void start() {
@@ -52,9 +55,9 @@ public class Renderer extends JPanel {
 		sortScenes();
 
 		// Start scenes scenes
-		scenes.stream().forEach(scene -> {
-			scene.init();
-		});
+//		scenes.stream().forEach(scene -> {
+//			scene.init(this);
+//		});
 
 		drawThread.start();
 		updateThread.start();
@@ -82,10 +85,8 @@ public class Renderer extends JPanel {
 		g.clearRect(0, 0, frame.getWidth(), frame.getHeight());
 
 		// Render scenes
-		scenes.stream().forEach(scene -> {
+		for (final Scene scene : scenes)
 			scene.draw(g);
-		});
-
 
 		// Clear screen
 		repaint();
@@ -101,9 +102,12 @@ public class Renderer extends JPanel {
 	}
 
 	public void submit(Scene scene) {
+		scene.init(this);
+		frame.addKeyListener(scene);
+		frame.addMouseListener(scene);
+		frame.addMouseMotionListener(scene);
 		scenes.add(scene);
 		sortScenes();
-		scene.init();
 	}
 
 	public Scene remove(long sceneID) {
@@ -136,5 +140,9 @@ public class Renderer extends JPanel {
 		scenes.sort((Scene obj1, Scene obj2) -> {
 			return Integer.compare(obj1.getzIndex(), obj2.getzIndex());
 		});
+	}
+
+	public JFrame getWindow() {
+		return frame;
 	}
 }
