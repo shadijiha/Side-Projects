@@ -1,95 +1,88 @@
 package com.main;
 
+import com.engin.GameObject;
+import com.engin.Renderer;
+import com.engin.Scene;
+import com.engin.components.MeshRenderer;
+import com.engin.components.Script;
+import com.engin.components.Transform;
+import com.engin.math.Vector;
+
 import javax.swing.*;
 import java.awt.*;
-import java.awt.image.BufferedImage;
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
 public class Main {
 
-	public static void main(String[] args) throws IOException {
+	public static void main(String[] args) {
 		// write your code here
-		int[] data = readVideo("test.avi");
-		var image = createVideo(data);
 
-		var window = createWindow(image.getWidth(null), image.getHeight(null));
+		try {
+			Renderer renderer = new Renderer();
+			renderer.start();
 
-		window.add(new JPanel() {
-
-			@Override
-			protected void paintComponent(Graphics g) {
-				g.drawImage(image, 0, 0, null);
-			}
-		});
-
-		window.pack();
-	}
-
-	public static int[] readVideo(String path) throws IOException {
-		File video = new File(path);
-		List<Integer> data = new ArrayList<>();
-
-		BufferedReader reader = new BufferedReader(new FileReader(video));
-
-		int d;
-		while ((d = reader.read()) != -1 && data.size() < 400_000) {
-			if (d <= 255)
-				data.add(d);
+			renderer.submit(new DebugScene());
+		} catch (Exception e) {
+			JOptionPane.showMessageDialog(null, e.toString(), "Runtime Error!", JOptionPane.ERROR_MESSAGE);
 		}
+	}
+}
 
-		reader.close();
+class DebugScene extends Scene {
 
-		// Convert to array
-		int array[] = new int[data.size()];
-		for (int i = 0; i < array.length; i++)
-			array[i] = data.get(i);
+	private Renderer renderer;
 
-		return array;
+	List<GameObject> gameObjects;
+
+	public DebugScene() {
+		super("Debug scene");
+		gameObjects = new ArrayList<>();
 	}
 
-	public static Image createVideo(int data[]) {
+	/**
+	 * Initializes the scene and its variables
+	 *
+	 * @param renderer The renderer that will handle the scene
+	 */
+	@Override
+	public void init(Renderer renderer) {
+		this.renderer = renderer;
 
-		var resolution = new Dimension(640, 480);
-		int pixelCount = resolution.width * resolution.height;
-		float framesInData = data.length / (float) pixelCount;
+		GameObject object = GameObject.instantiate();
+		object.<Transform>getComponent().scale = new Vector(100, 100);
+		object.addComponent(new MeshRenderer(object));
 
-		// First frame
-		int frameData[] = new int[pixelCount];
-		for (int i = 0; i < frameData.length; i++)
-			frameData[i] = data[i];
+		gameObjects.add(object);
+	}
 
-		// Construct Image
-		Image image = new BufferedImage(resolution.width, resolution.height, BufferedImage.TYPE_INT_ARGB);
-		var g = image.getGraphics();
+	/**
+	 * Updates the state of the scene
+	 *
+	 * @param dt The time between 2 frames in ms
+	 */
+	@Override
+	public void update(float dt) {
 
-		int y = 0;
-		for (int i = 0; i < frameData.length; i += 3) {
-			g.setColor(new Color(frameData[i], frameData[i + 1], frameData[i + 2]));
-			g.drawRect(i % resolution.width, y, 1, 1);
-
-			if (i % resolution.width == 0)
-				y++;
+		for (GameObject object : gameObjects) {
+			Script script = object.<Script>getComponent();
+			if (script != null)
+				script.update(dt);
 		}
-
-		g.dispose();
-
-		return image;
 	}
 
-	public static JFrame createWindow(int width, int height) {
-		JFrame frame = new JFrame();
+	/**
+	 * Draws the scene content to the screen
+	 *
+	 * @param g The graphics that will handle the drawing
+	 */
+	@Override
+	public void draw(Graphics g) {
 
-		frame.setPreferredSize(new Dimension(width, height));
-		frame.pack();
-		frame.setLocationRelativeTo(null);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frame.setVisible(true);
-
-		return frame;
+		for (GameObject object : gameObjects) {
+			var meshRenderer = object.<MeshRenderer>getComponent();
+			if (meshRenderer != null)
+				meshRenderer.draw(g);
+		}
 	}
 }
