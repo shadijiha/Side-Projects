@@ -3,7 +3,7 @@
  */
 package com.editor;
 
-import com.editor.html.HTMLDocument;
+import com.editor.html.*;
 
 import javax.swing.*;
 import java.awt.*;
@@ -22,7 +22,7 @@ public class RenderPanel extends JEditorPane {
 
 		this.document = document;
 
-		setPreferredSize(new Dimension((int) (frame.getWidth() * RENDER_PANEL_SIZE), frame.getHeight()));
+		this.setPreferredSize(new Dimension((int) (frame.getWidth() * RENDER_PANEL_SIZE), frame.getHeight()));
 		this.setFocusable(false);
 		this.setVisible(true);
 	}
@@ -32,7 +32,5 @@ public class RenderPanel extends JEditorPane {
 		this.setText(document.render());
 		this.repaint();
 		this.setVisible(true);
-
-		System.out.println(document.render());
 	}
 }

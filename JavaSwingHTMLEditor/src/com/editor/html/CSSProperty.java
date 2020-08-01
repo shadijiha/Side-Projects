@@ -12,4 +12,8 @@ public final class CSSProperty {
 		this.attribute = attribute;
 		this.value = value;
 	}
+
+	public CSSProperty(final CSSProperty other) {
+		this(other.attribute, other.value);
+	}
 }

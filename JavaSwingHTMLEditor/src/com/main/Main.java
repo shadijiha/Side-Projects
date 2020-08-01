@@ -1,30 +1,34 @@
 package com.main;
 
-import com.editor.Editor;
-import com.editor.html.CSSProperty;
-import com.editor.html.HTMLDocument;
-import com.editor.html.HTMLElement;
+import com.editor.*;
+import com.editor.html.*;
 
-import java.io.FileInputStream;
-import java.util.Scanner;
+import java.io.*;
+import java.util.*;
 
 public class Main {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws HTMLElementNotFoundException {
 
 		// write your code here
-		//final String html = readHTML("index.html");
 		var document = new HTMLDocument();
 		document.add(
 				new HTMLElement("h1", "Hello from Shado editor")
 						.addStyle(new CSSProperty("color", "green")));
 
-		//System.out.println(document.querySelector("body"));
-		//document.querySelector("body").get(0).addStyle("background-color", "lightblue");
+		document.add(
+				new HTMLElement("p", "This is a test of multiple elements in the editor")
+						.addStyle(new CSSProperty("font-family", "Arial")));
 
-		System.out.println(document.render());
+
+		var body = document.querySelector("body").get(0);
+		body.addStyle("background-color", "lightblue");
+
+		body.setContent("This is body content");
+
 
 		Editor editor = new Editor(document);
+		editor.select(body);
 	}
 
 	public static String readHTML(String path) {
