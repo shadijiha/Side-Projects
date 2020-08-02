@@ -3,11 +3,9 @@
  */
 package com.engin;
 
-import com.engin.components.EntityComponent;
-import com.engin.components.Transform;
+import com.engin.components.*;
 
-import java.util.HashSet;
-import java.util.Set;
+import java.util.*;
 
 public class GameObject {
 
@@ -33,6 +31,11 @@ public class GameObject {
 		components.add(component);
 	}
 
+	/**
+	 * Removes a component from the Game object
+	 * @param <T> The component class to remove
+	 * @return Returns the deleted component
+	 */
 	public <T extends EntityComponent> T removeComponent() {
 		for (EntityComponent e : components) {
 			try {
