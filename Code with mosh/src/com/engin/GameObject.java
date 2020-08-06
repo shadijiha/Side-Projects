@@ -3,11 +3,9 @@
  */
 package com.engin;
 
-import com.engin.components.EntityComponent;
-import com.engin.components.Transform;
+import com.engin.components.*;
 
-import java.util.HashSet;
-import java.util.Set;
+import java.util.*;
 
 public class GameObject {
 
@@ -27,12 +25,19 @@ public class GameObject {
 
 	/**
 	 * Adds a new Component to the object
+	 * 
 	 * @param component the new component to add
 	 */
 	public void addComponent(EntityComponent component) {
 		components.add(component);
 	}
 
+	/**
+	 * Removes a component from the Game object
+	 * 
+	 * @param <T> The component class to remove
+	 * @return Returns the deleted component
+	 */
 	@Deprecated
 	public <T extends EntityComponent> T removeComponent() {
 		for (EntityComponent e : components) {
@@ -59,8 +64,10 @@ public class GameObject {
 
 	/**
 	 * Finds a component of the object and returns it
+	 * 
 	 * @param <T> The class of the component to find
-	 * @return Returns null if no component was found or The component if it was found
+	 * @return Returns null if no component was found or The component if it was
+	 *         found
 	 */
 	@Deprecated
 	public <T extends EntityComponent> T getComponent() {
@@ -91,6 +98,7 @@ public class GameObject {
 
 	/**
 	 * Changes the name of the object
+	 * 
 	 * @param name The new name
 	 */
 	public final void setName(String name) {
@@ -113,6 +121,7 @@ public class GameObject {
 
 	/**
 	 * Finds if the object has a specific tag
+	 * 
 	 * @param tag the tag to search
 	 * @returns Returns true if the object is tagged as such
 	 */

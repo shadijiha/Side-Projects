@@ -3,13 +3,13 @@
  */
 package com.engin.components;
 
-import com.engin.GameObject;
+import com.engin.*;
 import com.engin.shapes.Rectangle;
 import com.engin.shapes.Shape;
 
 import java.awt.*;
 
-public class MeshRenderer extends EntityComponent {
+public final class MeshRenderer extends EntityComponent {
 	public final Transform transform;
 	public Shape shape;
 

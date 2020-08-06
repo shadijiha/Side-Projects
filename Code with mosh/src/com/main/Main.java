@@ -1,18 +1,14 @@
 package com.main;
 
-import com.engin.GameObject;
 import com.engin.Renderer;
-import com.engin.Scene;
-import com.engin.components.MeshRenderer;
-import com.engin.components.Script;
-import com.engin.components.Transform;
-import com.engin.math.ImmutableVector;
+import com.engin.*;
+import com.engin.components.*;
 import com.engin.math.Vector;
 
 import javax.swing.*;
 import java.awt.*;
-import java.util.ArrayList;
 import java.util.List;
+import java.util.*;
 
 public class Main {
 
@@ -73,8 +69,8 @@ class DebugScene extends Scene {
 	@Override
 	public void update(float dt) {
 
-		for (GameObject object : gameObjects) {
-			Script script = (Script) object.getComponent(Script.class);
+		for (var object : gameObjects) {
+			var script = object.<Script>getComponent();
 			if (script != null)
 				script.update(dt);
 		}
@@ -88,7 +84,7 @@ class DebugScene extends Scene {
 	@Override
 	public void draw(Graphics g) {
 
-		for (GameObject object : gameObjects) {
+		for (var object : gameObjects) {
 			var meshRenderer = object.<MeshRenderer>getComponent();
 			if (meshRenderer != null)
 				meshRenderer.draw(g);
