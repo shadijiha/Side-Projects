@@ -33,6 +33,7 @@ public class GameObject {
 		components.add(component);
 	}
 
+	@Deprecated
 	public <T extends EntityComponent> T removeComponent() {
 		for (EntityComponent e : components) {
 			try {
@@ -45,19 +46,39 @@ public class GameObject {
 		return null;
 	}
 
+	public EntityComponent removeComponent(Class<?> _class) {
+		for (EntityComponent e : components) {
+			EntityComponent temp = null;
+			if (e.getClass() == _class)
+				temp = e;
+			components.remove(temp);
+			return temp;
+		}
+		return null;
+	}
+
 	/**
 	 * Finds a component of the object and returns it
 	 * @param <T> The class of the component to find
 	 * @return Returns null if no component was found or The component if it was found
 	 */
+	@Deprecated
 	public <T extends EntityComponent> T getComponent() {
+		T result = null;
 		for (EntityComponent e : components) {
 			try {
-				T result = (T) e;
+				result = (T) e;
 				return result;
 			} catch (ClassCastException ignored) {
 			}
 		}
+		return result;
+	}
+
+	public EntityComponent getComponent(Class<?> _class) {
+		for (EntityComponent e : components)
+			if (e.getClass() == _class)
+				return e;
 		return null;
 	}
 
