@@ -25,6 +25,7 @@ public class GameObject {
 
 	/**
 	 * Adds a new Component to the object
+	 * 
 	 * @param component the new component to add
 	 */
 	public void addComponent(EntityComponent component) {
@@ -33,9 +34,11 @@ public class GameObject {
 
 	/**
 	 * Removes a component from the Game object
+	 * 
 	 * @param <T> The component class to remove
 	 * @return Returns the deleted component
 	 */
+	@Deprecated
 	public <T extends EntityComponent> T removeComponent() {
 		for (EntityComponent e : components) {
 			try {
@@ -48,19 +51,41 @@ public class GameObject {
 		return null;
 	}
 
+	public EntityComponent removeComponent(Class<?> _class) {
+		for (EntityComponent e : components) {
+			EntityComponent temp = null;
+			if (e.getClass() == _class)
+				temp = e;
+			components.remove(temp);
+			return temp;
+		}
+		return null;
+	}
+
 	/**
 	 * Finds a component of the object and returns it
+	 * 
 	 * @param <T> The class of the component to find
-	 * @return Returns null if no component was found or The component if it was found
+	 * @return Returns null if no component was found or The component if it was
+	 *         found
 	 */
+	@Deprecated
 	public <T extends EntityComponent> T getComponent() {
+		T result = null;
 		for (EntityComponent e : components) {
 			try {
-				T result = (T) e;
+				result = (T) e;
 				return result;
 			} catch (ClassCastException ignored) {
 			}
 		}
+		return result;
+	}
+
+	public EntityComponent getComponent(Class<?> _class) {
+		for (EntityComponent e : components)
+			if (e.getClass() == _class)
+				return e;
 		return null;
 	}
 
@@ -73,6 +98,7 @@ public class GameObject {
 
 	/**
 	 * Changes the name of the object
+	 * 
 	 * @param name The new name
 	 */
 	public final void setName(String name) {
@@ -95,6 +121,7 @@ public class GameObject {
 
 	/**
 	 * Finds if the object has a specific tag
+	 * 
 	 * @param tag the tag to search
 	 * @returns Returns true if the object is tagged as such
 	 */

@@ -21,7 +21,7 @@ public final class MeshRenderer extends EntityComponent {
 		if (transform == null)
 			throw new RuntimeException("An object must contain a transform before a Mesh renderer");
 
-		this.shape = new Rectangle((int) transform.position.x, (int) transform.position.y, (int) transform.scale.x, (int) transform.scale.y);
+		this.shape = new Rectangle((int) transform.position.getX(), (int) transform.position.getY(), (int) transform.scale.getX(), (int) transform.scale.getY());
 	}
 
 	public void draw(Graphics g) {
@@ -32,7 +32,7 @@ public final class MeshRenderer extends EntityComponent {
 		g2d.rotate(Math.toRadians(transform.rotation));
 
 		this.shape.moveTo(transform.position);
-		this.shape.setDimension((int) transform.scale.x, (int) transform.scale.y);
+		this.shape.setDimension((int) transform.scale.getX(), (int) transform.scale.getY());
 		this.shape.draw(g2d);
 
 		g2d.setTransform(old);

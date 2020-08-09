@@ -50,6 +50,14 @@ class DebugScene extends Scene {
 		object.<Transform>getComponent().scale = new Vector(100, 100);
 		object.addComponent(new MeshRenderer(object));
 
+		object.addComponent(new Script(object) {
+			@Override
+			public void update(float dt) {
+				var transform = (Transform) object.getComponent(Transform.class);
+				transform.position = new ImmutableVector(4, 1);
+			}
+		});
+
 		gameObjects.add(object);
 	}
 

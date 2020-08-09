@@ -4,12 +4,13 @@
 package com.engin.components;
 
 import com.engin.GameObject;
+import com.engin.math.Coordinates;
 import com.engin.math.Vector;
 
 public final class Transform extends EntityComponent {
 
-	public Vector position;
-	public Vector scale;
+	public Coordinates position;
+	public Coordinates scale;
 	public float rotation;
 
 	public Transform(GameObject obj, int x, int y, int w, int h, float angle) {
