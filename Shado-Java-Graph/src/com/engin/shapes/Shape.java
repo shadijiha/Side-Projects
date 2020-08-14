@@ -112,7 +112,8 @@ public abstract class Shape implements Serializable {
 	 * @param t
 	 */
 	public void setTexture(final Texture t) {
-		this.texture = t;
+		Texture temp = new Texture(t.getPath(), dimension.w, dimension.h);
+		this.texture = temp;
 	}
 
 	public void setTexture(final String path) {

@@ -8,11 +8,8 @@ import com.engin.Renderer;
 import com.engin.Scene;
 import com.engin.Util;
 
-import javax.imageio.ImageIO;
 import java.awt.*;
 import java.awt.image.BufferedImage;
-import java.io.File;
-import java.io.IOException;
 
 public class RandomImage extends Scene {
 
@@ -60,11 +57,11 @@ public class RandomImage extends Scene {
 		this.image = image;
 
 
-		try {
-			ImageIO.write(this.image, "png", new File("hehexd.png"));
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
+//		try {
+//			ImageIO.write(this.image, "png", new File("hehexd.png"));
+//		} catch (IOException e) {
+//			e.printStackTrace();
+//		}
 	}
 
 	/**

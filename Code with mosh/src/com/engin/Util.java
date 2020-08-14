@@ -3,6 +3,8 @@
  */
 package com.engin;
 
+import java.awt.*;
+
 public abstract class Util {
 
 	private Util() {
@@ -61,5 +63,39 @@ public abstract class Util {
 	 */
 	public static String randomString(int chars) {
 		return randomString(chars, false);
+	}
+
+	/**
+	 * @return Returns a randomly generated color
+	 */
+	public static Color randomColor() {
+		int red = random(0, 255);
+		int blue = random(0, 255);
+		int green = random(0, 255);
+
+		return new Color(red, green, blue);
+	}
+
+	/**
+	 * Generates a random color close to the color passed as parameter
+	 * @param c The color to generate close to
+	 * @return Returns the generated color
+	 */
+	public static Color randomColor(Color c) {
+
+		int red = (c.getRed() + random(-20, 20)) % 255;
+		int green = (c.getGreen() + random(-20, 20)) % 255;
+		int blue = (c.getBlue() + random(-20, 20)) % 255;
+
+		if (red < 0)
+			red = 0;
+
+		if (green < 0)
+			green = 0;
+
+		if (blue < 0)
+			blue = 0;
+
+		return new Color(red, green, blue);
 	}
 }

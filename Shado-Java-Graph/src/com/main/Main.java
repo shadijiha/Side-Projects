@@ -1,7 +1,6 @@
 package com.main;
 
 import com.engin.Renderer;
-import com.img.RandomImage;
 
 public class Main {
 
@@ -11,7 +10,7 @@ public class Main {
 		var renderer = new Renderer();
 		renderer.start();
 
-		renderer.submit(new RandomImage());
+		renderer.submit(new Enviroment());
 	}
 
 }
