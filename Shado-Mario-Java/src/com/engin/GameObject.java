@@ -33,7 +33,7 @@ public class GameObject {
 	}
 
 	/**
-	 * Removes a component from the Game object
+	 * Removes a component from the Game object <<<<<<< HEAD
 	 * 
 	 * @param <T> The component class to remove
 	 * @return Returns the deleted component
@@ -71,10 +71,9 @@ public class GameObject {
 	 */
 	@Deprecated
 	public <T extends EntityComponent> T getComponent() {
-		T result = null;
 		for (EntityComponent e : components) {
 			try {
-				result = (T) e;
+				T result = (T) e;
 				return result;
 			} catch (ClassCastException ignored) {
 			}
@@ -97,7 +96,9 @@ public class GameObject {
 	}
 
 	/**
-	 * Changes the name of the object
+	 * Changes the name of the object <<<<<<< HEAD
+	 * 
+	 * ======= >>>>>>> d87143804e46f8a3c741b4772cf11ffa313b795a
 	 * 
 	 * @param name The new name
 	 */
@@ -120,7 +121,9 @@ public class GameObject {
 	}
 
 	/**
-	 * Finds if the object has a specific tag
+	 * Finds if the object has a specific tag <<<<<<< HEAD
+	 * 
+	 * ======= >>>>>>> d87143804e46f8a3c741b4772cf11ffa313b795a
 	 * 
 	 * @param tag the tag to search
 	 * @returns Returns true if the object is tagged as such
