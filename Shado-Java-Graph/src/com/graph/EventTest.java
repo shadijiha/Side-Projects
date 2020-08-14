@@ -40,7 +40,7 @@ public class EventTest extends Scene {
 	}
 
 	@Override
-	public void update(long dt) {
+	public void update(float dt) {
 
 	}
 

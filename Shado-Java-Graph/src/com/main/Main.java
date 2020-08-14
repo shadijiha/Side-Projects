@@ -1,7 +1,7 @@
 package com.main;
 
-import com.engin.*;
-import com.graph.scenes.*;
+import com.engin.Renderer;
+import com.img.RandomImage;
 
 public class Main {
 
@@ -11,8 +11,7 @@ public class Main {
 		var renderer = new Renderer();
 		renderer.start();
 
-		renderer.submit(new AnimationTest());
-
+		renderer.submit(new RandomImage());
 	}
 
 }

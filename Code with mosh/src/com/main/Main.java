@@ -1,14 +1,17 @@
 package com.main;
 
+import com.engin.GameObject;
 import com.engin.Renderer;
-import com.engin.*;
-import com.engin.components.*;
+import com.engin.Scene;
+import com.engin.components.MeshRenderer;
+import com.engin.components.Script;
+import com.engin.components.Transform;
 import com.engin.math.Vector;
 
 import javax.swing.*;
 import java.awt.*;
+import java.util.ArrayList;
 import java.util.List;
-import java.util.*;
 
 public class Main {
 
@@ -46,15 +49,15 @@ class DebugScene extends Scene {
 	public void init(Renderer renderer) {
 		this.renderer = renderer;
 
-		GameObject object = GameObject.instantiate();
+		final GameObject object = GameObject.instantiate();
 		object.<Transform>getComponent().scale = new Vector(100, 100);
 		object.addComponent(new MeshRenderer(object));
 
 		object.addComponent(new Script(object) {
 			@Override
-			public void update(float dt) {
+			public void run(float dt) {
 				var transform = (Transform) object.getComponent(Transform.class);
-				transform.position = new ImmutableVector(4, 1);
+				transform.position.x += 1;
 			}
 		});
 
@@ -70,9 +73,11 @@ class DebugScene extends Scene {
 	public void update(float dt) {
 
 		for (var object : gameObjects) {
-			var script = object.<Script>getComponent();
-			if (script != null)
-				script.update(dt);
+			var script = (Script) object.getComponent(Script.class);
+			if (script != null) {
+				script.run(dt);
+			}
+
 		}
 	}
 
@@ -85,7 +90,7 @@ class DebugScene extends Scene {
 	public void draw(Graphics g) {
 
 		for (var object : gameObjects) {
-			var meshRenderer = object.<MeshRenderer>getComponent();
+			var meshRenderer = (MeshRenderer) object.getComponent(MeshRenderer.class);
 			if (meshRenderer != null)
 				meshRenderer.draw(g);
 		}

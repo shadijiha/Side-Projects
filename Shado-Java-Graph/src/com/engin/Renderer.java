@@ -5,8 +5,8 @@ package com.engin;
 
 import javax.swing.*;
 import java.awt.*;
+import java.util.ArrayList;
 import java.util.List;
-import java.util.*;
 
 public final class Renderer extends JPanel {
 
@@ -77,13 +77,13 @@ public final class Renderer extends JPanel {
 
 	private void updateComponent() {
 		// Render scenes
-		scenes.stream().forEach(scene -> {
-
+		for (int i = 0; i < scenes.size(); i++) {
+			var scene = scenes.get(i);
 			// Only update if there's no division by 0
 			var temp = 1.0f / (float) reportedFramerate;
 			if (temp != Double.POSITIVE_INFINITY)
 				scene.update(temp);
-		});
+		}
 
 		try {
 			Thread.sleep(5);
@@ -101,9 +101,8 @@ public final class Renderer extends JPanel {
 		g.clearRect(0, 0, frame.getWidth(), frame.getHeight());
 
 		// Render scenes
-		scenes.parallelStream().forEachOrdered(scene -> {
+		for (Scene scene : scenes)
 			scene.draw(g);
-		});
 
 		// Clear screen
 		repaint();
@@ -135,7 +134,7 @@ public final class Renderer extends JPanel {
 
 	/**
 	 * Submit a scene to be drawn to the screen
-	 * 
+	 *
 	 * @param scene The scene to draw
 	 */
 	public final void submit(final Scene scene) {
@@ -150,7 +149,7 @@ public final class Renderer extends JPanel {
 
 	/**
 	 * Submit a scene to be drawn to the screen with a specific Z-index
-	 * 
+	 *
 	 * @param scene  The scene to draw
 	 * @param zIndex The desired z index (smaller z-index = will be drawn earlier)
 	 */
@@ -161,7 +160,7 @@ public final class Renderer extends JPanel {
 
 	/**
 	 * Removes a scene from the scene list by its ID
-	 * 
+	 *
 	 * @param sceneID The ID of the scene to remove
 	 * @return Returns the removed scene
 	 */
@@ -180,7 +179,7 @@ public final class Renderer extends JPanel {
 
 	/**
 	 * Removes a scene from the scene list by its name
-	 * 
+	 *
 	 * @param sceneName The name of the scene to remove
 	 * @return Returns the removed scene
 	 */

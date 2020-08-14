@@ -1,9 +1,12 @@
 package com.engin.shapes;
 
-import javax.imageio.*;
+import javax.imageio.ImageIO;
 import java.awt.*;
-import java.awt.image.*;
-import java.io.*;
+import java.awt.image.BufferedImage;
+import java.awt.image.ImageObserver;
+import java.awt.image.ImageProducer;
+import java.io.File;
+import java.io.IOException;
 
 public class Texture extends Image {
 
@@ -55,7 +58,13 @@ public class Texture extends Image {
 		image = image1;
 	}
 
-	private static BufferedImage resize(BufferedImage img, int newW, int newH) {
+	Texture(BufferedImage image) {
+		this.image = image;
+		originalWidth = image.getWidth();
+		originalHeight = image.getHeight();
+	}
+
+	static BufferedImage resize(BufferedImage img, int newW, int newH) {
 		Image tmp = img.getScaledInstance(newW, newH, Image.SCALE_SMOOTH);
 		BufferedImage dimg = new BufferedImage(newW, newH, BufferedImage.TYPE_INT_ARGB);
 
@@ -93,6 +102,10 @@ public class Texture extends Image {
 	public Texture setY(int y) {
 		this.y = y;
 		return this;
+	}
+
+	BufferedImage getImage() {
+		return this.image;
 	}
 
 	/**
