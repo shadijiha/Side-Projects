@@ -3,7 +3,6 @@ package com.main;
 import com.engin.*;
 import com.engin.audio.*;
 import com.engin.components.*;
-import com.engin.logger.*;
 import com.engin.math.Vector;
 
 import java.awt.*;
@@ -11,30 +10,14 @@ import java.awt.event.*;
 import java.util.List;
 import java.util.*;
 
-public class Main {
-
-	public static void main(String[] args) {
-		// write your code here
-
-		try {
-			Renderer renderer = new Renderer();
-			renderer.start();
-
-			renderer.submit(new DebugScene());
-		} catch (Exception e) {
-			Debug.error(e);
-		}
-	}
-}
-
-class DebugScene extends Scene {
+class ExampleScene extends Scene {
 
 	private static final long serialVersionUID = 3863558974487580979L;
 	private Renderer renderer;
 
 	List<GameObject> gameObjects;
 
-	public DebugScene() {
+	public ExampleScene() {
 		super("Debug scene");
 		gameObjects = new ArrayList<>();
 	}
@@ -72,7 +55,7 @@ class DebugScene extends Scene {
 	public void update(final float dt) {
 
 		for (var object : gameObjects) {
-			var script = (Script) object.getComponent(Script.class);
+			Script script = (Script) object.getComponent(Script.class);
 			if (script != null)
 				script.run(dt);
 		}
@@ -104,9 +87,17 @@ class DebugScene extends Scene {
 	 */
 	@Override
 	public void mouseClicked(MouseEvent e) {
-		AudioManager.submit("Footstep02.wav", 2.0f);
-		//AudioManager.submit("JetEngine.wav");
-		long id = AudioManager.submit("kayle-morgana-the-righteous-the-fallen-login-screen-league-of-legends.wav");
-		AudioManager.remove(id);
+		AudioManager.submit("kayle-morgana-the-righteous-the-fallen-login-screen-league-of-legends.wav");
 	}
 }
+
+public class Example {
+
+	public static void main(String[] args) {
+		// write your code here
+		Renderer renderer = new Renderer();
+		renderer.start();
+		renderer.submit(new ExampleScene());
+	}
+}
+
