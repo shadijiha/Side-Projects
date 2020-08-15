@@ -150,17 +150,24 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\engin\Graphics.cpp" />
     <ClCompile Include="src\backend\IndexBuffer.cpp" />
-    <ClCompile Include="src\backend\Renderer.cpp" />
+    <ClCompile Include="src\engin\Renderer.cpp" />
     <ClCompile Include="src\backend\Shader.cpp" />
     <ClCompile Include="src\backend\Texture.cpp" />
     <ClCompile Include="src\backend\VertexArray.cpp" />
     <ClCompile Include="src\backend\VertexBuffer.cpp" />
     <ClCompile Include="src\Core.cpp" />
+    <ClCompile Include="src\engin\Scene.cpp" />
     <ClCompile Include="src\Main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\Core.h" />
+    <ClInclude Include="src\engin\Graphics.h" />
     <ClInclude Include="src\Backend\Core.h" />
+    <ClInclude Include="src\engin\interfaces\Comparable.h" />
+    <ClInclude Include="src\engin\Renderer.h" />
+    <ClInclude Include="src\engin\Scene.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -3,13 +3,11 @@
  */
 package com.engin;
 
-import com.engin.components.EntityComponent;
-import com.engin.components.Transform;
+import com.engin.components.*;
 
-import java.util.HashSet;
-import java.util.Set;
+import java.util.*;
 
-public class GameObject {
+public final class GameObject {
 
 	private String name;
 	private final Set<String> tags;
@@ -30,7 +28,7 @@ public class GameObject {
 	 *
 	 * @param component the new component to add
 	 */
-	public void addComponent(EntityComponent component) {
+	public final void addComponent(EntityComponent component) {
 		components.add(component);
 	}
 
@@ -41,7 +39,7 @@ public class GameObject {
 	 * @return Returns the deleted component
 	 */
 	@Deprecated
-	public <T extends EntityComponent> T removeComponent() {
+	public final <T extends EntityComponent> T removeComponent() {
 		for (EntityComponent e : components) {
 			try {
 				T result = (T) e;
@@ -53,10 +51,10 @@ public class GameObject {
 		return null;
 	}
 
-	public EntityComponent removeComponent(Class<?> _class) {
+	public final EntityComponent removeComponent(Class<?> _class) {
 		for (EntityComponent e : components) {
 			EntityComponent temp = null;
-			if (e.getClass() == _class)
+			if (e.getClass() == _class || e.getClass().getSuperclass() == _class)
 				temp = e;
 			components.remove(temp);
 			return temp;
@@ -72,7 +70,7 @@ public class GameObject {
 	 *         found
 	 */
 	@Deprecated
-	public <T extends EntityComponent> T getComponent() {
+	public final <T extends EntityComponent> T getComponent() {
 		T result = null;
 		for (EntityComponent e : components) {
 			try {
@@ -84,9 +82,9 @@ public class GameObject {
 		return result;
 	}
 
-	public EntityComponent getComponent(Class<?> _class) {
+	public final EntityComponent getComponent(Class<?> _class) {
 		for (EntityComponent e : components)
-			if (e.getClass() == _class)
+			if (e.getClass() == _class || e.getClass().getSuperclass() == _class)
 				return e;
 		return null;
 	}
@@ -132,5 +130,35 @@ public class GameObject {
 			if (s.equals(tag))
 				return true;
 		return false;
+	}
+
+	/**
+	 * Returns a string representation of the object. In general, the
+	 * {@code toString} method returns a string that
+	 * "textually represents" this object. The result should
+	 * be a concise but informative representation that is easy for a
+	 * person to read.
+	 * It is recommended that all subclasses override this method.
+	 * <p>
+	 * The {@code toString} method for class {@code Object}
+	 * returns a string consisting of the name of the class of which the
+	 * object is an instance, the at-sign character `{@code @}', and
+	 * the unsigned hexadecimal representation of the hash code of the
+	 * object. In other words, this method returns a string equal to the
+	 * value of:
+	 * <blockquote>
+	 * <pre>
+	 * getClass().getName() + '@' + Integer.toHexString(hashCode())
+	 * </pre></blockquote>
+	 *
+	 * @return a string representation of the object.
+	 */
+	@Override
+	public final String toString() {
+		return name + "\t" + tags.toString() + "\t" + components.toString();
+	}
+
+	final Set<EntityComponent> getComponents() {
+		return new HashSet<>(components);
 	}
 }
