@@ -1,11 +1,13 @@
 package com.main;
 
 import com.engin.*;
+import com.engin.audio.*;
 import com.engin.components.*;
 import com.engin.logger.*;
 import com.engin.math.Vector;
 
 import java.awt.*;
+import java.awt.event.*;
 import java.util.List;
 import java.util.*;
 
@@ -67,13 +69,16 @@ class DebugScene extends Scene {
 	 * @param dt The time between 2 frames in ms
 	 */
 	@Override
-	public void update(float dt) {
+	public void update(final float dt) {
 
 		for (var object : gameObjects) {
 			var script = (Script) object.getComponent(Script.class);
 			if (script != null)
 				script.run(dt);
 		}
+
+		String title = AudioManager.isPlaying() ? "Audio is playing" : "No Audio playing";
+		renderer.getWindow().setTitle(title);
 	}
 
 	/**
@@ -82,12 +87,26 @@ class DebugScene extends Scene {
 	 * @param g The graphics that will handle the drawing
 	 */
 	@Override
-	public void draw(Graphics g) {
+	public void draw(final Graphics g) {
 
 		for (var object : gameObjects) {
 			var meshRenderer = (MeshRenderer) object.getComponent(MeshRenderer.class);
 			if (meshRenderer != null)
 				meshRenderer.draw(g);
 		}
+	}
+
+	/**
+	 * Invoked when the mouse button has been clicked (pressed and released) on a
+	 * component.
+	 *
+	 * @param e the event to be processed
+	 */
+	@Override
+	public void mouseClicked(MouseEvent e) {
+		AudioManager.submit("Footstep02.wav", 2.0f);
+		//AudioManager.submit("JetEngine.wav");
+		long id = AudioManager.submit("kayle-morgana-the-righteous-the-fallen-login-screen-league-of-legends.wav");
+		AudioManager.remove(id);
 	}
 }

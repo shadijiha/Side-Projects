@@ -15,6 +15,7 @@ public abstract class AudioPlayer {
 	private long currentFrame;
 	private Clip clip;
 	private String status;
+	private final long id;
 
 	private AudioInputStream stream;
 
@@ -33,6 +34,7 @@ public abstract class AudioPlayer {
 			Debug.error(e);
 		}
 
+		this.id = (long) (Math.random() * Long.MAX_VALUE);
 
 	}
 
@@ -117,10 +119,18 @@ public abstract class AudioPlayer {
 	}
 
 	public boolean isPlaying() {
+		if (status == null)
+			return false;
 		return status.equalsIgnoreCase("play");
 	}
 
 	public boolean isFinished() {
+		if (status == null)
+			return false;
 		return clip.getMicrosecondLength() == clip.getMicrosecondPosition();
+	}
+
+	public final long getId() {
+		return this.id;
 	}
 }

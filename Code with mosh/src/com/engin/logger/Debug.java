@@ -13,7 +13,7 @@ public final class Debug {
 	}
 
 	public static void error(Throwable e) {
-		JOptionPane.showMessageDialog(null, e.getMessage(), "Error!", JOptionPane.ERROR_MESSAGE);
+		JOptionPane.showMessageDialog(null, e.toString(), "Error!", JOptionPane.ERROR_MESSAGE);
 	}
 
 	public static void error(String message) {
