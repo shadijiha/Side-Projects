@@ -1,12 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="78beb6ae-9649-4c1e-8447-79d20f8639ad" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/engin/Util.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/engin/Util.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Shado-Java-Graph/src/com/engin/Util.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Shado-Java-Graph/src/com/engin/Util.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Shado-Java-Graph/src/com/img/RandomImage.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Shado-Java-Graph/src/com/img/RandomImage.java" afterDir="false" />
-    </list>
+    <list default="true" id="78beb6ae-9649-4c1e-8447-79d20f8639ad" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -101,6 +96,7 @@
       <workItem from="1596742433540" duration="2075000" />
       <workItem from="1597432945931" duration="344000" />
       <workItem from="1597433505417" duration="363000" />
+      <workItem from="1597436828115" duration="19000" />
     </task>
     <servers />
   </component>
