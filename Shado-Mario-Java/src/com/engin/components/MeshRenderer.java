@@ -21,7 +21,8 @@ public final class MeshRenderer extends EntityComponent {
 		if (transform == null)
 			throw new RuntimeException("An object must contain a transform before a Mesh renderer");
 
-		this.shape = new Rectangle((int) transform.position.x, (int) transform.position.y, (int) transform.scale.x, (int) transform.scale.y);
+		this.shape = new Rectangle((int) transform.position.x, (int) transform.position.y, (int) transform.scale.x,
+				(int) transform.scale.y);
 	}
 
 	public void draw(Graphics g) {

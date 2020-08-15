@@ -3,11 +3,17 @@ package com.main;
 import com.engin.*;
 import com.engin.components.*;
 import com.engin.logger.*;
+import com.engin.GameObject;
+import com.engin.Renderer;
+import com.engin.Scene;
+import com.engin.components.MeshRenderer;
+import com.engin.components.Script;
+import com.engin.components.Transform;
 import com.engin.math.Vector;
 
 import java.awt.*;
+import java.util.ArrayList;
 import java.util.List;
-import java.util.*;
 
 public class Main {
 
@@ -52,9 +58,9 @@ class DebugScene extends Scene {
 
 		object.addComponent(new Script(object) {
 			@Override
-			public void update(float dt) {
+			public void run(float dt) {
 				var transform = (Transform) object.getComponent(Transform.class);
-				transform.position.x++;
+				transform.position.x += 1;
 			}
 		});
 
