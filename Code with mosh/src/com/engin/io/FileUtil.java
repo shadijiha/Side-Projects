@@ -3,9 +3,10 @@
  */
 package com.engin.io;
 
-import javax.swing.*;
+import com.engin.logger.*;
+
 import java.io.*;
-import java.util.Scanner;
+import java.util.*;
 
 public abstract class FileUtil {
 
@@ -31,7 +32,7 @@ public abstract class FileUtil {
 			return builder.toString();
 
 		} catch (IOException e) {
-			JOptionPane.showMessageDialog(null, e.toString(), "IO Error!", JOptionPane.ERROR_MESSAGE);
+			Debug.error(e);
 			return null;
 		}
 	}
@@ -49,7 +50,7 @@ public abstract class FileUtil {
 			writer = new PrintWriter(new FileOutputStream(path, append));
 			writer.print(data.toString());
 		} catch (IOException e) {
-			JOptionPane.showMessageDialog(null, e.getMessage(), "IO Error!", JOptionPane.ERROR_MESSAGE);
+			Debug.error(e);
 		} finally {
 			writer.close();
 		}
@@ -75,7 +76,7 @@ public abstract class FileUtil {
 			stream.writeObject(object);
 			stream.close();
 		} catch (IOException e) {
-			JOptionPane.showMessageDialog(null, e.toString(), "IO Error!", JOptionPane.ERROR_MESSAGE);
+			Debug.error(e);
 		}
 	}
 
@@ -88,7 +89,7 @@ public abstract class FileUtil {
 			objectIn.close();
 			return obj;
 		} catch (Exception e) {
-			JOptionPane.showMessageDialog(null, e.toString(), "IO Error!", JOptionPane.ERROR_MESSAGE);
+			Debug.error(e);
 			return null;
 		}
 	}

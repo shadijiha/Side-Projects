@@ -1,11 +1,10 @@
 package com.main;
 
-import com.engin.Renderer;
 import com.engin.*;
 import com.engin.components.*;
+import com.engin.logger.*;
 import com.engin.math.Vector;
 
-import javax.swing.*;
 import java.awt.*;
 import java.util.List;
 import java.util.*;
@@ -21,13 +20,14 @@ public class Main {
 
 			renderer.submit(new DebugScene());
 		} catch (Exception e) {
-			JOptionPane.showMessageDialog(null, e.toString(), "Runtime Error!", JOptionPane.ERROR_MESSAGE);
+			Debug.error(e);
 		}
 	}
 }
 
 class DebugScene extends Scene {
 
+	private static final long serialVersionUID = 3863558974487580979L;
 	private Renderer renderer;
 
 	List<GameObject> gameObjects;
@@ -47,14 +47,14 @@ class DebugScene extends Scene {
 		this.renderer = renderer;
 
 		GameObject object = GameObject.instantiate();
-		object.<Transform>getComponent().scale = new Vector(100, 100);
+		((Transform) object.getComponent(Transform.class)).scale = new Vector(100, 100);
 		object.addComponent(new MeshRenderer(object));
 
 		object.addComponent(new Script(object) {
 			@Override
 			public void update(float dt) {
 				var transform = (Transform) object.getComponent(Transform.class);
-				transform.position = new ImmutableVector(4, 1);
+				transform.position.x++;
 			}
 		});
 
@@ -70,7 +70,7 @@ class DebugScene extends Scene {
 	public void update(float dt) {
 
 		for (var object : gameObjects) {
-			var script = object.<Script>getComponent();
+			var script = (Script) object.getComponent(Script.class);
 			if (script != null)
 				script.update(dt);
 		}
@@ -85,7 +85,7 @@ class DebugScene extends Scene {
 	public void draw(Graphics g) {
 
 		for (var object : gameObjects) {
-			var meshRenderer = object.<MeshRenderer>getComponent();
+			var meshRenderer = (MeshRenderer) object.getComponent(MeshRenderer.class);
 			if (meshRenderer != null)
 				meshRenderer.draw(g);
 		}
