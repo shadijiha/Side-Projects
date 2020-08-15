@@ -11,6 +11,7 @@ public class Main {
 		renderer.start();
 
 		renderer.submit(new Enviroment());
+		renderer.submit(new PlayerLayer());
 	}
 
 }
