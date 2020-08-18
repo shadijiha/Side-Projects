@@ -3,6 +3,8 @@
  */
 package com.engin;
 
+import com.engin.logger.*;
+
 import java.awt.*;
 
 public abstract class Util {
@@ -97,5 +99,37 @@ public abstract class Util {
 			blue = 0;
 
 		return new Color(red, green, blue);
+	}
+
+	/**
+	 * Runs a task after delay
+	 * @param runnable The task to run
+	 * @param delayMilli The delay in milli seconds
+	 */
+	public static void setTimeout(Runnable runnable, long delayMilli) {
+		new Thread(() -> {
+			try {
+				Thread.sleep(delayMilli);
+				runnable.run();
+			} catch (Exception e) {
+				Debug.error(e);
+			}
+		}).start();
+	}
+
+	/**
+	 * Runs a task after delay
+	 * @param runnable The task to run
+	 * @param delaySeconds The delay in seconds
+	 */
+	public static void setTimeout(Runnable runnable, float delaySeconds) {
+		new Thread(() -> {
+			try {
+				Thread.sleep((long) (delaySeconds * 1000));
+				runnable.run();
+			} catch (Exception e) {
+				Debug.error(e);
+			}
+		}).start();
 	}
 }

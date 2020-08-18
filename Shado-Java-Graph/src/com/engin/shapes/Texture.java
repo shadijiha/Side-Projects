@@ -1,18 +1,15 @@
 package com.engin.shapes;
 
-import javax.imageio.ImageIO;
+import javax.imageio.*;
 import java.awt.*;
-import java.awt.image.BufferedImage;
-import java.awt.image.ImageObserver;
-import java.awt.image.ImageProducer;
-import java.io.File;
-import java.io.IOException;
+import java.awt.image.*;
+import java.io.*;
 
 public class Texture extends Image {
 
+	private final String path;
 	private int x;
 	private int y;
-	private final String path;
 
 	private final BufferedImage image;
 	private final int originalWidth;
@@ -65,7 +62,6 @@ public class Texture extends Image {
 
 	Texture(BufferedImage image) {
 		this.path = null;
-
 		this.image = image;
 		originalWidth = image.getWidth();
 		originalHeight = image.getHeight();

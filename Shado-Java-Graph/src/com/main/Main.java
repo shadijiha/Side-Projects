@@ -1,6 +1,7 @@
 package com.main;
 
-import com.engin.Renderer;
+import com.engin.*;
+import com.racingGame.*;
 
 public class Main {
 
@@ -10,8 +11,7 @@ public class Main {
 		var renderer = new Renderer();
 		renderer.start();
 
-		renderer.submit(new Enviroment());
-		renderer.submit(new PlayerLayer());
+		renderer.submit(new GlabalScene());
 	}
 
 }

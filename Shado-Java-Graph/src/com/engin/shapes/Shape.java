@@ -3,13 +3,11 @@
  */
 package com.engin.shapes;
 
-import com.engin.math.Coordinates;
 import com.engin.math.Dimension;
-import com.engin.math.ImmutableVector;
-import com.engin.math.Vector;
+import com.engin.math.*;
 
 import java.awt.*;
-import java.io.Serializable;
+import java.io.*;
 
 public abstract class Shape implements Serializable {
 
@@ -43,7 +41,7 @@ public abstract class Shape implements Serializable {
 	 * @param x The new X
 	 * @param y The new Y
 	 */
-	public void moveTo(int x, int y) {
+	public void moveTo(float x, float y) {
 		this.position.x = x;
 		this.position.y = y;
 	}
@@ -57,7 +55,7 @@ public abstract class Shape implements Serializable {
 	 * @param x The X to add
 	 * @param y The Y to add
 	 */
-	public void moveBy(int x, int y) {
+	public void moveBy(float x, float y) {
 		position.x += x;
 		position.y += y;
 	}
@@ -112,7 +110,7 @@ public abstract class Shape implements Serializable {
 	 * @param t
 	 */
 	public void setTexture(final Texture t) {
-		Texture temp = new Texture(t.getPath(), dimension.w, dimension.h);
+		var temp = new Texture(t.getPath(), dimension.w, dimension.h);
 		this.texture = temp;
 	}
 
