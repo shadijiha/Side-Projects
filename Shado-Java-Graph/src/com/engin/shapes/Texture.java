@@ -82,7 +82,9 @@ public class Texture extends Image {
 		g.drawImage(image, x, y, null);
 	}
 
-	/***************************** Getters and setters *******************************/
+	/*****************************
+	 * Getters and setters
+	 *******************************/
 	public Texture setPosition(int x, int y) {
 		this.x = x;
 		this.y = y;
@@ -112,13 +114,12 @@ public class Texture extends Image {
 	}
 
 	/**
-	 * Determines the width of the image. If the width is not yet known,
-	 * this method returns {@code -1} and the specified
-	 * {@code ImageObserver} object is notified later.
+	 * Determines the width of the image. If the width is not yet known, this method
+	 * returns {@code -1} and the specified {@code ImageObserver} object is notified
+	 * later.
 	 *
 	 * @param observer an object waiting for the image to be loaded.
-	 * @return the width of this image, or {@code -1}
-	 * if the width is not yet known.
+	 * @return the width of this image, or {@code -1} if the width is not yet known.
 	 * @see Image#getHeight
 	 * @see ImageObserver
 	 */
@@ -132,13 +133,13 @@ public class Texture extends Image {
 	}
 
 	/**
-	 * Determines the height of the image. If the height is not yet known,
-	 * this method returns {@code -1} and the specified
-	 * {@code ImageObserver} object is notified later.
+	 * Determines the height of the image. If the height is not yet known, this
+	 * method returns {@code -1} and the specified {@code ImageObserver} object is
+	 * notified later.
 	 *
 	 * @param observer an object waiting for the image to be loaded.
-	 * @return the height of this image, or {@code -1}
-	 * if the height is not yet known.
+	 * @return the height of this image, or {@code -1} if the height is not yet
+	 *         known.
 	 * @see Image#getWidth
 	 * @see ImageObserver
 	 */
@@ -152,12 +153,11 @@ public class Texture extends Image {
 	}
 
 	/**
-	 * Gets the object that produces the pixels for the image.
-	 * This method is called by the image filtering classes and by
-	 * methods that perform image conversion and scaling.
+	 * Gets the object that produces the pixels for the image. This method is called
+	 * by the image filtering classes and by methods that perform image conversion
+	 * and scaling.
 	 *
-	 * @return the image producer that produces the pixels
-	 * for this image.
+	 * @return the image producer that produces the pixels for this image.
 	 * @see ImageProducer
 	 */
 	@Override
@@ -166,12 +166,11 @@ public class Texture extends Image {
 	}
 
 	/**
-	 * Creates a graphics context for drawing to an off-screen image.
-	 * This method can only be called for off-screen images.
+	 * Creates a graphics context for drawing to an off-screen image. This method
+	 * can only be called for off-screen images.
 	 *
 	 * @return a graphics context to draw to the off-screen image.
-	 * @throws UnsupportedOperationException if called for a
-	 *                                       non-off-screen image.
+	 * @throws UnsupportedOperationException if called for a non-off-screen image.
 	 * @see Graphics
 	 * @see Component#createImage(int, int)
 	 */
@@ -183,17 +182,16 @@ public class Texture extends Image {
 	/**
 	 * Gets a property of this image by name.
 	 * <p>
-	 * Individual property names are defined by the various image
-	 * formats. If a property is not defined for a particular image, this
-	 * method returns the {@code UndefinedProperty} object.
+	 * Individual property names are defined by the various image formats. If a
+	 * property is not defined for a particular image, this method returns the
+	 * {@code UndefinedProperty} object.
 	 * <p>
-	 * If the properties for this image are not yet known, this method
-	 * returns {@code null}, and the {@code ImageObserver}
-	 * object is notified later.
+	 * If the properties for this image are not yet known, this method returns
+	 * {@code null}, and the {@code ImageObserver} object is notified later.
 	 * <p>
-	 * The property name {@code "comment"} should be used to store
-	 * an optional comment which can be presented to the application as a
-	 * description of the image, its source, or its author.
+	 * The property name {@code "comment"} should be used to store an optional
+	 * comment which can be presented to the application as a description of the
+	 * image, its source, or its author.
 	 *
 	 * @param name     a property name.
 	 * @param observer an object waiting for this image to be loaded.
@@ -205,9 +203,5 @@ public class Texture extends Image {
 	@Override
 	public Object getProperty(String name, ImageObserver observer) {
 		return image.getProperty(name, observer);
-	}
-
-	public String getPath() {
-		return path;
 	}
 }

@@ -13,7 +13,7 @@ public abstract class Shape implements Serializable {
 
 	private static final long serialVersionUID = 3183164399459748671L;
 
-	protected Vector position;
+	protected Vector2f position;
 	protected Dimension<Integer> dimension;
 	protected int lineWidth;
 
@@ -22,7 +22,7 @@ public abstract class Shape implements Serializable {
 	protected Texture texture;
 
 	private Shape(int x, int y, int w, int h, Texture t) {
-		this.position = new Vector(x, y);
+		this.position = new Vector2f(x, y);
 		this.dimension = new Dimension<>(w, h);
 		this.texture = t;
 		this.fill = Color.WHITE;
@@ -38,6 +38,7 @@ public abstract class Shape implements Serializable {
 
 	/**
 	 * Moves the shape to new location
+	 * 
 	 * @param x The new X
 	 * @param y The new Y
 	 */
@@ -46,12 +47,13 @@ public abstract class Shape implements Serializable {
 		this.position.y = y;
 	}
 
-	public void moveTo(Coordinates coordinates) {
-		moveTo((int) coordinates.getX(), (int) coordinates.getY());
+	public void moveTo(ICoordinates2F ICoordinates2F) {
+		moveTo((int) ICoordinates2F.getX(), (int) ICoordinates2F.getY());
 	}
 
 	/**
 	 * Increments the position of the object by the parameters passed
+	 * 
 	 * @param x The X to add
 	 * @param y The Y to add
 	 */
@@ -60,12 +62,13 @@ public abstract class Shape implements Serializable {
 		position.y += y;
 	}
 
-	public void moveBy(Coordinates coordinates) {
-		moveBy((int) coordinates.getX(), (int) coordinates.getY());
+	public void moveBy(ICoordinates2F ICoordinates2F) {
+		moveBy((int) ICoordinates2F.getX(), (int) ICoordinates2F.getY());
 	}
 
 	/**
 	 * Changes the fill of the shape
+	 * 
 	 * @param c The new Color
 	 */
 	public void setFill(Color c) {
@@ -74,6 +77,7 @@ public abstract class Shape implements Serializable {
 
 	/**
 	 * Changes the fill of the shape
+	 * 
 	 * @param c The new Color
 	 */
 	public void setStroke(Color c) {
@@ -82,6 +86,7 @@ public abstract class Shape implements Serializable {
 
 	/**
 	 * Changes the line width of the shape
+	 * 
 	 * @param c The new line Width
 	 */
 	public void setLineWidth(int c) {
@@ -90,6 +95,7 @@ public abstract class Shape implements Serializable {
 
 	/**
 	 * Changes the dimension of the shape
+	 * 
 	 * @param w
 	 * @param h
 	 */
@@ -107,6 +113,7 @@ public abstract class Shape implements Serializable {
 
 	/**
 	 * Changes the texture of the object
+	 * 
 	 * @param t
 	 */
 	public void setTexture(final Texture t) {
@@ -125,7 +132,7 @@ public abstract class Shape implements Serializable {
 	/**
 	 * @return Returns a deep copy of the position of this shape
 	 */
-	public ImmutableVector getPosition() {
+	public ImmutableVec2f getPosition() {
 		return position.toImmutableVector();
 	}
 

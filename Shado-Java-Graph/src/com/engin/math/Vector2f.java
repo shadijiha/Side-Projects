@@ -5,21 +5,21 @@ package com.engin.math;
 
 import java.util.HashMap;
 
-public class Vector implements Coordinates {
+public class Vector2f implements ICoordinates2F {
 
 	public float x;
 	public float y;
 
-	public Vector(float x, float y) {
+	public Vector2f(float x, float y) {
 		this.x = x;
 		this.y = y;
 	}
 
-	public Vector() {
+	public Vector2f() {
 		this(0.0f, 0.0f);
 	}
 
-	public Vector(final Vector v) {
+	public Vector2f(final Vector2f v) {
 		this(v.x, v.y);
 	}
 
@@ -28,8 +28,8 @@ public class Vector implements Coordinates {
 	 * @param b The other point
 	 * @return Return the distance between the calling point and "b"
 	 */
-	public double distance(Vector b) {
-		return Vector.distance(this, b);
+	public double distance(Vector2f b) {
+		return Vector2f.distance(this, b);
 	}
 
 	/**
@@ -38,7 +38,7 @@ public class Vector implements Coordinates {
 	 * @param b The second point
 	 * @return Returns the distance between the 2 points
 	 */
-	public static double distance(Vector a, Vector b) {
+	public static double distance(Vector2f a, Vector2f b) {
 		return Math.sqrt(Math.pow(b.x - a.x, 2) + Math.pow(b.y - a.y, 2));
 	}
 
@@ -46,8 +46,8 @@ public class Vector implements Coordinates {
 	 * Converts the vector to an immutable vector
 	 * @return
 	 */
-	public ImmutableVector toImmutableVector() {
-		return new ImmutableVector(x, y);
+	public ImmutableVec2f toImmutableVector() {
+		return new ImmutableVec2f(x, y);
 	}
 
 	/**
@@ -101,7 +101,7 @@ public class Vector implements Coordinates {
 		if (obj == null || obj.getClass() != this.getClass()) {
 			return false;
 		} else {
-			var v = (Vector) obj;
+			var v = (Vector2f) obj;
 			return v.x == x && v.y == y;
 		}
 	}
@@ -167,9 +167,9 @@ public class Vector implements Coordinates {
 	 * @see Cloneable
 	 */
 	@Override
-	public Vector clone() {
+	public Vector2f clone() {
 		try {
-			Vector v = (Vector) super.clone();
+			Vector2f v = (Vector2f) super.clone();
 			v.x = this.x;
 			v.y = this.y;
 			return v;

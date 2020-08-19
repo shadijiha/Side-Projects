@@ -3,26 +3,22 @@
  */
 package com.engin.math;
 
-public class ImmutableVector implements Coordinates {
+public class ImmutableVec2f implements ICoordinates2F {
 
 	public final float x;
 	public final float y;
 
-	public ImmutableVector(float x, float y) {
+	public ImmutableVec2f(float x, float y) {
 		this.x = x;
 		this.y = y;
 	}
 
-	public ImmutableVector() {
+	public ImmutableVec2f() {
 		this(0.0f, 0.0f);
 	}
 
-	public ImmutableVector(final Vector v) {
-		this(v.x, v.y);
-	}
-
-	public ImmutableVector(final ImmutableVector immutableVertex) {
-		this(immutableVertex.x, immutableVertex.y);
+	public ImmutableVec2f(final ICoordinates2F v) {
+		this(v.getX(), v.getY());
 	}
 
 	/**
@@ -30,8 +26,14 @@ public class ImmutableVector implements Coordinates {
 	 * @param b The other point
 	 * @return Return the distance between the calling point and "b"
 	 */
-	public double distance(ImmutableVector b) {
-		return ImmutableVector.distance(this, b);
+	@Override
+	public double distance(ICoordinates2F b) {
+		return ImmutableVec2f.distance(this, new ImmutableVec2f(b));
+	}
+
+	@Override
+	public double mag() {
+		return Math.sqrt(x * x + y * y);
 	}
 
 	/**
@@ -40,7 +42,7 @@ public class ImmutableVector implements Coordinates {
 	 * @param b The second point
 	 * @return Returns the distance between the 2 points
 	 */
-	public static double distance(ImmutableVector a, ImmutableVector b) {
+	public static double distance(ImmutableVec2f a, ImmutableVec2f b) {
 		return Math.sqrt(Math.pow(b.x - a.x, 2) + Math.pow(b.y - a.y, 2));
 	}
 
@@ -48,8 +50,8 @@ public class ImmutableVector implements Coordinates {
 	 * Converts an immutable vertex to a vertex
 	 * @return
 	 */
-	public Vector toVertex() {
-		return new Vector(x, y);
+	public Vector2f toVector() {
+		return new Vector2f(x, y);
 	}
 
 	/**
@@ -102,11 +104,11 @@ public class ImmutableVector implements Coordinates {
 		if (obj == null) {
 			return false;
 		}
-		if (obj.getClass() == Vector.class) {
-			var v = (Vector) obj;
+		if (obj.getClass() == Vector2f.class) {
+			var v = (Vector2f) obj;
 			return v.x == x && v.y == y;
 		} else if (obj.getClass() == this.getClass()) {
-			var v = (ImmutableVector) obj;
+			var v = (ImmutableVec2f) obj;
 			return v.x == x && v.y == y;
 		} else {
 			return false;
@@ -174,8 +176,8 @@ public class ImmutableVector implements Coordinates {
 	 * @see Cloneable
 	 */
 	@Override
-	public ImmutableVector clone() {
-		return new ImmutableVector(this);
+	public ImmutableVec2f clone() {
+		return new ImmutableVec2f(this);
 	}
 
 	/**
