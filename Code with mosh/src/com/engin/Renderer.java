@@ -3,6 +3,8 @@
  */
 package com.engin;
 
+import com.engin.ui.UIManager;
+
 import javax.swing.*;
 import java.awt.*;
 import java.util.List;
@@ -73,6 +75,9 @@ public final class Renderer extends JPanel {
 
 		drawThread.start();
 		updateThread.start();
+
+		// Add the UI layer
+		this.submit(UIManager.singleton, Integer.MAX_VALUE);
 	}
 
 	private void updateComponent() {

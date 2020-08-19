@@ -87,7 +87,7 @@ class ExampleScene extends Scene {
 	 */
 	@Override
 	public void mouseClicked(MouseEvent e) {
-		AudioManager.submit("kayle-morgana-the-righteous-the-fallen-login-screen-league-of-legends.wav");
+		//AudioManager.submit("kayle-morgana-the-righteous-the-fallen-login-screen-league-of-legends.wav");
 	}
 }
 
@@ -98,6 +98,7 @@ public class Example {
 		Renderer renderer = new Renderer();
 		renderer.start();
 		renderer.submit(new ExampleScene());
+		renderer.submit(new UITest());
 	}
 }
 
