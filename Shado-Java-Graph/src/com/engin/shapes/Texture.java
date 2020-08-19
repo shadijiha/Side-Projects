@@ -12,15 +12,12 @@ public class Texture extends Image {
 
 	private int x;
 	private int y;
-	private final String path;
 
 	private final BufferedImage image;
 	private final int originalWidth;
 	private final int originalHeight;
 
 	public Texture(String path, int desiredwidth, int desiredHeight) {
-		this.path = path;
-
 		int originalHeight1;
 		int originalWidth1;
 		BufferedImage image1;
@@ -43,8 +40,6 @@ public class Texture extends Image {
 	}
 
 	public Texture(String path) {
-		this.path = path;
-
 		int originalHeight1;
 		int originalWidth1;
 		BufferedImage image1;
@@ -64,8 +59,6 @@ public class Texture extends Image {
 	}
 
 	Texture(BufferedImage image) {
-		this.path = null;
-
 		this.image = image;
 		originalWidth = image.getWidth();
 		originalHeight = image.getHeight();
@@ -209,9 +202,5 @@ public class Texture extends Image {
 	@Override
 	public Object getProperty(String name, ImageObserver observer) {
 		return image.getProperty(name, observer);
-	}
-
-	public String getPath() {
-		return path;
 	}
 }

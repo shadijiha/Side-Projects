@@ -3,10 +3,10 @@
  */
 package com.engin.shapes;
 
-import com.engin.math.Coordinates;
 import com.engin.math.Dimension;
-import com.engin.math.ImmutableVector;
-import com.engin.math.Vector;
+import com.engin.math.ICoordinates2F;
+import com.engin.math.ImmutableVec2f;
+import com.engin.math.Vector2f;
 
 import java.awt.*;
 import java.io.Serializable;
@@ -15,7 +15,7 @@ public abstract class Shape implements Serializable {
 
 	private static final long serialVersionUID = 3183164399459748671L;
 
-	protected Vector position;
+	protected Vector2f position;
 	protected Dimension<Integer> dimension;
 	protected int lineWidth;
 
@@ -24,7 +24,7 @@ public abstract class Shape implements Serializable {
 	protected Texture texture;
 
 	private Shape(int x, int y, int w, int h, Texture t) {
-		this.position = new Vector(x, y);
+		this.position = new Vector2f(x, y);
 		this.dimension = new Dimension<>(w, h);
 		this.texture = t;
 		this.fill = Color.WHITE;
@@ -48,8 +48,8 @@ public abstract class Shape implements Serializable {
 		this.position.y = y;
 	}
 
-	public void moveTo(Coordinates coordinates) {
-		moveTo((int) coordinates.getX(), (int) coordinates.getY());
+	public void moveTo(ICoordinates2F ICoordinates2F) {
+		moveTo((int) ICoordinates2F.getX(), (int) ICoordinates2F.getY());
 	}
 
 	/**
@@ -62,8 +62,8 @@ public abstract class Shape implements Serializable {
 		position.y += y;
 	}
 
-	public void moveBy(Coordinates coordinates) {
-		moveBy((int) coordinates.getX(), (int) coordinates.getY());
+	public void moveBy(ICoordinates2F ICoordinates2F) {
+		moveBy((int) ICoordinates2F.getX(), (int) ICoordinates2F.getY());
 	}
 
 	/**
@@ -112,8 +112,7 @@ public abstract class Shape implements Serializable {
 	 * @param t
 	 */
 	public void setTexture(final Texture t) {
-		Texture temp = new Texture(t.getPath(), dimension.w, dimension.h);
-		this.texture = temp;
+		this.texture = t;
 	}
 
 	public void setTexture(final String path) {
@@ -127,7 +126,7 @@ public abstract class Shape implements Serializable {
 	/**
 	 * @return Returns a deep copy of the position of this shape
 	 */
-	public ImmutableVector getPosition() {
+	public ImmutableVec2f getPosition() {
 		return position.toImmutableVector();
 	}
 

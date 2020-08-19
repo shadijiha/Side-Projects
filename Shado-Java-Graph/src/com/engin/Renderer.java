@@ -5,8 +5,8 @@ package com.engin;
 
 import javax.swing.*;
 import java.awt.*;
-import java.util.ArrayList;
 import java.util.List;
+import java.util.*;
 
 public final class Renderer extends JPanel {
 

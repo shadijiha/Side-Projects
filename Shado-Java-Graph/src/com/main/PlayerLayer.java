@@ -47,9 +47,7 @@ public class PlayerLayer extends Scene {
 	 */
 	@Override
 	public void draw(Graphics g) {
-
 		player.draw(g);
-
 	}
 
 	/**
