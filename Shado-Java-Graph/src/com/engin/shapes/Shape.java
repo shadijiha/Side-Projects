@@ -4,12 +4,10 @@
 package com.engin.shapes;
 
 import com.engin.math.Dimension;
-import com.engin.math.ICoordinates2F;
-import com.engin.math.ImmutableVec2f;
-import com.engin.math.Vector2f;
+import com.engin.math.*;
 
 import java.awt.*;
-import java.io.Serializable;
+import java.io.*;
 
 public abstract class Shape implements Serializable {
 
@@ -40,10 +38,11 @@ public abstract class Shape implements Serializable {
 
 	/**
 	 * Moves the shape to new location
+	 * 
 	 * @param x The new X
 	 * @param y The new Y
 	 */
-	public void moveTo(int x, int y) {
+	public void moveTo(float x, float y) {
 		this.position.x = x;
 		this.position.y = y;
 	}
@@ -54,10 +53,11 @@ public abstract class Shape implements Serializable {
 
 	/**
 	 * Increments the position of the object by the parameters passed
+	 * 
 	 * @param x The X to add
 	 * @param y The Y to add
 	 */
-	public void moveBy(int x, int y) {
+	public void moveBy(float x, float y) {
 		position.x += x;
 		position.y += y;
 	}
@@ -68,6 +68,7 @@ public abstract class Shape implements Serializable {
 
 	/**
 	 * Changes the fill of the shape
+	 * 
 	 * @param c The new Color
 	 */
 	public void setFill(Color c) {
@@ -76,6 +77,7 @@ public abstract class Shape implements Serializable {
 
 	/**
 	 * Changes the fill of the shape
+	 * 
 	 * @param c The new Color
 	 */
 	public void setStroke(Color c) {
@@ -84,6 +86,7 @@ public abstract class Shape implements Serializable {
 
 	/**
 	 * Changes the line width of the shape
+	 * 
 	 * @param c The new line Width
 	 */
 	public void setLineWidth(int c) {
@@ -92,6 +95,7 @@ public abstract class Shape implements Serializable {
 
 	/**
 	 * Changes the dimension of the shape
+	 * 
 	 * @param w
 	 * @param h
 	 */
@@ -109,10 +113,12 @@ public abstract class Shape implements Serializable {
 
 	/**
 	 * Changes the texture of the object
+	 * 
 	 * @param t
 	 */
 	public void setTexture(final Texture t) {
-		this.texture = t;
+		var temp = new Texture(t.getPath(), dimension.w, dimension.h);
+		this.texture = temp;
 	}
 
 	public void setTexture(final String path) {

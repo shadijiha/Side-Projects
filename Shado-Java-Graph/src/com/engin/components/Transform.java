@@ -3,6 +3,8 @@
  */
 package com.engin.components;
 
+import com.engin.*;
+import com.engin.math.*;
 import com.engin.GameObject;
 import com.engin.math.Vector2f;
 
@@ -40,6 +42,11 @@ public final class Transform extends EntityComponent {
 	 * getClass().getName() + '@' + Integer.toHexString(hashCode())
 	 * </pre>
 	 *
+	 * 
+	 * <pre>
+	 * getClass().getName() + '@' + Integer.toHexString(hashCode())
+	 * </pre>
+	 * 
 	 * </blockquote>
 	 *
 	 * @return a string representation of the object.

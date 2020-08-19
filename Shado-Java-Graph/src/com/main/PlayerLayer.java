@@ -3,21 +3,32 @@
  */
 package com.main;
 
-import com.engin.Renderer;
-import com.engin.Scene;
+import com.engin.*;
 import com.engin.shapes.Rectangle;
 
 import java.awt.*;
-import java.awt.event.KeyEvent;
+import java.awt.event.*;
 
 public class PlayerLayer extends Scene {
 
 	private final Rectangle player;
 
+	private float velocity = 0f;
+	private float gravity = 0.1f;
+	private float lift = -5f;
+
+	private float h;
+	private float w;
+
+	private Renderer renderer;
+
 	public PlayerLayer() {
 		super("PlayerLayer");
 		player = new Rectangle(0, 0, 100, 100);
 		player.setFill(Color.PINK);
+
+		this.w = player.getDimension().w;
+		this.h = player.getDimension().h;
 	}
 
 	/**
@@ -27,7 +38,9 @@ public class PlayerLayer extends Scene {
 	 */
 	@Override
 	public void init(Renderer renderer) {
+		this.renderer = renderer;
 
+		player.moveBy(renderer.getWidth() / 4.0f, 0);
 	}
 
 	/**
@@ -37,7 +50,7 @@ public class PlayerLayer extends Scene {
 	 */
 	@Override
 	public void update(float dt) {
-
+		this.force();
 	}
 
 	/**
@@ -59,6 +72,38 @@ public class PlayerLayer extends Scene {
 	@Override
 	public void keyPressed(KeyEvent e) {
 		if (e.getKeyCode() == KeyEvent.VK_D)
-			player.moveBy(5, 0);
+			Enviroment.singleton.moveObjects(-10);
+		if (e.getKeyCode() == KeyEvent.VK_A)
+			Enviroment.singleton.moveObjects(10);
+		if (e.getKeyCode() == KeyEvent.VK_W)
+			jump();
+	}
+
+	private void force() {
+		this.velocity += this.gravity;
+
+		player.moveBy(0f, this.velocity);
+
+		if (player.getPosition().y > Enviroment.GROUND_LEVEL - this.h) {
+			player.moveTo(player.getPosition().x, Enviroment.GROUND_LEVEL - this.h);
+			this.velocity = 0;
+		}
+
+		if (player.getPosition().y < 0) {
+			player.moveTo(player.getPosition().x, 0);
+			this.velocity = 0;
+		}
+	}
+
+	private void jump() {
+//		if (
+//				this.energy > this.jumpCost &&
+//						this.hp > 0 &&
+//						!this.stunned &&
+//						!this.rooted
+//		) {
+		this.velocity += this.lift;
+		//this.energy -= this.jumpCost;
+		//}
 	}
 }
