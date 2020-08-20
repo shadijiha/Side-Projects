@@ -1,14 +1,17 @@
 package com.main;
 
-import com.engin.*;
-import com.engin.audio.*;
-import com.engin.components.*;
+import com.engin.GameObject;
+import com.engin.Renderer;
+import com.engin.Scene;
+import com.engin.components.MeshRenderer;
+import com.engin.components.Script;
+import com.engin.components.Transform;
 import com.engin.math.Vector;
 
 import java.awt.*;
-import java.awt.event.*;
+import java.awt.event.MouseEvent;
+import java.util.ArrayList;
 import java.util.List;
-import java.util.*;
 
 class ExampleScene extends Scene {
 
@@ -59,9 +62,7 @@ class ExampleScene extends Scene {
 			if (script != null)
 				script.run(dt);
 		}
-
-		String title = AudioManager.isPlaying() ? "Audio is playing" : "No Audio playing";
-		renderer.getWindow().setTitle(title);
+		renderer.getWindow().setTitle((int) (1f / dt) + "");
 	}
 
 	/**

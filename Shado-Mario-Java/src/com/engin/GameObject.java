@@ -3,9 +3,11 @@
  */
 package com.engin;
 
-import com.engin.components.*;
+import com.engin.components.EntityComponent;
+import com.engin.components.Transform;
 
-import java.util.*;
+import java.util.HashSet;
+import java.util.Set;
 
 public class GameObject {
 
@@ -25,7 +27,7 @@ public class GameObject {
 
 	/**
 	 * Adds a new Component to the object
-	 * 
+	 *
 	 * @param component the new component to add
 	 */
 	public void addComponent(EntityComponent component) {
@@ -34,7 +36,7 @@ public class GameObject {
 
 	/**
 	 * Removes a component from the Game object <<<<<<< HEAD
-	 * 
+	 *
 	 * @param <T> The component class to remove
 	 * @return Returns the deleted component
 	 */
@@ -64,7 +66,7 @@ public class GameObject {
 
 	/**
 	 * Finds a component of the object and returns it
-	 * 
+	 *
 	 * @param <T> The class of the component to find
 	 * @return Returns null if no component was found or The component if it was
 	 *         found
@@ -78,7 +80,7 @@ public class GameObject {
 			} catch (ClassCastException ignored) {
 			}
 		}
-		return result;
+		return null;
 	}
 
 	public EntityComponent getComponent(Class<?> _class) {
@@ -97,9 +99,9 @@ public class GameObject {
 
 	/**
 	 * Changes the name of the object <<<<<<< HEAD
-	 * 
+	 *
 	 * ======= >>>>>>> d87143804e46f8a3c741b4772cf11ffa313b795a
-	 * 
+	 *
 	 * @param name The new name
 	 */
 	public final void setName(String name) {
@@ -122,9 +124,9 @@ public class GameObject {
 
 	/**
 	 * Finds if the object has a specific tag <<<<<<< HEAD
-	 * 
+	 *
 	 * ======= >>>>>>> d87143804e46f8a3c741b4772cf11ffa313b795a
-	 * 
+	 *
 	 * @param tag the tag to search
 	 * @returns Returns true if the object is tagged as such
 	 */

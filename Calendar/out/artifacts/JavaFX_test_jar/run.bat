@@ -1,1 +1,0 @@
-java -jar JavaFX_test.jar
