@@ -1,9 +1,12 @@
 package com.engin.shapes;
 
-import javax.imageio.*;
+import javax.imageio.ImageIO;
 import java.awt.*;
-import java.awt.image.*;
-import java.io.*;
+import java.awt.image.BufferedImage;
+import java.awt.image.ImageObserver;
+import java.awt.image.ImageProducer;
+import java.io.File;
+import java.io.IOException;
 
 public class Texture extends Image {
 
@@ -139,7 +142,7 @@ public class Texture extends Image {
 	 *
 	 * @param observer an object waiting for the image to be loaded.
 	 * @return the height of this image, or {@code -1} if the height is not yet
-	 *         known.
+	 * known.
 	 * @see Image#getWidth
 	 * @see ImageObserver
 	 */
@@ -203,5 +206,9 @@ public class Texture extends Image {
 	@Override
 	public Object getProperty(String name, ImageObserver observer) {
 		return image.getProperty(name, observer);
+	}
+
+	public String getPath() {
+		return path;
 	}
 }
