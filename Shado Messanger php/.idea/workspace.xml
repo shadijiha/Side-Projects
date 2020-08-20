@@ -2,12 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fca8372c-cdd6-4df5-8e67-39ef78128b94" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/client/autocomplete.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/autocomplete.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/autocomplete.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/autocomplete.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/compose.php" beforeDir="false" afterPath="$PROJECT_DIR$/client/compose.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/client/index.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/phpfiles/util.php" beforeDir="false" afterPath="$PROJECT_DIR$/phpfiles/util.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,6 +51,9 @@
       <option name="presentableId" value="Default" />
       <updated>1597536183496</updated>
       <workItem from="1597536184681" duration="8636000" />
+      <workItem from="1597877884152" duration="2849000" />
+      <workItem from="1597880938154" duration="771000" />
+      <workItem from="1597897291854" duration="563000" />
     </task>
     <servers />
   </component>

@@ -1,7 +1,8 @@
 <?php
-session_start();
 require_once('../phpfiles/config.php');
-//phpinfo();
+include '../phpfiles/util.php';     // THIS HAS TO BE HERE BEFORE SESSION START
+
+session_start();
 ?>
 <html lang="fr">
 
@@ -14,7 +15,7 @@ require_once('../phpfiles/config.php');
 
     <!-- See if a user is already login in -->
     <?php
-    if (unserialize($_SESSION['user']) == null || unserialize($_SESSION['user']) == "") {
+    if ($_SESSION['user'] == null || $_SESSION['user'] == "") {
         echo "<script>window.location.href = 'login.php';</script>";
     }
     ?>
@@ -42,15 +43,12 @@ require_once('../phpfiles/config.php');
         $result = $conn->query($query);
         $array = array();
         while ($row = $result->fetch_assoc()) {
-            array_push(
-                $array,
-                $row['username']
-            );
+            $array[$row['username']] = $row['color'];
         }
 
         // Convert php array to javascript array
-        for ($i = 0; $i < count($array); $i++) {
-            echo "users.push('$array[$i]');\n";
+        foreach ($array as $k => $v) {
+            echo "users.push({username: '$k', color: '$v'});\n";
         }
 
         ?>
@@ -122,15 +120,16 @@ require_once('../phpfiles/config.php');
 
             HandleAutoCompleteClick = (element) => {
                 // Add to buffer
-                document.getElementById("recepients_buffer").value += element + ",";
-                document.getElementById("receipients").innerHTML += `<div class="receipient_display" id="receipiant_${element}">${element}</div>`;
 
-                document.getElementById("receipiant_" + element).addEventListener("click", function () {
+                document.getElementById("recepients_buffer").value += element.username + ",";
+                document.getElementById("receipients").innerHTML += `<div class="receipient_display" style="background-color: ${element.color};" id="receipiant_${element.username}">${element.username}</div>`;
+
+                document.getElementById("receipiant_" + element.username).addEventListener("click", function () {
 
                     // Remove from buffer
-                    document.getElementById("recepients_buffer").value = document.getElementById("recepients_buffer").value.replace(element + ",", "");
+                    document.getElementById("recepients_buffer").value = document.getElementById("recepients_buffer").value.replace(element.username + ",", "");
 
-                    document.getElementById("receipiant_" + element).remove();
+                    document.getElementById("receipiant_" + element.username).remove();
                 });
             }
 
@@ -144,7 +143,6 @@ require_once('../phpfiles/config.php');
 </div>
 
 <?php
-include '../phpfiles/util.php';
 
 if (isset($_POST['logout'])) {
     Logout();
@@ -153,10 +151,7 @@ if (isset($_POST['logout'])) {
 // Sending a message
 if (isset($_POST['send_message'])) {
 
-    $temp = unserialize($_SESSION['user']);
-    var_dump($temp);
-
-    $author = $temp->username;
+    $author = $_SESSION['user'];
     $recepients = $_POST['recepients_buffer'];
     $date = $_POST['date_value'];
     $content = $_POST['message_content'];
