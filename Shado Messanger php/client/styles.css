@@ -139,12 +139,12 @@ textarea[name="message_content"] {
 .receipient_display {
     background-color: rgb(19, 47, 150);
     color: white;
-    padding: 20px;
+    padding: 10px;
     border-radius: 30px;
     min-width: 50px;
     text-align: center;
     display: inline-block;
-    margin-left: 20px;
+    margin-left: 10px;
 }
 
 #new_message img {

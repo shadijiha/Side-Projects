@@ -43,15 +43,12 @@ session_start();
         $result = $conn->query($query);
         $array = array();
         while ($row = $result->fetch_assoc()) {
-            array_push(
-                $array,
-                $row['username']
-            );
+            $array[$row['username']] = $row['color'];
         }
 
         // Convert php array to javascript array
-        for ($i = 0; $i < count($array); $i++) {
-            echo "users.push('$array[$i]');\n";
+        foreach ($array as $k => $v) {
+            echo "users.push({username: '$k', color: '$v'});\n";
         }
 
         ?>
@@ -123,15 +120,16 @@ session_start();
 
             HandleAutoCompleteClick = (element) => {
                 // Add to buffer
-                document.getElementById("recepients_buffer").value += element + ",";
-                document.getElementById("receipients").innerHTML += `<div class="receipient_display" id="receipiant_${element}">${element}</div>`;
 
-                document.getElementById("receipiant_" + element).addEventListener("click", function () {
+                document.getElementById("recepients_buffer").value += element.username + ",";
+                document.getElementById("receipients").innerHTML += `<div class="receipient_display" style="background-color: ${element.color};" id="receipiant_${element.username}">${element.username}</div>`;
+
+                document.getElementById("receipiant_" + element.username).addEventListener("click", function () {
 
                     // Remove from buffer
-                    document.getElementById("recepients_buffer").value = document.getElementById("recepients_buffer").value.replace(element + ",", "");
+                    document.getElementById("recepients_buffer").value = document.getElementById("recepients_buffer").value.replace(element.username + ",", "");
 
-                    document.getElementById("receipiant_" + element).remove();
+                    document.getElementById("receipiant_" + element.username).remove();
                 });
             }
 
