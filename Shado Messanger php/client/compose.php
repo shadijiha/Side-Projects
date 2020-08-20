@@ -1,7 +1,8 @@
 <?php
-session_start();
 require_once('../phpfiles/config.php');
-//phpinfo();
+include '../phpfiles/util.php';     // THIS HAS TO BE HERE BEFORE SESSION START
+
+session_start();
 ?>
 <html lang="fr">
 
@@ -14,7 +15,7 @@ require_once('../phpfiles/config.php');
 
     <!-- See if a user is already login in -->
     <?php
-    if (unserialize($_SESSION['user']) == null || unserialize($_SESSION['user']) == "") {
+    if ($_SESSION['user'] == null || $_SESSION['user'] == "") {
         echo "<script>window.location.href = 'login.php';</script>";
     }
     ?>
@@ -144,7 +145,6 @@ require_once('../phpfiles/config.php');
 </div>
 
 <?php
-include '../phpfiles/util.php';
 
 if (isset($_POST['logout'])) {
     Logout();
@@ -153,10 +153,7 @@ if (isset($_POST['logout'])) {
 // Sending a message
 if (isset($_POST['send_message'])) {
 
-    $temp = unserialize($_SESSION['user']);
-    var_dump($temp);
-
-    $author = $temp->username;
+    $author = $_SESSION['user'];
     $recepients = $_POST['recepients_buffer'];
     $date = $_POST['date_value'];
     $content = $_POST['message_content'];
