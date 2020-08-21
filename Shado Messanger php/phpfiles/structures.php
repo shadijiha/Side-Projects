@@ -52,4 +52,16 @@ class Message
     }
 }
 
+class Team  {
+    public $id;
+    public $admin;
+    public $members;
+
+    function __construct(int $_id, User $_admin, array $_members) {
+        $this->id = $_id;
+        $this->admin = $_admin;
+        $this->members = $_members;
+    }
+}
+
 ?>

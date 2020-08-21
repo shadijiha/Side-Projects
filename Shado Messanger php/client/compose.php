@@ -20,15 +20,8 @@ session_start();
     }
     ?>
 
+    <script src="./fixOffset.js"></script>
     <script>
-        window.addEventListener("load", function () {
-
-            const div = document.getElementById("all_messages");
-            div.style.position = "absolute";
-            div.style.left = document.getElementById("main_panel").offsetWidth + 50 + "px";
-
-        });
-
         const users = [];
 
         <?php
@@ -119,11 +112,21 @@ session_start();
             }, 1000);
 
             HandleAutoCompleteClick = (element) => {
-                // Add to buffer
 
+                // See if the buffer already contains that receipiant
+                if (document.getElementById("recepients_buffer").value.includes(element.username + ","))
+                    return;
+
+                // Add to buffer                
                 document.getElementById("recepients_buffer").value += element.username + ",";
+
+                // Add to the HTML page
                 document.getElementById("receipients").innerHTML += `<div class="receipient_display" style="background-color: ${element.color};" id="receipiant_${element.username}">${element.username}</div>`;
 
+                // Clear the input
+                document.getElementById("receipients_input").value = "";
+
+                // Add the delete functionality
                 document.getElementById("receipiant_" + element.username).addEventListener("click", function () {
 
                     // Remove from buffer
