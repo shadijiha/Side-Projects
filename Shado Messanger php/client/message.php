@@ -43,7 +43,7 @@ session_start();
 		} else	{
 
 			// See if User has the permission
-			if (strpos($message->tags, $_SESSION['user']->username . ",") === false || strcmp($_SESSION['user']->username, $message->author) !== 0)	{
+			if (strpos($message->tags, $_SESSION['user']->username . ",") === false && strcmp($_SESSION['user']->username, $message->author) !== 0)	{
 				echo "<div style='text-align: center; margin: 20%;'>Je ne sais pas comment vous vous êtes rendu là. Mais vous n'avez pas la permission de voir ce message</div>";
 				exit();
 			}
