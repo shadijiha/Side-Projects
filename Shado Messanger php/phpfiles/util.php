@@ -70,7 +70,38 @@ function Logout()
 {
     $_SESSION['user'] = null;
 
-    echo "<script>window.location.href = 'login.php';";
+    echo "<script>window.location.href = 'login.php';</script>";
+}
+
+function GetAllUsers(): ?array
+{
+    // Create connection
+    //$conn = new mysqli($servername, $username, $password, $dbname);
+    // Check connection
+    $conn = $GLOBALS['conn'];
+    if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
+    }
+
+    $sql = "SELECT * FROM `users`";
+
+    $result = $conn->query($sql);
+    $array = array();
+
+    if ($result) {
+
+        while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
+            array_push(
+                $array,
+                new User($row['id'], $row['username'], $row['password'], $row['date'], $row['admin'], $row['color'])
+            );
+        }
+
+        // output data of each row
+        return $array;
+    } else {
+        return null;
+    }
 }
 
 function GetUserByName(string $username): ?User
@@ -101,15 +132,16 @@ function GetUserByName(string $username): ?User
         // output data of each row
         if (count($array) > 0)
             return $array[0];
-        else   
+        else
             return null;
     } else {
         return null;
     }
 }
 
-function GetMessageById(string $id): ?Message   {
-       // Create connection
+function GetMessageById(string $id): ?Message
+{
+    // Create connection
     //$conn = new mysqli($servername, $username, $password, $dbname);
     // Check connection
     $conn = $GLOBALS['conn'];
@@ -135,7 +167,7 @@ function GetMessageById(string $id): ?Message   {
         return $array[0];
     } else {
         return null;
-    } 
+    }
 }
 
 function AddMessage(User $user, string $title, string $content, string $tags, string $date): ?Message
@@ -203,11 +235,12 @@ function GetMessageToUser(User $user): ?array
 
 }
 
-function DisplayMessage(Message $message, string $color): void    {
+function DisplayMessage(Message $message, string $color): void
+{
 
     // Cut the message content if it is too big
     $tempContent = $message->content;
-    if (strlen($message->content) > 60)    {
+    if (strlen($message->content) > 60) {
         $tempContent = substr($message->content, 0, 60) . "... <br /><br />[Cliquez pour le message complet]";
     }
 
@@ -243,7 +276,8 @@ function DisplayMessage(Message $message, string $color): void    {
             </div>";
 }
 
-function FormatDate(int $date): string  {
+function FormatDate(int $date): string
+{
     return "<script>
             var d = new Date($date);
             dformat = [d.getMonth()+1,
@@ -257,7 +291,8 @@ function FormatDate(int $date): string  {
         </script>";
 }
 
-function DeleteMessage(int $id): void   {
+function DeleteMessage(int $id): void
+{
 
     $conn = $GLOBALS['conn'];
 
@@ -266,13 +301,14 @@ function DeleteMessage(int $id): void   {
 
     if ($conn->query($query) === TRUE) {
         echo "Record deleted successfully";
-      } else {
+    } else {
         echo "Error deleting record: " . $conn->error;
-      } 
+    }
 
 }
 
-function GetTeamsOf(User $user): ?array  {
+function GetTeamsOf(User $user): ?array
+{
 
     $conn = $GLOBALS['conn'];
 
@@ -291,7 +327,7 @@ function GetTeamsOf(User $user): ?array  {
             $members = array();
             $rawMembers = explode(",", $row['members']);
 
-            foreach($rawMembers as $val)    {
+            foreach ($rawMembers as $val) {
                 array_push($members, GetUserByName(trim($val)));
             }
 
@@ -303,28 +339,30 @@ function GetTeamsOf(User $user): ?array  {
 
 }
 
-function GetPreferableFontColor(string $hex)  {
+function GetPreferableFontColor(string $hex)
+{
 
     $hex = str_replace("#", "", $hex);
 
-    if(strlen($hex) == 3) {
-       $r = hexdec(substr($hex,0,1).substr($hex,0,1));
-       $g = hexdec(substr($hex,1,1).substr($hex,1,1));
-       $b = hexdec(substr($hex,2,1).substr($hex,2,1));
+    if (strlen($hex) == 3) {
+        $r = hexdec(substr($hex, 0, 1) . substr($hex, 0, 1));
+        $g = hexdec(substr($hex, 1, 1) . substr($hex, 1, 1));
+        $b = hexdec(substr($hex, 2, 1) . substr($hex, 2, 1));
     } else {
-       $r = hexdec(substr($hex,0,2));
-       $g = hexdec(substr($hex,2,2));
-       $b = hexdec(substr($hex,4,2));
+        $r = hexdec(substr($hex, 0, 2));
+        $g = hexdec(substr($hex, 2, 2));
+        $b = hexdec(substr($hex, 4, 2));
     }
 
-    if (($r*0.299 + $g*0.587 + $b*0.114) > 186) {
-        return "#000000";    
-    } else  {
+    if (($r * 0.299 + $g * 0.587 + $b * 0.114) > 186) {
+        return "#000000";
+    } else {
         return "#ffffff";
     }
 }
 
-function UpdateUser(User $user, string $password, string $color): void    {
+function UpdateUser(User $user, string $password, string $color): void
+{
 
     $conn = $GLOBALS['conn'];
 
@@ -340,14 +378,15 @@ function UpdateUser(User $user, string $password, string $color): void    {
     $_SESSION['user']->color = $color;
 }
 
-function MarkMessageAsRed(Message $message, User $user): void {
+function MarkMessageAsRed(Message $message, User $user): void
+{
 
     $conn = $GLOBALS['conn'];
 
     // See if old read by already contes the user
     if (strpos($message->readby, $user->username . ",") !== false) {
         return;
-    } else  {
+    } else {
 
         // Otherwise add it to the read by
         $message->readby .= $user->username . ",";

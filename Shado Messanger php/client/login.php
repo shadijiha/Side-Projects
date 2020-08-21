@@ -10,7 +10,7 @@ session_start();
     <title>Shado Messanger</title>
     <script src="./client.js"></script>
 </head>
-<body>
+<body style="background-image: url('https://wallpaperaccess.com/full/1272147.jpg');">
 <div id="_title">
     Shado Messanger
 </div>
@@ -41,6 +41,9 @@ session_start();
         <br/>
         <br/>
         <a href="register.php">Première utilisation? Créer un compte</a>
+    </div>
+    <div id="copy_right">
+        &copy; Shadi Jiha | All rights reserved | <a href="http://www.shadijiha.com" target="_blank">http://www.shadijiha.com</a>
     </div>
 </form>
 <?php
