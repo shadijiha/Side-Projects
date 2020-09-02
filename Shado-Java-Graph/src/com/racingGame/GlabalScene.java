@@ -4,7 +4,8 @@
 
 package com.racingGame;
 
-import com.engin.*;
+import com.engin.Renderer;
+import com.engin.Scene;
 
 import java.awt.*;
 
@@ -12,7 +13,7 @@ public class GlabalScene extends Scene {
 
 	private Renderer renderer;
 
-	private float carPos;
+	private final float carPos;
 
 	public GlabalScene() {
 		super("racing game");
@@ -68,27 +69,27 @@ public class GlabalScene extends Scene {
 
 				if (x >= 0 && x < leftGrass) {
 					g.setColor(Color.GREEN);
-					g.drawLine(x, row, x, row);
+					g.drawRect(x, row, 1, 1);
 				}
 
 				if (x >= leftGrass && x < leftClip) {
 					g.setColor(Color.RED);
-					g.drawLine(x, row, x, row);
+					g.drawRect(x, row, 1, 1);
 				}
 
 				if (x >= leftClip && x < rightClip) {
 					g.setColor(Color.GRAY);
-					g.drawLine(x, row, x, row);
+					g.drawRect(x, row, 1, 1);
 				}
 
 				if (x >= rightClip && x < rightGrass) {
 					g.setColor(Color.RED);
-					g.drawLine(x, row, x, row);
+					g.drawRect(x, row, 1, 1);
 				}
 
 				if (x >= rightGrass && x < renderer.getWidth()) {
 					g.setColor(Color.GREEN);
-					g.drawLine(x, row, x, row);
+					g.drawRect(x, row, 1, 1);
 				}
 
 			}
