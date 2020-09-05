@@ -3,9 +3,11 @@
  */
 package com.engin;
 
-import com.engin.logger.*;
+import com.engin.logger.Debug;
 
 import java.awt.*;
+import java.util.Timer;
+import java.util.TimerTask;
 
 public abstract class Util {
 
@@ -131,5 +133,21 @@ public abstract class Util {
 				Debug.error(e);
 			}
 		}).start();
+	}
+
+	public static Timer setInterval(Runnable runnable, long periodMilli) {
+		return setInterval(runnable, 0, periodMilli);
+	}
+
+	public static Timer setInterval(Runnable runnable, long delay, long periodMilli) {
+		var timer = new Timer();
+		timer.scheduleAtFixedRate(new TimerTask() {
+			@Override
+			public void run() {
+				runnable.run();
+			}
+		}, delay, periodMilli);
+
+		return timer;
 	}
 }

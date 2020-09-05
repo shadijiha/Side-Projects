@@ -2,6 +2,8 @@ package com.ecosystem;
 
 import com.engin.Renderer;
 import com.engin.Scene;
+import com.engin.Util;
+import com.engin.logger.Debug;
 
 import java.awt.*;
 
@@ -24,7 +26,24 @@ public class EcosystemSimulation extends Scene {
 
 		this.renderer = renderer;
 
+		for (int i = 0; i < 5; i++) {
+			new Rabbit(renderer);
+		}
+
 		test = new Rabbit(renderer);
+
+		// Log stuff
+		final StringBuilder block = new StringBuilder();
+		Util.setInterval(() -> {
+			block.append("\n======================\n");
+			for (Rabbit r : Rabbit.getAllRabbits()) {
+				block.append(r).append("\n");
+			}
+
+			Debug.push(block.toString());
+			Debug.flush();
+
+		}, 2000);
 	}
 
 	/**
@@ -34,7 +53,8 @@ public class EcosystemSimulation extends Scene {
 	 */
 	@Override
 	public void update(float dt) {
-		test.update();
+		for (Rabbit rabbit : Rabbit.getAllRabbits())
+			rabbit.update(dt);
 	}
 
 	/**
@@ -44,7 +64,7 @@ public class EcosystemSimulation extends Scene {
 	 */
 	@Override
 	public void draw(Graphics g) {
-		test.draw(g);
-		test.headTo(1, 1);
+		for (Rabbit rabbit : Rabbit.getAllRabbits())
+			rabbit.draw(g);
 	}
 }

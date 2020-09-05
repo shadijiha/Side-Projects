@@ -32,6 +32,38 @@ public class Vector2f implements ICoordinates2F {
 		return Vector2f.distance(this, b);
 	}
 
+	public double length() {
+		return Math.sqrt(x * x + y * y);
+	}
+
+	public Vector2f add(Vector2f other) {
+		x += other.x;
+		y += other.y;
+		return this;
+	}
+
+	public Vector2f sub(Vector2f other) {
+		x -= other.x;
+		y -= other.y;
+		return this;
+	}
+
+	public Vector2f mult(float amount) {
+		x *= amount;
+		y *= amount;
+		return this;
+	}
+
+	public Vector2f div(float amount) {
+		x /= amount;
+		y /= amount;
+		return this;
+	}
+
+	public static Vector2f subtract(Vector2f a, Vector2f b) {
+		return new Vector2f(a.x - b.x, a.y - b.y);
+	}
+
 	/**
 	 * Calculates the distance between to points
 	 * @param a The first point
@@ -40,6 +72,13 @@ public class Vector2f implements ICoordinates2F {
 	 */
 	public static double distance(Vector2f a, Vector2f b) {
 		return Math.sqrt(Math.pow(b.x - a.x, 2) + Math.pow(b.y - a.y, 2));
+	}
+
+	public static Vector2f normalize(Vector2f vec) {
+		double mag = vec.length();
+		return new Vector2f(
+				(float) (vec.x / mag),
+				(float) (vec.y / mag));
 	}
 
 	/**
