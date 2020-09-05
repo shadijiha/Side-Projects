@@ -1,0 +1,14 @@
+package entities;
+
+import org.lwjgl.util.vector.Vector3f;
+
+/**
+ * 
+ * @author shadi
+ *
+ */
+public class Camera {
+
+	private Vector3f position;
+	
+}

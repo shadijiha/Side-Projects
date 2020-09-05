@@ -3,20 +3,22 @@
  */
 package com.ecosystem;
 
-import com.engin.Renderer;
-import com.engin.math.ICoordinates2F;
-import com.engin.math.ImmutableVec2f;
-import com.engin.math.Vector2f;
+import com.engin.*;
+import com.engin.math.*;
 import com.engin.shapes.Rectangle;
 
 import java.awt.*;
-import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
+import java.util.*;
 
 public final class Rabbit {
 
 	private static final List<Rabbit> allRabbits = Collections.synchronizedList(new ArrayList<Rabbit>());
+
+	public static final StatCollector maleCollector = new StatCollector("male");
+	public static final StatCollector femaleCollector = new StatCollector("female");
+	private static int totalMales = 0;
+	private static int totalFemale = 0;
 
 	public final static byte MALE = 0;
 	public final static byte FEMALE = 1;
@@ -135,8 +137,16 @@ public final class Rabbit {
 		}
 
 		// Child
-		new Rabbit(renderer);
+		var child = new Rabbit(renderer);
 
+		// Collect stats
+		if (child.gender == MALE) {
+			totalMales++;
+			maleCollector.addToGraph(System.currentTimeMillis(), totalMales);
+		} else {
+			totalFemale++;
+			femaleCollector.addToGraph(System.currentTimeMillis(), totalFemale);
+		}
 
 		isPregnant = false;
 		birthTime = 0L;

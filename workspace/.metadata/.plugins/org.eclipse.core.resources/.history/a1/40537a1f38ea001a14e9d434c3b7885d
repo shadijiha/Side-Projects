@@ -1,0 +1,20 @@
+package models;
+
+import textures.ModelTexture;
+
+/**
+ * 
+ * @author shadi
+ *
+ */
+public class TexturedModel {
+
+	private RawModel model;
+	private ModelTexture texture;
+
+	public TexturedModel(RawModel model, ModelTexture texture) {
+		this.model = model;
+		this.texture = texture;
+	}
+
+}

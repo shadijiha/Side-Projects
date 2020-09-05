@@ -81,8 +81,14 @@ public final class Renderer extends JPanel {
 			var scene = scenes.get(i);
 			// Only update if there's no division by 0
 			var temp = 1.0f / (float) reportedFramerate;
-			if (temp != Double.POSITIVE_INFINITY)
-				scene.update(temp);
+			if (temp != Double.POSITIVE_INFINITY) {
+				try {
+					scene.update(temp);
+				} catch (ConcurrentModificationException e) {
+
+				}
+			}
+
 		}
 
 		try {
@@ -101,8 +107,12 @@ public final class Renderer extends JPanel {
 		g.clearRect(0, 0, frame.getWidth(), frame.getHeight());
 
 		// Render scenes
-		for (Scene scene : scenes)
-			scene.draw(g);
+		for (Scene scene : scenes) {
+			try {
+				scene.draw(g);
+			} catch (ConcurrentModificationException e) {
+			}
+		}
 
 		// Clear screen
 		repaint();

@@ -1,0 +1,14 @@
+package entities;
+
+import models.TexturedModel;
+
+/**
+ * 
+ * @author shadi
+ *
+ */
+public class Entity {
+
+	private TexturedModel model;
+
+}

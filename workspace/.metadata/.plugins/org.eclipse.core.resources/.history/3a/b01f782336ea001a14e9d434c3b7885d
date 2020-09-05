@@ -1,0 +1,16 @@
+package shaders;
+
+/**
+ * 
+ * @author shadi
+ *
+ */
+public class StaticShader extends Shader {
+
+	private final static String SHADER_FILE = "resources/test.shader";
+
+	public StaticShader() {
+		super();
+	}
+
+}

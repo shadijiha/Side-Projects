@@ -1,0 +1,41 @@
+package shaders;
+
+import org.lwjgl.util.vector.Matrix4f;
+
+/**
+ * 
+ * @author shadi
+ *
+ */
+public class StaticShader extends Shader {
+
+	private final static String SHADER_FILE = "resources/test.shader";
+
+	private int locationTransformMatrix;
+	private int locationProjectionMat;
+
+	public StaticShader() {
+		super(SHADER_FILE);
+	}
+
+	@Override
+	protected void bindAttributes() {
+		// TODO Auto-generated method stub
+		super.bindAttribute(0, "position");
+		super.bindAttribute(1, "textureCoords");
+	}
+
+	@Override
+	protected void getAllUniformLocations() {
+		// TODO Auto-generated method stub
+		locationTransformMatrix = super.getUniformLocation("tranformMat");
+	}
+
+	public void loadTransformMatrix(Matrix4f matrix) {
+		super.loadMatrix(locationTransformMatrix, matrix);
+	}
+
+	public void loadTransformMatrix(Matrix4f matrix) {
+		super.loadMatrix(locationTransformMatrix, matrix);
+	}
+}

@@ -1,9 +1,7 @@
 package com.ecosystem;
 
-import com.engin.Renderer;
-import com.engin.Scene;
-import com.engin.Util;
-import com.engin.logger.Debug;
+import com.engin.*;
+import com.engin.logger.*;
 
 import java.awt.*;
 
@@ -53,8 +51,17 @@ public class EcosystemSimulation extends Scene {
 	 */
 	@Override
 	public void update(float dt) {
+
+		renderer.getWindow().setTitle(1 / dt + " FPS");
+
 		for (Rabbit rabbit : Rabbit.getAllRabbits())
 			rabbit.update(dt);
+
+//		if (Rabbit.maleCollector.size() + Rabbit.femaleCollector.size() >= 500) {
+//			Rabbit.maleCollector.exportToCSV();
+//			Rabbit.femaleCollector.exportToCSV();
+//			System.exit(0);
+//		}
 	}
 
 	/**

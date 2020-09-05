@@ -5,7 +5,7 @@ import com.engin.Scene
 import java.awt.Font
 import java.awt.Graphics
 
-class UI() : Scene("UI Scene", 1000) {
+final class UI() : Scene("UI Scene", 1000) {
 
     /**
      * Draws the scene content to the screen
@@ -36,5 +36,4 @@ class UI() : Scene("UI Scene", 1000) {
     override fun update(dt: Float) {
         //To change body of created functions use File | Settings | File Templates.
     }
-
 }

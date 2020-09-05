@@ -1,0 +1,14 @@
+package shaders;
+
+/**
+ * 
+ * @author shadi
+ *
+ */
+public class StaticShader extends Shader {
+
+	public StaticShader()	{
+		super()
+	}
+
+}
