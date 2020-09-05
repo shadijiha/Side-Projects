@@ -1,0 +1,19 @@
+/**
+ * 
+ */
+package util;
+
+/**
+ * @author shadi
+ *
+ */
+public final class Color {
+
+	private final float red;
+	private final float green;
+	private final float blue;
+	private final float alpha;
+	
+	public Color()
+
+}

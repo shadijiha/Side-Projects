@@ -1,0 +1,29 @@
+#type vertex
+#version 150
+
+in vec3 position;
+
+out vec4 color;
+
+uniform mat4 tranformMat;
+uniform mat4 projectionMat;
+uniform mat4 viewMatrix;
+
+uniform vec4 u_color;
+
+void main(void)	{
+	gl_Position = projectionMat * viewMatrix * tranformMat * vec4(position, 1.0);
+	color = u_color;
+}
+
+
+#type fragment
+#version 400 core
+
+in vec4 color;
+
+out vec4 out_Color;
+
+void main(void)	{
+	out_Color = color;
+}

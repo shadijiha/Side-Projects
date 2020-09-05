@@ -1,0 +1,12 @@
+/**
+ * 
+ */
+package shaders;
+
+/**
+ * @author shadi
+ *
+ */
+public final class FlatColorShader {
+
+}

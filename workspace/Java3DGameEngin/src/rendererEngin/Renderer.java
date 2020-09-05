@@ -6,12 +6,17 @@ import org.lwjgl.opengl.GL13;
 import org.lwjgl.opengl.GL20;
 import org.lwjgl.opengl.GL30;
 import org.lwjgl.util.vector.Matrix4f;
+import org.lwjgl.util.vector.Vector2f;
+import org.lwjgl.util.vector.Vector3f;
 
 import entities.Camera;
 import entities.Entity;
 import models.RawModel;
 import models.TexturedModel;
+import shaders.FlatColorShader;
 import shaders.StaticShader;
+import textures.ModelTexture;
+import util.Color;
 import util.Maths;
 
 /**
@@ -26,9 +31,11 @@ public class Renderer {
 	private static final float FAR_PLANE = 1000f;
 
 	private final Matrix4f projectionMatrix;
-	private final Camera camera;
+	private Camera camera;
+	private final Loader loader;
+	private final StaticShader shader;
 
-	public Renderer(Camera camera, StaticShader shader) {
+	public Renderer(Camera camera, Loader loader, StaticShader shader) {
 		projectionMatrix = new Matrix4f();
 		createProjectionMatrix();
 
@@ -37,6 +44,12 @@ public class Renderer {
 		shader.unbind();
 
 		this.camera = camera;
+		this.loader = loader;
+
+		this.shader = new StaticShader();
+		this.shader.bind();
+		this.shader.loadProjectionMatrix(projectionMatrix);
+		this.shader.unbind();
 	}
 
 	public void clear() {
@@ -88,6 +101,54 @@ public class Renderer {
 		GL20.glDisableVertexAttribArray(0);
 		GL20.glDisableVertexAttribArray(1);
 		GL30.glBindVertexArray(0);
+	}
+
+	public void drawQuad(Vector3f position, Vector2f dimensions, Color c) {
+
+		// TODO: change the position.z ADD DEPTH
+		float[] vertices = { position.x, position.y, position.z, position.x, position.y + dimensions.y, position.z,
+				position.x + dimensions.x, position.y + dimensions.y, position.z, position.x + dimensions.x, position.y,
+				position.z };
+
+		int[] indices = { 0, 1, 3, 3, 1, 2 };
+
+		var colorShader = new FlatColorShader();
+		colorShader.bind();
+		colorShader.loadProjectionMatrix(projectionMatrix);
+		colorShader.loadViewMatrix(camera);
+
+		var transformMat = Maths.createTranformMatrix(position, new Vector3f(0, 0, 0),
+				new Vector3f(dimensions.x, dimensions.y, 0f));
+		colorShader.loadTransformMatrix(transformMat);
+		colorShader.loadColor(c.toVector4f());
+
+		var model = loader.loadToVAO(vertices, indices);
+		render(model);
+
+		colorShader.unbind();
+	}
+
+	public void drawQuad(Vector3f position, Vector2f dimensions, ModelTexture texture) {
+
+		// TODO: change the position.z ADD DEPTH
+		float[] vertices = { position.x, position.y, position.z, position.x, position.y + dimensions.y, position.z,
+				position.x + dimensions.x, position.y + dimensions.y, position.z, position.x + dimensions.x, position.y,
+				position.z };
+
+		int[] indices = { 0, 1, 3, 3, 1, 2 };
+
+		// Update Shader
+		this.shader.bind();
+		this.shader.loadViewMatrix(camera);
+
+		var transformMat = Maths.createTranformMatrix(position, new Vector3f(0, 0, 0),
+				new Vector3f(dimensions.x, dimensions.y, 0f));
+		this.shader.loadTransformMatrix(transformMat);
+
+		var texturedModel = new TexturedModel(loader.loadToVAO(vertices, indices), texture);
+		render(texturedModel);
+
+		this.shader.unbind();
 	}
 
 	private void createProjectionMatrix() {

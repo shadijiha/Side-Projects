@@ -1,0 +1,17 @@
+package enginTester;
+
+public abstract class AbstractApplication {
+
+	/**
+	 * All scenes should be initialized here. Example:
+	 * 
+	 * 2 |	@Override
+	 * 3 |	public void init() {
+	 * 4 |		new MyScene1();
+	 * 5 |		new MyScene2();
+	 * 6 |		new MyScene3();
+	 * 7 |	}
+	 */
+	public abstract void init();
+
+}

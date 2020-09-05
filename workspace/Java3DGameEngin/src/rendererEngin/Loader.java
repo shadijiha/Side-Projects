@@ -32,6 +32,16 @@ public final class Loader {
 	private List<Integer> vbos = new ArrayList<>();
 	private List<Integer> textures = new ArrayList<Integer>();
 
+	public RawModel loadToVAO(float[] positions, int[] indices) {
+		int vaoID = createVAO();
+
+		bindIndexBuffer(indices);
+		storeDataInAttribList(0, 3, positions);
+		unbindVAO();
+
+		return new RawModel(vaoID, indices.length);
+	}
+
 	public RawModel loadToVAO(float[] positions, float[] textureCoords, int[] indices) {
 		int vaoID = createVAO();
 
