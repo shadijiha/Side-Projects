@@ -4,6 +4,7 @@
 
 package com.main;
 
+import com.ecosystem.*;
 import com.engin.*;
 
 import java.awt.*;
@@ -46,11 +47,15 @@ public class UI extends Scene {
 	public void draw(Graphics g) {
 
 		var font = g.getFont();
+		var color = g.getColor();
 
 		g.setFont(new Font("arial", Font.PLAIN, 20));
+		g.setColor(Color.WHITE);
 		g.drawString(1 / dt + "", renderer.getWidth() - 50, 20);
 
+		g.drawString(Rabbit.getRabbitCount() + "", 30, 30);
 
 		g.setFont(font);
+		g.setColor(color);
 	}
 }

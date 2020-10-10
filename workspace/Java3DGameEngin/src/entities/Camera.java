@@ -14,7 +14,7 @@ public class Camera {
 	private Vector3f rotation;
 
 	public Camera() {
-		position = new Vector3f(0, 0, 0);
+		position = new Vector3f(0, 0, 5);
 		rotation = new Vector3f(0, 0, 0);
 	}
 
@@ -38,18 +38,22 @@ public class Camera {
 		return rotation;
 	}
 
-	public void addWASDListener() {
+	public void listenToWASD(float dt) {
 		if (Keyboard.isKeyDown(Keyboard.KEY_W))
-			position.z -= 0.02f;
+			position.y += 2f * dt;
 		if (Keyboard.isKeyDown(Keyboard.KEY_S))
-			position.z += 0.02f;
+			position.y -= 2f * dt;
 		if (Keyboard.isKeyDown(Keyboard.KEY_D))
-			position.x += 0.02f;
+			position.x += 2f * dt;
 		if (Keyboard.isKeyDown(Keyboard.KEY_A))
-			position.x -= 0.02f;
+			position.x -= 2f * dt;
+		if (Keyboard.isKeyDown(Keyboard.KEY_UP))
+			position.z -= 2f * dt;
+		if (Keyboard.isKeyDown(Keyboard.KEY_DOWN))
+			position.z += 2f * dt;
 		if (Keyboard.isKeyDown(Keyboard.KEY_E))
-			rotate(-1, -1, -1);
+			rotate(0, 10 * dt, 0);
 		if (Keyboard.isKeyDown(Keyboard.KEY_Q))
-			rotate(1, 1, 1);
+			rotate(0, -10 * dt, 0);
 	}
 }

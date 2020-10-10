@@ -17,10 +17,10 @@ public final class Color {
 	public static final Color WHITE = new Color(1, 1, 1);
 	public static final Color BLACK = new Color(0, 0, 0);
 
-	private final float red;
-	private final float green;
-	private final float blue;
-	private final float alpha;
+	public final float red;
+	public final float green;
+	public final float blue;
+	public final float alpha;
 
 	public Color(float r, float g, float b, float a) {
 

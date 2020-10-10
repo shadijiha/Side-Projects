@@ -3,9 +3,7 @@
  */
 package rendererEngin;
 
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.List;
+import entities.Camera;
 
 /**
  * @author shadi
@@ -13,28 +11,16 @@ import java.util.List;
  */
 public abstract class Scene {
 
-	private static final List<Scene> allScenes = new ArrayList<>();
-
+	private final long id;
 	private String name;
-	private final int zIndex;
+	protected int zIndex;
 	private boolean hidden;
-
-	private boolean hasInitialized;
 
 	public Scene(String name, int z_index) {
 		this.name = name;
 		this.zIndex = z_index;
 		this.hidden = false;
-
-		allScenes.add(this);
-		allScenes.sort(new Comparator<Scene>() {
-
-			@Override
-			public int compare(Scene o1, Scene o2) {
-				// TODO Auto-generated method stub
-				return Integer.compare(o1.zIndex, o2.zIndex);
-			}
-		});
+		this.id = (long) (Math.random() * Long.MAX_VALUE);
 	}
 
 	public Scene(String name) {
@@ -51,7 +37,7 @@ public abstract class Scene {
 	 * 
 	 * @param display
 	 */
-	public abstract void init(Loader loader);
+	public abstract void init(Loader loader, Camera defaultCamera);
 
 	/**
 	 * Updates the scene
@@ -65,7 +51,7 @@ public abstract class Scene {
 	 * 
 	 * @param renderer The openGL context renderer
 	 */
-	public abstract void draw(Renderer renderer);
+	public abstract void draw(Renderer r);
 
 	public final int getZindex() {
 		return zIndex;
@@ -87,15 +73,8 @@ public abstract class Scene {
 		hidden = false;
 	}
 
-	public final boolean hasInitialized() {
-		return hasInitialized;
-	}
-
-	public final void inited() {
-		hasInitialized = true;
-	}
-
-	public static final List<Scene> allScenes() {
-		return List.copyOf(allScenes);
+	public final long getId() {
+		// TODO Auto-generated method stub
+		return this.id;
 	}
 }

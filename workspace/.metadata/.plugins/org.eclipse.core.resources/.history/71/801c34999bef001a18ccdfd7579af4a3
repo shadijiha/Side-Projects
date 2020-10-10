@@ -1,7 +1,0 @@
-package enginTester;
-
-public abstract class AbstractApplication {
-	
-	public void abstract init();
-
-}

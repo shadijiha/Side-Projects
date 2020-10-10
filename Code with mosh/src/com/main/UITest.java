@@ -26,7 +26,7 @@ public class UITest extends Scene {
 	public void init(Renderer renderer) {
 		final var textField = new TextField(50, 50, 200, 50);
 		textField.onClick(System.out::println);
-		textField.onMouseOver(e -> {
+		textField.onMouseMove(e -> {
 			textField.setBackgroundColor(Color.RED);
 		});
 		textField.onMouseOut(e -> {

@@ -1,22 +1,13 @@
 package shaders;
 
-import org.lwjgl.util.vector.Matrix4f;
-
-import entities.Camera;
-import util.Maths;
-
 /**
  * 
  * @author shadi
  *
  */
-public class StaticShader extends Shader {
+public final class StaticShader extends Shader {
 
-	private final static String SHADER_FILE = "resources/test.glsl";
-
-	private int locationTransformMatrix;
-	private int locationProjectionMat;
-	private int locationViewMatrix;
+	private final static String SHADER_FILE = "src/resources/static_shader.glsl";
 
 	public StaticShader() {
 		super(SHADER_FILE);
@@ -35,18 +26,5 @@ public class StaticShader extends Shader {
 		locationTransformMatrix = super.getUniformLocation("tranformMat");
 		locationProjectionMat = super.getUniformLocation("projectionMat");
 		locationViewMatrix = super.getUniformLocation("viewMatrix");
-	}
-
-	public void loadTransformMatrix(Matrix4f matrix) {
-		super.loadMatrix(locationTransformMatrix, matrix);
-	}
-
-	public void loadViewMatrix(Camera camera) {
-		Matrix4f viewMatrix = Maths.createViewMatrix(camera);
-		super.loadMatrix(locationViewMatrix, viewMatrix);
-	}
-
-	public void loadProjectionMatrix(Matrix4f projection) {
-		super.loadMatrix(locationProjectionMat, projection);
 	}
 }

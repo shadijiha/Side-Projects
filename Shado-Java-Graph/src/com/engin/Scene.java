@@ -23,6 +23,12 @@ public abstract class Scene implements KeyListener, MouseListener, MouseMotionLi
 		this(name, 0);
 	}
 
+	public Scene() {
+		this.name = this.getClass().getName();
+		this.id = (long) (Math.random() * Long.MAX_VALUE);
+		this.zIndex = 0;
+	}
+
 	/**
 	 * Initializes the scene and its variables
 	 *
@@ -70,7 +76,7 @@ public abstract class Scene implements KeyListener, MouseListener, MouseMotionLi
 	 *
 	 * @param o The other scene
 	 * @return a negative integer, zero, or a positive integer as this object is
-	 *         less than, equal to, or greater than the specified object.
+	 * less than, equal to, or greater than the specified object.
 	 */
 	public final int compareTo(Scene o) {
 		return Integer.compare(zIndex, o.zIndex);

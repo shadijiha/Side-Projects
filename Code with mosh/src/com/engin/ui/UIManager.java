@@ -105,6 +105,7 @@ public final class UIManager extends Scene {
 		for (UIComponent component : components) {
 			if (collision(e.getX(), e.getY(), component)) {
 				component.mouseMoved(e);
+				System.out.println(e.getX() + ", " + e.getY());
 			}
 
 		}
@@ -130,8 +131,8 @@ public final class UIManager extends Scene {
 
 	private static boolean collision(int x, int y, UIComponent ui) {
 		return (x < ui.position.x + ui.dimension.w &&
-				x + 5 > ui.position.x &&
+				x > ui.position.x &&
 				y < ui.position.y + ui.dimension.h &&
-				y + 5 > ui.position.y);
+				y > ui.position.y);
 	}
 }

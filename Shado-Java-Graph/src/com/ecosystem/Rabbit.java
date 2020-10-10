@@ -24,8 +24,8 @@ public final class Rabbit {
 	public final static byte FEMALE = 1;
 
 	// General control enviroment variable
-	public static final float THIRST_CHANGE = 0.05f;
-	public static final float HUNGER_CHANGE = 0.03f;
+	public static final float THIRST_CHANGE = 0.02f;
+	public static final float HUNGER_CHANGE = 0.01f;
 	public static final float HORNEYNESS_CHANGE = 0.1f;
 	public static final float CHANCE_TO_GET_PREGNANT = 0.5F;
 	public static final float MIN_HORNEYNESS_FOR_REPRODUCTION = 0.5f;
@@ -52,6 +52,7 @@ public final class Rabbit {
 	private Vector2f start;
 	private Vector2f end;
 	private boolean moving;
+	private boolean isDead;
 
 	public Rabbit(Renderer r) {
 		gender = Math.random() > 0.5 ? MALE : FEMALE;
@@ -74,10 +75,15 @@ public final class Rabbit {
 
 		headTo(end);
 
-		allRabbits.add(this);
+		synchronized (this) {
+			allRabbits.add(this);
+		}
 	}
 
 	public void update(float dt) {
+
+		if (isDead)
+			return;
 
 		// Update stats
 		thirst -= THIRST_CHANGE * dt;
@@ -88,14 +94,23 @@ public final class Rabbit {
 		if (hunger > 1.0f) hunger = 1.0f;
 		if (horneiness > 1.0f) horneiness = 1.0f;
 
-		if (thirst < 0.0f) thirst = 0.0f;
-		if (hunger < 0.0f) hunger = 0.0f;
-		if (horneiness < 0.0f) horneiness = 0.0f;
+		if (thirst < 0.0f) {
+			thirst = 0.0f;
+			die();
+		}
+		if (hunger < 0.0f) {
+			hunger = 0.0f;
+			die();
+		}
+		if (horneiness < 0.0f) {
+			horneiness = 0.0f;
+			die();
+		}
 
 		// See if there's an opposite gender nearby nearby
 		for (Rabbit other : allRabbits) {
 			if (this.horneiness >= MIN_HORNEYNESS_FOR_REPRODUCTION && this.gender != other.gender
-					&& !this.isPregnant && !other.isPregnant) {
+					&& !this.isPregnant && !other.isPregnant && !isDead && !other.isDead) {
 
 				// See if its in the vision range
 				var dist = position.distance(other.position);
@@ -129,6 +144,12 @@ public final class Rabbit {
 				headTo();
 			}
 		}
+	}
+
+	private synchronized void die() {
+		isDead = true;
+
+		allRabbits.remove(this);
 	}
 
 	public void giveBirth() {
@@ -196,7 +217,7 @@ public final class Rabbit {
 		hungerBarBG.setFill(Color.WHITE);
 		hungerBarBG.draw(g);
 
-		var hungerBar = new Rectangle((int) hungerBarBG.getPosition().x, (int) hungerBarBG.getPosition().y, (int) (BAR_HEIGHT * hunger), BAR_HEIGHT);
+		var hungerBar = new Rectangle((int) hungerBarBG.getPosition().x, (int) hungerBarBG.getPosition().y, (int) (BAR_WIDTH * hunger), BAR_HEIGHT);
 		hungerBar.setFill(Color.ORANGE);
 		hungerBar.draw(g);
 

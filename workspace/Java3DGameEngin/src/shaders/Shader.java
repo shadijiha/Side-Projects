@@ -3,6 +3,8 @@ package shaders;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.nio.FloatBuffer;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Scanner;
 
 import org.lwjgl.BufferUtils;
@@ -11,6 +13,9 @@ import org.lwjgl.opengl.GL20;
 import org.lwjgl.util.vector.Matrix4f;
 import org.lwjgl.util.vector.Vector3f;
 import org.lwjgl.util.vector.Vector4f;
+
+import entities.Camera;
+import util.Maths;
 
 /**
  * 
@@ -24,6 +29,12 @@ public abstract class Shader {
 	private int programID;
 	private int vertexShaderId;
 	private int fragmentShaderID;
+
+	protected int locationTransformMatrix;
+	protected int locationProjectionMat;
+	protected int locationViewMatrix;
+
+	protected Map<String, Integer> cachedLocations = new HashMap<>();
 
 	public Shader(String vertexFile, String fragmentFile) {
 
@@ -82,27 +93,112 @@ public abstract class Shader {
 
 	protected abstract void bindAttributes();
 
+	public void loadTransformMatrix(Matrix4f matrix) {
+		loadMatrix(locationTransformMatrix, matrix);
+	}
+
+	public void loadViewMatrix(Camera camera) {
+		Matrix4f viewMatrix = Maths.createViewMatrix(camera);
+		loadMatrix(locationViewMatrix, viewMatrix);
+	}
+
+	public void loadProjectionMatrix(Matrix4f projection) {
+		loadMatrix(locationProjectionMat, projection);
+	}
+
+	/**
+	 * Sends a float uniform value to the shader
+	 * 
+	 * @param location The location of the uniform
+	 * @param value    The value to send
+	 */
 	public void loadFloat(int location, float value) {
 		GL20.glUniform1f(location, value);
 	}
 
+	/**
+	 * Sends a 3D vector uniform to the shader
+	 * 
+	 * @param location The location of the uniform
+	 * @param vector   The vector to send
+	 */
 	public void loadVector3f(int location, Vector3f vector) {
 		GL20.glUniform3f(location, vector.x, vector.y, vector.z);
 	}
 
+	/**
+	 * Sends a 4D vector uniform to the shader
+	 * 
+	 * @param location The location of the uniform
+	 * @param vector   The vector to send
+	 */
 	public void loadVector4f(int location, Vector4f vector) {
 		GL20.glUniform4f(location, vector.x, vector.y, vector.z, vector.w);
 	}
 
+	/**
+	 * Sends a boolean value uniform to the shader
+	 * 
+	 * @param location The location of the uniform
+	 * @param vector   The boolean to send
+	 */
 	public void loadBoolean(int location, boolean value) {
 		float toLoad = value ? 1 : 0;
 		GL20.glUniform1f(location, toLoad);
 	}
 
+	/**
+	 * Sends a 4x4 matrix uniform to the shader
+	 * 
+	 * @param location The location of the uniform
+	 * @param matrix   The matrix to send
+	 */
 	public void loadMatrix(int location, Matrix4f matrix) {
 		matrix.store(MATRIX_BUFFER);
 		MATRIX_BUFFER.flip();
 		GL20.glUniformMatrix4(location, false, MATRIX_BUFFER);
+	}
+
+	public void updateUniform(String name, Object value) {
+
+		int location;
+
+		// TODO store them in a hash table
+		if (cachedLocations.containsKey(name)) {
+			location = cachedLocations.get(name);
+		} else {
+			location = getUniformLocation(name);
+			cachedLocations.put(name, location);
+		}
+
+		// Set the value depending on the valriable type
+		if (value instanceof Float)
+			loadFloat(location, (Float) value);
+		else if (value instanceof Vector3f)
+			loadVector3f(location, (Vector3f) value);
+		else if (value instanceof Vector4f)
+			loadVector4f(location, (Vector4f) value);
+		else if (value instanceof Boolean)
+			loadBoolean(location, (Boolean) value);
+		else if (value instanceof Matrix4f)
+			loadMatrix(location, (Matrix4f) value);
+		else
+			throw new IllegalArgumentException(
+					"The value can only be a float, boolean, Vector3f, Vector4f or Matrix4f");
+	}
+
+	/**
+	 * Binds the position to spot 0
+	 */
+	public void bindPosition() {
+		bindAttribute(0, "position");
+	}
+
+	/**
+	 * Binds the position to spot 1
+	 */
+	public void bindTextureCoordinates() {
+		bindAttribute(1, "textureCoords");
 	}
 
 	protected void bindAttribute(int attribute, String variableName) {
