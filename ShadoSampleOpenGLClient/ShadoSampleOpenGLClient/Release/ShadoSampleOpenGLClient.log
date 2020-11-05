@@ -2,19 +2,9 @@
   main.cpp
 LINK : warning LNK4098: defaultlib 'LIBCMT' conflicts with use of other libs; use /NODEFAULTLIB:library
   Generating code
-  613 of 3746 functions (16.4%) were compiled, the rest were copied from previous compilation.
-    13 functions were new in current compilation
-    352 functions had inline decision re-evaluated but remain unchanged
+  3623 of 3774 functions (96.0%) were compiled, the rest were copied from previous compilation.
+    29 functions were new in current compilation
+    35 functions had inline decision re-evaluated but remain unchanged
   Finished generating code
-ShadoOpenGLEngin.lib(Application.obj) : warning LNK4099: PDB 'Learning OpenGL.pdb' was not found with 'ShadoOpenGLEngin.lib(Application.obj)' or at 'D:\Wamp64\www\GitHub\Side-Projects\ShadoSampleOpenGLClient\Release\Learning OpenGL.pdb'; linking object as if no debug info
-ShadoOpenGLEngin.lib(OrbitCamera.obj) : warning LNK4099: PDB 'Learning OpenGL.pdb' was not found with 'ShadoOpenGLEngin.lib(OrbitCamera.obj)' or at 'D:\Wamp64\www\GitHub\Side-Projects\ShadoSampleOpenGLClient\Release\Learning OpenGL.pdb'; linking object as if no debug info
-ShadoOpenGLEngin.lib(Renderer2D.obj) : warning LNK4099: PDB 'Learning OpenGL.pdb' was not found with 'ShadoOpenGLEngin.lib(Renderer2D.obj)' or at 'D:\Wamp64\www\GitHub\Side-Projects\ShadoSampleOpenGLClient\Release\Learning OpenGL.pdb'; linking object as if no debug info
-ShadoOpenGLEngin.lib(Debug.obj) : warning LNK4099: PDB 'Learning OpenGL.pdb' was not found with 'ShadoOpenGLEngin.lib(Debug.obj)' or at 'D:\Wamp64\www\GitHub\Side-Projects\ShadoSampleOpenGLClient\Release\Learning OpenGL.pdb'; linking object as if no debug info
-ShadoOpenGLEngin.lib(input.obj) : warning LNK4099: PDB 'Learning OpenGL.pdb' was not found with 'ShadoOpenGLEngin.lib(input.obj)' or at 'D:\Wamp64\www\GitHub\Side-Projects\ShadoSampleOpenGLClient\Release\Learning OpenGL.pdb'; linking object as if no debug info
-ShadoOpenGLEngin.lib(Buffer.obj) : warning LNK4099: PDB 'Learning OpenGL.pdb' was not found with 'ShadoOpenGLEngin.lib(Buffer.obj)' or at 'D:\Wamp64\www\GitHub\Side-Projects\ShadoSampleOpenGLClient\Release\Learning OpenGL.pdb'; linking object as if no debug info
-ShadoOpenGLEngin.lib(Shader.obj) : warning LNK4099: PDB 'Learning OpenGL.pdb' was not found with 'ShadoOpenGLEngin.lib(Shader.obj)' or at 'D:\Wamp64\www\GitHub\Side-Projects\ShadoSampleOpenGLClient\Release\Learning OpenGL.pdb'; linking object as if no debug info
-ShadoOpenGLEngin.lib(VertexArray.obj) : warning LNK4099: PDB 'Learning OpenGL.pdb' was not found with 'ShadoOpenGLEngin.lib(VertexArray.obj)' or at 'D:\Wamp64\www\GitHub\Side-Projects\ShadoSampleOpenGLClient\Release\Learning OpenGL.pdb'; linking object as if no debug info
-ShadoOpenGLEngin.lib(Texture2D.obj) : warning LNK4099: PDB 'Learning OpenGL.pdb' was not found with 'ShadoOpenGLEngin.lib(Texture2D.obj)' or at 'D:\Wamp64\www\GitHub\Side-Projects\ShadoSampleOpenGLClient\Release\Learning OpenGL.pdb'; linking object as if no debug info
-ShadoOpenGLEngin.lib(stb_image.obj) : warning LNK4099: PDB 'Learning OpenGL.pdb' was not found with 'ShadoOpenGLEngin.lib(stb_image.obj)' or at 'D:\Wamp64\www\GitHub\Side-Projects\ShadoSampleOpenGLClient\Release\Learning OpenGL.pdb'; linking object as if no debug info
 glew32s.lib(glew.obj) : warning LNK4099: PDB 'vc120.pdb' was not found with 'glew32s.lib(glew.obj)' or at 'D:\Wamp64\www\GitHub\Side-Projects\ShadoSampleOpenGLClient\Release\vc120.pdb'; linking object as if no debug info
   ShadoSampleOpenGLClient.vcxproj -> D:\Wamp64\www\GitHub\Side-Projects\ShadoSampleOpenGLClient\Release\ShadoSampleOpenGLClient.exe
