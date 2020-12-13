@@ -1,8 +1,0 @@
-
-
-var temp = 20;
-
-while (temp > 0)    {
-    print(temp);
-    temp -= 1;
-}

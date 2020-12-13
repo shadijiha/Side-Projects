@@ -1,2 +1,0 @@
-[19:54:22] [warning] SHADO: TextureShader shader does not contain the following uniform/layout: u_Transform
-[19:54:22] [warning] SHADO: Renderer2D_Lines shader does not contain the following uniform/layout: u_Transform
