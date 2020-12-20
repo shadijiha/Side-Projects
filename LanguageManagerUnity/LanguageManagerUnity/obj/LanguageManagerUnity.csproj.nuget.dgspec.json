@@ -1,21 +1,26 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\shadi\\Desktop\\LanguageManagerUnity\\LanguageManagerUnity\\LanguageManagerUnity.csproj": {}
+    "D:\\Wamp64\\www\\GitHub\\Side-Projects\\LanguageManagerUnity\\LanguageManagerUnity\\LanguageManagerUnity.csproj": {}
   },
   "projects": {
-    "C:\\Users\\shadi\\Desktop\\LanguageManagerUnity\\LanguageManagerUnity\\LanguageManagerUnity.csproj": {
+    "D:\\Wamp64\\www\\GitHub\\Side-Projects\\LanguageManagerUnity\\LanguageManagerUnity\\LanguageManagerUnity.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\shadi\\Desktop\\LanguageManagerUnity\\LanguageManagerUnity\\LanguageManagerUnity.csproj",
+        "projectUniqueName": "D:\\Wamp64\\www\\GitHub\\Side-Projects\\LanguageManagerUnity\\LanguageManagerUnity\\LanguageManagerUnity.csproj",
         "projectName": "LanguageManagerUnity",
-        "projectPath": "C:\\Users\\shadi\\Desktop\\LanguageManagerUnity\\LanguageManagerUnity\\LanguageManagerUnity.csproj",
+        "projectPath": "D:\\Wamp64\\www\\GitHub\\Side-Projects\\LanguageManagerUnity\\LanguageManagerUnity\\LanguageManagerUnity.csproj",
         "packagesPath": "C:\\Users\\shadi\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\shadi\\Desktop\\LanguageManagerUnity\\LanguageManagerUnity\\obj\\",
+        "outputPath": "D:\\Wamp64\\www\\GitHub\\Side-Projects\\LanguageManagerUnity\\LanguageManagerUnity\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
           "C:\\Users\\shadi\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
@@ -37,6 +42,12 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "dependencies": {
+            "Google.Cloud.Translation.V2": {
+              "target": "Package",
+              "version": "[2.0.0, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -52,7 +63,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.402\\RuntimeIdentifierGraph.json"
         }
       }
     }

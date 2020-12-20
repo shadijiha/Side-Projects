@@ -1,0 +1,4 @@
+// French lang file
+#type object file
+welcome : Bienvenu
+back:   Revenir

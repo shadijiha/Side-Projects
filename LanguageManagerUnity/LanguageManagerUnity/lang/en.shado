@@ -1,0 +1,4 @@
+// English lang file
+#type object file
+welcome : Welcome
+back:   Go Back
